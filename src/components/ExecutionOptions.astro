@@ -9,20 +9,20 @@ import { site } from "../config/site";
 	<div class="container execution-grid">
 		<div class="execution-copy">
 			<p class="eyebrow eyebrow-light">
-				SUMINISTRO + EJECUCIÓN
+				EL ALCANCE LO DEFINE EL PROYECTO
 			</p>
 
 			<h2>
-				Compre el material
+				Desde un servicio puntual
 				<span>
-					o resuelva el proyecto completo.
+					hasta una solución completa.
 				</span>
 			</h2>
 
 			<p>
-				Dependiendo del requerimiento podemos cotizar
-				únicamente el producto, materiales complementarios
-				o una propuesta que incluya instalación y ejecución.
+				No todos los clientes necesitan lo mismo.
+				Podemos ejecutar un trabajo, suministrar un producto
+				o combinar materiales, accesorios y mano de obra.
 			</p>
 
 			<a
@@ -43,12 +43,34 @@ import { site } from "../config/site";
 
 				<div>
 					<h3>
+						Servicio / ejecución
+					</h3>
+
+					<p>
+						Para mantenimiento, reparación, remodelación,
+						obra civil o trabajos que requieren evaluar
+						el sitio y definir un alcance.
+					</p>
+
+					<span class="option-detail">
+						Mano de obra · Proyecto · Mantenimiento
+					</span>
+				</div>
+			</article>
+
+			<article class="execution-option">
+				<span class="option-number">
+					02
+				</span>
+
+				<div>
+					<h3>
 						Solo suministro
 					</h3>
 
 					<p>
 						Si ya cuenta con instalador o personal técnico,
-						podemos cotizar únicamente el producto o material
+						podemos suministrar el producto o material
 						según medida, cantidad y disponibilidad.
 					</p>
 
@@ -62,7 +84,7 @@ import { site } from "../config/site";
 				class="execution-option execution-option-featured"
 			>
 				<span class="option-number">
-					02
+					03
 				</span>
 
 				<div>
@@ -71,13 +93,13 @@ import { site } from "../config/site";
 					</h3>
 
 					<p>
-						Evaluamos materiales, mano de obra y condiciones
-						del sitio para preparar una propuesta con el
-						alcance necesario.
+						Integramos producto, materiales complementarios
+						y mano de obra cuando el cliente necesita
+						una solución más completa.
 					</p>
 
 					<span class="option-detail">
-						Material + Mano de obra
+						Material + Accesorios + Mano de obra
 					</span>
 				</div>
 			</article>
@@ -87,14 +109,15 @@ import { site } from "../config/site";
 
 <style>
 	.dark-section {
-		background: #111111;
+		background: #0d0d0d;
 		color: white;
+		border-top: 1px solid #252525;
 	}
 
 	.execution-grid {
 		display: grid;
 		grid-template-columns:
-			minmax(0, 1fr)
+			minmax(0, 0.92fr)
 			minmax(0, 1.08fr);
 		align-items: center;
 		gap: 52px;
@@ -150,7 +173,7 @@ import { site } from "../config/site";
 
 	.execution-options {
 		display: grid;
-		gap: 16px;
+		gap: 12px;
 		min-width: 0;
 	}
 
@@ -159,7 +182,7 @@ import { site } from "../config/site";
 		grid-template-columns:
 			34px minmax(0, 1fr);
 		gap: 14px;
-		padding: 34px;
+		padding: 27px 30px;
 		border: 1px solid #333333;
 		border-radius: 12px;
 		background: #181818;
@@ -178,18 +201,18 @@ import { site } from "../config/site";
 	}
 
 	.execution-option h3 {
-		margin-bottom: 16px;
+		margin-bottom: 10px;
 		color: white;
-		font-size: 1.4rem;
+		font-size: 1.3rem;
 		line-height: 1.25;
 	}
 
 	.execution-option p {
 		max-width: 100%;
-		margin-bottom: 20px;
+		margin-bottom: 14px;
 		color: #c4c4c4;
-		font-size: 1rem;
-		line-height: 1.65;
+		font-size: 0.94rem;
+		line-height: 1.6;
 		word-break: normal;
 		overflow-wrap: normal;
 		hyphens: none;
@@ -198,7 +221,7 @@ import { site } from "../config/site";
 	.option-detail {
 		display: block;
 		color: white;
-		font-size: 0.82rem;
+		font-size: 0.78rem;
 		font-weight: 800;
 		letter-spacing: 0.03em;
 	}
@@ -226,7 +249,7 @@ import { site } from "../config/site";
 		}
 
 		.execution-option {
-			padding: 28px;
+			padding: 25px;
 		}
 	}
 

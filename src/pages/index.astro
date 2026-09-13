@@ -4,6 +4,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Solutions from "../components/Solutions.astro";
 import ProjectsPreview from "../components/ProjectsPreview.astro";
+import ServicesPreview from "../components/ServicesPreview.astro";
+import HomePrices from "../components/HomePrices.astro";
 import ExecutionOptions from "../components/ExecutionOptions.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 
@@ -11,7 +13,7 @@ const title =
 	"Multiservicios Obra Civil AR | Obra Civil y Suministros Guatemala";
 
 const description =
-	"Obra civil, mantenimiento, suministros hidráulicos, contadores de agua y Deck WPC en Guatemala. Cotice suministro, instalación y ejecución con AR.";
+	"Obra civil, mantenimiento, remodelaciones, suministros hidráulicos, contadores de agua y Deck WPC en Guatemala. Suministro, instalación y ejecución con AR.";
 ---
 
 <BaseLayout
@@ -25,6 +27,10 @@ const description =
 	<Solutions />
 
 	<ProjectsPreview />
+
+	<ServicesPreview />
+
+	<HomePrices />
 
 	<ExecutionOptions />
 

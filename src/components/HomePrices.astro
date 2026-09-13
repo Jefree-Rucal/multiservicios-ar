@@ -1,0 +1,309 @@
+<section
+	class="section home-prices"
+	id="precios-home"
+>
+	<div class="container">
+		<div class="prices-heading">
+			<div>
+				<p class="eyebrow eyebrow-light">
+					PRECIOS CLAROS
+				</p>
+
+				<h2>
+					Cuando el producto se puede comparar,
+					<span>publicamos el precio.</span>
+				</h2>
+			</div>
+
+			<p>
+				Estos precios corresponden a productos específicos.
+				Instalación, entrega y materiales complementarios se
+				agregan por separado cuando el proyecto los requiere.
+			</p>
+		</div>
+
+		<div class="price-grid">
+			<a
+				class="price-card"
+				href="/contador-agua-3-4-guatemala/"
+			>
+				<span class="price-kicker">
+					CONTADOR DE AGUA 3/4"
+				</span>
+
+				<strong>
+					Desde Q420
+				</strong>
+
+				<p>
+					Tres opciones Genebre con precio publicado
+					y confirmación de disponibilidad.
+				</p>
+
+				<b>
+					Ver modelos y comprar →
+				</b>
+			</a>
+
+			<a
+				class="price-card"
+				href="/deck-wpc-guatemala/"
+			>
+				<span class="price-kicker">
+					PISO DECK WPC
+				</span>
+
+				<strong>
+					Q875 / caja
+				</strong>
+
+				<p>
+					Caja de 5 piezas. Accesorios e instalación
+					se calculan aparte según necesidad.
+				</p>
+
+				<b>
+					Calcular cajas y comprar →
+				</b>
+			</a>
+
+			<a
+				class="price-card"
+				href="/suministros-hidraulicos-guatemala/#precios-hidraulicos"
+			>
+				<span class="price-kicker">
+					UNIÓN DRESSER HELMAN
+				</span>
+
+				<strong>
+					Desde Q1,400
+				</strong>
+
+				<p>
+					Uniones 200 PSI con precios por medida
+					y disponibilidad sujeta a confirmación.
+				</p>
+
+				<b>
+					Ver medidas y precios →
+				</b>
+			</a>
+
+			<a
+				class="price-card"
+				href="/suministros-hidraulicos-guatemala/#precios-hidraulicos"
+			>
+				<span class="price-kicker">
+					WOLTMANN GENEBRE 6060A
+				</span>
+
+				<strong>
+					Desde Q3,050
+				</strong>
+
+				<p>
+					Medidas de 3", 4", 6" y 8" con
+					precios de referencia publicados.
+				</p>
+
+				<b>
+					Ver medidas y precios →
+				</b>
+			</a>
+		</div>
+
+		<div class="prices-note">
+			<strong>
+				¿Necesita instalación o un alcance más grande?
+			</strong>
+
+			<p>
+				No todo debe convertirse en una lista de precios.
+				Los trabajos de obra civil, mantenimiento, instalación
+				y remodelación se cotizan según alcance y condiciones del sitio.
+			</p>
+
+			<a href="/servicios-obra-civil-guatemala/">
+				Ver servicios y ejecución →
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.home-prices {
+		background: #111111;
+		color: white;
+	}
+
+	.prices-heading {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 1fr)
+			minmax(0, 0.72fr);
+		align-items: end;
+		gap: 70px;
+		margin-bottom: 40px;
+	}
+
+	.prices-heading h2 {
+		margin-bottom: 0;
+		font-size:
+			clamp(
+				2.25rem,
+				4vw,
+				3.55rem
+			);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.prices-heading h2 span {
+		display: block;
+		color: #ff454c;
+	}
+
+	.prices-heading > p {
+		margin: 0;
+		color: #bdbdbd;
+		line-height: 1.75;
+	}
+
+	.eyebrow-light {
+		color: #ff454c;
+	}
+
+	.price-grid {
+		display: grid;
+		grid-template-columns:
+			repeat(4, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	.price-card {
+		min-height: 330px;
+		display: flex;
+		flex-direction: column;
+		padding: 25px;
+		color: white;
+		background: #181818;
+		border: 1px solid #333333;
+		border-radius: 10px;
+		transition:
+			transform 0.2s ease,
+			border-color 0.2s ease;
+	}
+
+	.price-card:hover {
+		transform: translateY(-3px);
+		border-color: #ed1c24;
+	}
+
+	.price-kicker {
+		display: block;
+		min-height: 34px;
+		margin-bottom: 42px;
+		color: #9a9a9a;
+		font-size: 0.67rem;
+		font-weight: 900;
+		letter-spacing: 0.1em;
+		line-height: 1.4;
+	}
+
+	.price-card > strong {
+		display: block;
+		margin-bottom: 14px;
+		color: #ff454c;
+		font-size: clamp(1.8rem, 2.4vw, 2.45rem);
+		line-height: 1;
+		letter-spacing: -0.04em;
+	}
+
+	.price-card p {
+		margin: 0 0 22px;
+		color: #bdbdbd;
+		font-size: 0.9rem;
+		line-height: 1.65;
+	}
+
+	.price-card b {
+		margin-top: auto;
+		color: white;
+		font-size: 0.82rem;
+	}
+
+	.prices-note {
+		display: grid;
+		grid-template-columns:
+			minmax(180px, 0.55fr)
+			minmax(0, 1.25fr)
+			auto;
+		align-items: center;
+		gap: 28px;
+		margin-top: 16px;
+		padding: 24px 26px;
+		border: 1px solid #333333;
+		border-radius: 10px;
+		background: #151515;
+	}
+
+	.prices-note strong {
+		font-size: 1rem;
+	}
+
+	.prices-note p {
+		margin: 0;
+		color: #a9a9a9;
+		font-size: 0.85rem;
+		line-height: 1.6;
+	}
+
+	.prices-note a {
+		color: #ff454c;
+		font-size: 0.82rem;
+		font-weight: 900;
+		white-space: nowrap;
+	}
+
+	@media (max-width: 1100px) {
+		.price-grid {
+			grid-template-columns:
+				repeat(2, minmax(0, 1fr));
+		}
+
+		.price-card {
+			min-height: 280px;
+		}
+
+		.prices-note {
+			grid-template-columns: 1fr;
+			gap: 12px;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.prices-heading {
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.prices-heading h2 {
+			font-size: 2.2rem;
+		}
+
+		.price-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.price-card {
+			min-height: 0;
+		}
+
+		.price-kicker {
+			min-height: 0;
+			margin-bottom: 28px;
+		}
+	}
+</style>
