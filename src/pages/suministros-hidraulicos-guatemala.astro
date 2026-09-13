@@ -10,7 +10,7 @@ const description =
 	"Suministros hidráulicos en Guatemala con precios de referencia para Woltmann y Dresser, además de válvulas, flanges, kits y accesorios. Suministro e instalación.";
 
 const whatsappGeneral = createWhatsAppLink(
-	`Hola, vi su página de suministros hidráulicos y quisiera solicitar una cotización.
+	`Hola, vi su página de suministros hidráulicos y quisiera comprar un producto o solicitar una cotización.
 
 Producto o material:
 Medida:
@@ -190,6 +190,15 @@ const faqSchema = {
 				"@type": "Answer",
 				text:
 					"AR publica precios de referencia para equipos comparables: Woltmann Genebre 6060A desde Q3,050 y uniones tipo Dresser HELMAN 200 PSI desde Q1,400. El precio y la disponibilidad se confirman antes de cerrar la compra.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "¿Qué incluye el precio publicado de Woltmann y Dresser?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"El precio publicado corresponde al producto y medida indicados. Kits, flanges, empaques, tornillería, otros materiales complementarios, entrega e instalación se cotizan por separado cuando aplican.",
 			},
 		},
 		{
@@ -379,7 +388,7 @@ const breadcrumbSchema = {
 				</p>
 			</aside>
 		</div>
-\t</section>
+	</section>
 
 	<!-- ==================================================
 	     PRECIOS
@@ -439,7 +448,7 @@ const breadcrumbSchema = {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										Comprar / consultar →
+										Comprar / confirmar →
 									</a>
 								</div>
 							))
@@ -475,7 +484,7 @@ const breadcrumbSchema = {
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										Comprar / consultar →
+										Comprar / confirmar →
 									</a>
 								</div>
 							))
@@ -509,6 +518,88 @@ const breadcrumbSchema = {
 				de inventario. La disponibilidad, entrega e instalación se
 				confirman antes de aceptar el pedido.
 			</p>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     QUÉ INCLUYE / COMPRA
+	================================================== -->
+
+	<section class="section purchase-clarity-section">
+		<div class="container">
+			<div class="purchase-clarity-heading">
+				<div>
+					<p class="eyebrow">
+						ANTES DE COMPRAR
+					</p>
+
+					<h2>
+						El precio publicado es del producto.
+						<span>Los complementos se agregan solo si los necesita.</span>
+					</h2>
+				</div>
+
+				<p>
+					Así puede comparar el costo del equipo sin mezclarlo
+					con instalación, transporte o accesorios que cambian
+					según cada proyecto.
+				</p>
+			</div>
+
+			<div class="purchase-clarity-grid">
+				<article>
+					<span>01</span>
+
+					<h3>Woltmann</h3>
+
+					<p>
+						El precio mostrado corresponde al contador Genebre
+						6060A de la medida indicada.
+					</p>
+
+					<ul>
+						<li>Equipo de la medida seleccionada</li>
+						<li>Kit y accesorios: aparte</li>
+						<li>Entrega e instalación: aparte</li>
+					</ul>
+				</article>
+
+				<article>
+					<span>02</span>
+
+					<h3>Unión Dresser</h3>
+
+					<p>
+						El precio mostrado corresponde a una unión tipo
+						Dresser HELMAN 200 PSI de la medida indicada.
+					</p>
+
+					<ul>
+						<li>Unión de la medida seleccionada</li>
+						<li>Materiales complementarios: aparte</li>
+						<li>Entrega e instalación: aparte</li>
+					</ul>
+				</article>
+
+				<article class="featured">
+					<span>03</span>
+
+					<h3>¿Necesita el sistema completo?</h3>
+
+					<p>
+						Podemos agregar flanges, empaques, tornillería,
+						otros accesorios y mano de obra según el requerimiento.
+					</p>
+
+					<a
+						href={whatsappGeneral}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Completar mi requerimiento →
+					</a>
+				</article>
+			</div>
 		</div>
 	</section>
 
@@ -574,12 +665,8 @@ const breadcrumbSchema = {
 						y caudales, con opciones de 3", 4", 6" y 8".
 					</p>
 
-					<a
-						href={whatsappWoltmann}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Cotizar Woltmann →
+					<a href="#precios-hidraulicos">
+						Ver precios Woltmann →
 					</a>
 				</article>
 
@@ -1021,39 +1108,41 @@ const breadcrumbSchema = {
 				</p>
 
 				<h2>
-					Confirmamos antes de comprar.
+					Del precio publicado
+					<span>a una compra confirmada.</span>
 				</h2>
 
 				<p>
-					No publicamos inventario que no mantenemos.
-					Verificamos especificaciones, precio y
-					disponibilidad antes de presentar la propuesta.
+					No mostramos inventario como garantizado. Primero
+					confirmamos la referencia y disponibilidad; después
+					definimos si necesita solo el producto o también
+					accesorios, entrega e instalación.
 				</p>
 			</div>
 
 			<div class="process-grid">
 				<article>
 					<span>01</span>
-					<h3>Requerimiento</h3>
-					<p>Producto, medida, cantidad y aplicación.</p>
+					<h3>Elija</h3>
+					<p>Producto, medida y cantidad que necesita.</p>
 				</article>
 
 				<article>
 					<span>02</span>
-					<h3>Verificación</h3>
-					<p>Confirmamos especificación y disponibilidad.</p>
+					<h3>Confirmamos</h3>
+					<p>Validamos referencia, precio y disponibilidad.</p>
 				</article>
 
 				<article>
 					<span>03</span>
-					<h3>Cotización</h3>
-					<p>Preparamos la propuesta según el alcance.</p>
+					<h3>Completamos</h3>
+					<p>Agregamos accesorios o instalación si aplican.</p>
 				</article>
 
 				<article>
 					<span>04</span>
-					<h3>Entrega / instalación</h3>
-					<p>Coordinamos suministro y trabajo cuando aplica.</p>
+					<h3>Cerramos</h3>
+					<p>Coordinamos el suministro y la ejecución acordada.</p>
 				</article>
 			</div>
 		</div>
@@ -1097,6 +1186,19 @@ const breadcrumbSchema = {
 
 				<details>
 					<summary>
+						¿Qué incluye el precio publicado?
+					</summary>
+
+					<p>
+						El precio publicado corresponde al producto y medida
+						indicados. Kits, flanges, empaques, tornillería,
+						materiales complementarios, entrega e instalación
+						se cotizan por separado cuando aplican.
+					</p>
+				</details>
+
+				<details>
+					<summary>
 						¿Qué suministros hidráulicos pueden cotizar en Guatemala?
 					</summary>
 
@@ -1114,10 +1216,10 @@ const breadcrumbSchema = {
 					</summary>
 
 					<p>
-						Podemos cotizar uniones tipo Dresser HELMAN
+						Podemos suministrar uniones tipo Dresser HELMAN
 						200 PSI en medidas como 3", 4", 6" y 8".
-						La referencia, precio y disponibilidad se
-						confirman al momento de cotizar.
+						El precio está publicado por medida y la
+						disponibilidad se confirma antes de cerrar la compra.
 					</p>
 				</details>
 
@@ -1190,17 +1292,18 @@ const breadcrumbSchema = {
 	<section class="section final-cta">
 		<div class="container final-inner">
 			<p class="eyebrow">
-				COTIZACIÓN
+				COMPRA O COTIZACIÓN
 			</p>
 
 			<h2>
-				¿Necesita un suministro hidráulico?
+				¿Ya sabe qué medida necesita?
 			</h2>
 
 			<p>
-				Envíenos producto, medida, cantidad y aplicación.
-				Si tiene fotografías, planos o especificaciones,
-				también puede adjuntarlos por WhatsApp.
+				Si el producto tiene precio publicado, envíenos la medida
+				y cantidad para confirmar disponibilidad. Si necesita una
+				válvula, accesorios o instalación, revisamos la especificación
+				y completamos la propuesta.
 			</p>
 
 			<a
@@ -1209,7 +1312,7 @@ const breadcrumbSchema = {
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Cotizar por WhatsApp
+				Comprar o cotizar por WhatsApp
 			</a>
 		</div>
 	</section>
@@ -1465,7 +1568,7 @@ const breadcrumbSchema = {
 	   FAMILIAS
 	================================================== */
 
-\t.price-preview-panel h2 {
+	.price-preview-panel h2 {
 		margin-bottom: 22px;
 	}
 
@@ -1705,6 +1808,89 @@ const breadcrumbSchema = {
 	.dresser-price-list span {
 		color: #ed1c24;
 		font-size: 0.9rem;
+		font-weight: 900;
+	}
+
+	.purchase-clarity-section {
+		background: #f7f7f7;
+	}
+
+	.purchase-clarity-heading {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+		align-items: end;
+		gap: 70px;
+		margin-bottom: 38px;
+	}
+
+	.purchase-clarity-heading h2 {
+		margin-bottom: 0;
+		font-size: clamp(2.2rem, 4vw, 3.4rem);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.purchase-clarity-heading h2 span {
+		display: block;
+		color: #ed1c24;
+	}
+
+	.purchase-clarity-heading > p {
+		margin: 0;
+		color: #666666;
+		line-height: 1.75;
+	}
+
+	.purchase-clarity-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 14px;
+	}
+
+	.purchase-clarity-grid article {
+		min-height: 300px;
+		display: flex;
+		flex-direction: column;
+		padding: 26px;
+		background: white;
+		border: 1px solid #dfdfdf;
+		border-radius: 11px;
+	}
+
+	.purchase-clarity-grid article.featured {
+		border-top: 4px solid #ed1c24;
+	}
+
+	.purchase-clarity-grid article > span {
+		margin-bottom: 36px;
+		color: #ed1c24;
+		font-size: 0.72rem;
+		font-weight: 900;
+	}
+
+	.purchase-clarity-grid h3 {
+		margin-bottom: 10px;
+		font-size: 1.25rem;
+	}
+
+	.purchase-clarity-grid p {
+		color: #666666;
+		line-height: 1.65;
+	}
+
+	.purchase-clarity-grid ul {
+		margin: 16px 0 0;
+		padding-left: 18px;
+		color: #555555;
+		font-size: 0.86rem;
+		line-height: 1.7;
+	}
+
+	.purchase-clarity-grid a {
+		margin-top: auto;
+		padding-top: 20px;
+		color: #ed1c24;
+		font-size: 0.84rem;
 		font-weight: 900;
 	}
 
@@ -2464,6 +2650,19 @@ const breadcrumbSchema = {
 	================================================== */
 
 	@media (max-width: 900px) {
+		.purchase-clarity-heading,
+		.purchase-clarity-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.purchase-clarity-heading {
+			gap: 24px;
+		}
+
+		.purchase-clarity-grid article {
+			min-height: 0;
+		}
+
 		.prices-heading,
 		.price-table-grid {
 			grid-template-columns: 1fr;
