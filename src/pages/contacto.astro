@@ -1,0 +1,1269 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { createWhatsAppLink, site } from "../config/site";
+
+const title =
+	"Contacto y Cotizaciones en Guatemala | Multiservicios Obra Civil AR";
+
+const description =
+	"Contacte a Multiservicios Obra Civil AR en Guatemala para cotizar obra civil, mantenimiento, remodelaciones, suministros hidráulicos, contadores de agua y Deck WPC.";
+
+const whatsappGeneral = createWhatsAppLink(
+	`Hola, vi la página de Multiservicios Obra Civil AR y quisiera solicitar una cotización.
+
+Tipo de proyecto o producto:
+Ubicación:
+Medidas o cantidad aproximada:
+¿Puedo enviar fotografías o planos?: Sí
+Información adicional:`
+);
+
+const whatsappCivil = createWhatsAppLink(
+	`Hola, quisiera cotizar un trabajo de obra civil o mantenimiento.
+
+Tipo de trabajo:
+Ubicación:
+Área o medidas aproximadas:
+¿Puedo enviar fotografías o planos?: Sí
+Información adicional:`
+);
+
+const whatsappHydraulic = createWhatsAppLink(
+	`Hola, quisiera cotizar suministros o instalación hidráulica.
+
+Producto o necesidad:
+Medida / diámetro:
+Cantidad:
+Ubicación:
+¿Requiero instalación?: Sí / No
+Información adicional:`
+);
+
+const whatsappDeck = createWhatsAppLink(
+	`Hola, quisiera cotizar Piso Deck WPC.
+
+Área aproximada en m²:
+Ubicación:
+¿Requiero instalación?: Sí / No
+Color o acabado de interés:
+¿Puedo enviar fotografías?: Sí`
+);
+
+const phoneDisplay = "+502 5118 0794";
+
+const contactSchema = {
+	"@context": "https://schema.org",
+	"@type": "ContactPage",
+	name: "Contacto y cotizaciones - Multiservicios Obra Civil AR",
+	description,
+	inLanguage: "es-GT",
+	mainEntity: {
+		"@type": "Organization",
+		name: site.name,
+		areaServed: {
+			"@type": "Country",
+			name: "Guatemala",
+		},
+		contactPoint: {
+			"@type": "ContactPoint",
+			telephone: phoneDisplay,
+			contactType: "cotizaciones",
+			availableLanguage: ["es"],
+			areaServed: "GT",
+		},
+	},
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+>
+	<script
+		type="application/ld+json"
+		set:html={JSON.stringify(contactSchema)}
+	></script>
+
+	<!-- ==================================================
+	     HERO
+	================================================== -->
+
+	<section class="contact-hero">
+		<div class="container hero-grid">
+			<div class="hero-copy">
+				<p class="eyebrow">
+					CONTACTO Y COTIZACIONES EN GUATEMALA
+				</p>
+
+				<h1>
+					Cuéntenos qué necesita.
+					<span>Nosotros empezamos por el alcance.</span>
+				</h1>
+
+				<p class="hero-lead">
+					Obra civil, mantenimiento, productos hidráulicos
+					o Deck WPC. Envíenos la información básica del
+					proyecto y revisamos qué se necesita cotizar.
+				</p>
+
+				<div class="hero-actions">
+					<a
+						class="button"
+						href={whatsappGeneral}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Cotizar por WhatsApp
+					</a>
+
+					<a
+						class="button button-secondary"
+						href="#que-enviar"
+					>
+						Qué información enviar
+					</a>
+				</div>
+
+				<div class="hero-trust">
+					<span>✓ Atención en Guatemala</span>
+					<span>✓ Proyectos y suministros</span>
+					<span>✓ Factura FEL</span>
+				</div>
+			</div>
+
+			<aside class="contact-panel">
+				<p class="panel-label">
+					CANAL DIRECTO
+				</p>
+
+				<h2>
+					WhatsApp AR
+				</h2>
+
+				<a
+					class="phone-link"
+					href={whatsappGeneral}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label={`Contactar a ${site.name} por WhatsApp`}
+				>
+					{phoneDisplay}
+				</a>
+
+				<p class="panel-copy">
+					Puede escribirnos directamente y adjuntar
+					fotografías, medidas, planos o referencias
+					del producto que necesita.
+				</p>
+
+				<div class="panel-list">
+					<div>
+						<span>01</span>
+
+						<p>
+							<strong>Indique la necesidad</strong>
+							Reparación, proyecto, producto o instalación.
+						</p>
+					</div>
+
+					<div>
+						<span>02</span>
+
+						<p>
+							<strong>Comparta ubicación</strong>
+							Nos ayuda a revisar logística y alcance.
+						</p>
+					</div>
+
+					<div>
+						<span>03</span>
+
+						<p>
+							<strong>Agregue medidas</strong>
+							Área, cantidad, diámetro o referencia disponible.
+						</p>
+					</div>
+
+					<div>
+						<span>04</span>
+
+						<p>
+							<strong>Adjunte evidencia</strong>
+							Fotografías o planos cuando aplique.
+						</p>
+					</div>
+				</div>
+			</aside>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     QUICK CONTACT
+	================================================== -->
+
+	<section class="section contact-options">
+		<div class="container">
+			<div class="section-heading">
+				<p class="eyebrow">
+					¿QUÉ DESEA COTIZAR?
+				</p>
+
+				<h2>
+					El mensaje puede empezar
+					<span>desde el área correcta.</span>
+				</h2>
+
+				<p>
+					Seleccione la línea que más se acerca a su
+					necesidad. Cada botón abre WhatsApp con una
+					guía distinta para recopilar la información útil.
+				</p>
+			</div>
+
+			<div class="options-grid">
+				<article class="option-card featured">
+					<span class="option-number">
+						01
+					</span>
+
+					<h3>
+						Obra civil y mantenimiento
+					</h3>
+
+					<p>
+						Reparaciones, remodelaciones, tablayeso,
+						pintura, plomería, drenajes, impermeabilización,
+						herrería y trabajos de infraestructura.
+					</p>
+
+					<a
+						href={whatsappCivil}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Cotizar obra civil →
+					</a>
+				</article>
+
+				<article class="option-card">
+					<span class="option-number">
+						02
+					</span>
+
+					<h3>
+						Suministros hidráulicos
+					</h3>
+
+					<p>
+						Contadores de agua, Woltmann, uniones tipo
+						Dresser, válvulas, kits, accesorios y
+						posibilidad de instalación.
+					</p>
+
+					<a
+						href={whatsappHydraulic}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Cotizar hidráulicos →
+					</a>
+				</article>
+
+				<article class="option-card">
+					<span class="option-number">
+						03
+					</span>
+
+					<h3>
+						Piso Deck WPC
+					</h3>
+
+					<p>
+						Suministro de material por caja o propuesta
+						de suministro + instalación para áreas
+						exteriores.
+					</p>
+
+					<a
+						href={whatsappDeck}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Cotizar Deck WPC →
+					</a>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     WHAT TO SEND
+	================================================== -->
+
+	<section
+		class="section send-section"
+		id="que-enviar"
+	>
+		<div class="container send-grid">
+			<div class="send-copy">
+				<p class="eyebrow eyebrow-light">
+					PARA COTIZAR MEJOR
+				</p>
+
+				<h2>
+					No necesita tener
+					<span>todo resuelto antes de escribirnos.</span>
+				</h2>
+
+				<p>
+					Con información inicial podemos entender
+					el requerimiento. Si el trabajo necesita
+					visita técnica, medición o una validación
+					adicional, se define después.
+				</p>
+
+				<a
+					class="button button-light"
+					href={whatsappGeneral}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Enviar información
+				</a>
+			</div>
+
+			<div class="send-cards">
+				<article>
+					<span>01</span>
+
+					<div>
+						<h3>
+							Ubicación
+						</h3>
+
+						<p>
+							Zona, municipio o referencia general
+							del lugar donde se realizará el trabajo.
+						</p>
+					</div>
+				</article>
+
+				<article>
+					<span>02</span>
+
+					<div>
+						<h3>
+							Medidas
+						</h3>
+
+						<p>
+							Metros cuadrados, largo, ancho, altura,
+							diámetro o cantidad aproximada.
+						</p>
+					</div>
+				</article>
+
+				<article>
+					<span>03</span>
+
+					<div>
+						<h3>
+							Fotografías
+						</h3>
+
+						<p>
+							Una o varias imágenes ayudan a identificar
+							la condición actual y el tipo de trabajo.
+						</p>
+					</div>
+				</article>
+
+				<article class="send-featured">
+					<span>04</span>
+
+					<div>
+						<h3>
+							Objetivo
+						</h3>
+
+						<p>
+							Qué desea reparar, instalar, reemplazar,
+							comprar o mejorar.
+						</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     PROCESS
+	================================================== -->
+
+	<section class="section process-section">
+		<div class="container">
+			<div class="section-heading process-heading">
+				<p class="eyebrow">
+					PROCESO DE COTIZACIÓN
+				</p>
+
+				<h2>
+					De la consulta a una propuesta clara.
+				</h2>
+
+				<p>
+					No todos los trabajos pueden cotizarse de la
+					misma manera. Primero confirmamos qué información
+					es suficiente para definir el alcance.
+				</p>
+			</div>
+
+			<div class="process-grid">
+				<article>
+					<span>01</span>
+					<h3>Consulta</h3>
+					<p>Recibimos su necesidad y datos básicos.</p>
+				</article>
+
+				<article>
+					<span>02</span>
+					<h3>Revisión</h3>
+					<p>Validamos medidas, fotografías y requerimientos.</p>
+				</article>
+
+				<article>
+					<span>03</span>
+					<h3>Alcance</h3>
+					<p>Definimos materiales, mano de obra o suministro.</p>
+				</article>
+
+				<article>
+					<span>04</span>
+					<h3>Cotización</h3>
+					<p>Preparamos la propuesta según el proyecto.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     LINKS
+	================================================== -->
+
+	<section class="section explore-section">
+		<div class="container explore-grid">
+			<div>
+				<p class="eyebrow">
+					ANTES DE ESCRIBIRNOS
+				</p>
+
+				<h2>
+					Puede revisar nuestras
+					<span>soluciones y proyectos.</span>
+				</h2>
+
+				<p class="explore-lead">
+					Si todavía está comparando opciones, estas páginas
+					le ayudan a conocer productos, alcances y trabajos
+					que ya hemos ejecutado.
+				</p>
+			</div>
+
+			<div class="explore-links">
+				<a href="/servicios-obra-civil-guatemala/">
+					<span>Servicios</span>
+					<strong>Obra civil y mantenimiento</strong>
+					<small>Ver página →</small>
+				</a>
+
+				<a href="/suministros-hidraulicos-guatemala/">
+					<span>Productos</span>
+					<strong>Suministros hidráulicos</strong>
+					<small>Ver página →</small>
+				</a>
+
+				<a href="/deck-wpc-guatemala/">
+					<span>Producto + instalación</span>
+					<strong>Piso Deck WPC</strong>
+					<small>Ver página →</small>
+				</a>
+
+				<a href="/proyectos/">
+					<span>Portafolio</span>
+					<strong>Proyectos ejecutados</strong>
+					<small>Ver página →</small>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     FINAL CTA
+	================================================== -->
+
+	<section class="section final-cta">
+		<div class="container final-inner">
+			<p class="eyebrow">
+				CONTACTO DIRECTO
+			</p>
+
+			<h2>
+				¿Empezamos con su cotización?
+			</h2>
+
+			<p>
+				Escríbanos por WhatsApp y comparta la información
+				que ya tenga disponible. Si falta algún dato,
+				lo identificamos durante la revisión.
+			</p>
+
+			<a
+				class="button"
+				href={whatsappGeneral}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Escribir al {phoneDisplay}
+			</a>
+		</div>
+	</section>
+
+	<section class="contact-note">
+		<div class="container">
+			<p>
+				La atención, disponibilidad de materiales, visitas,
+				plazos y alcance se confirman según cada requerimiento.
+				Las cotizaciones se preparan con base en la información
+				disponible y pueden requerir validación adicional.
+			</p>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.contact-hero {
+		padding: 88px 0;
+
+		background:
+			linear-gradient(
+				115deg,
+				#ffffff 0%,
+				#ffffff 60%,
+				#f1f1f1 100%
+			);
+	}
+
+	.hero-grid {
+		display: grid;
+
+		grid-template-columns:
+			minmax(0, 1.08fr)
+			minmax(370px, 0.92fr);
+
+		align-items: center;
+
+		gap: 64px;
+	}
+
+	.hero-copy h1 {
+		max-width: 790px;
+
+		margin-bottom: 26px;
+
+		font-size:
+			clamp(
+				3rem,
+				5vw,
+				5rem
+			);
+
+		line-height: 0.97;
+
+		letter-spacing: -0.055em;
+	}
+
+	.hero-copy h1 span,
+	.section-heading h2 span,
+	.send-copy h2 span,
+	.explore-grid h2 span {
+		display: block;
+
+		color: #ed1c24;
+	}
+
+	.hero-lead {
+		max-width: 680px;
+
+		color: #606060;
+
+		font-size: 1.08rem;
+
+		line-height: 1.75;
+	}
+
+	.hero-actions {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 12px;
+
+		margin-top: 32px;
+	}
+
+	.hero-trust {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 12px 22px;
+
+		margin-top: 30px;
+
+		color: #555555;
+
+		font-size: 0.88rem;
+
+		font-weight: 700;
+	}
+
+	.contact-panel {
+		padding: 36px;
+
+		background: #111111;
+
+		color: white;
+
+		border-radius: 14px;
+
+		box-shadow:
+			0 30px 70px
+			rgba(0, 0, 0, 0.16);
+	}
+
+	.panel-label {
+		margin-bottom: 12px;
+
+		color: #ff464d;
+
+		font-size: 0.7rem;
+
+		font-weight: 900;
+
+		letter-spacing: 0.14em;
+	}
+
+	.contact-panel h2 {
+		margin-bottom: 4px;
+
+		font-size: 2rem;
+
+		letter-spacing: -0.035em;
+	}
+
+	.phone-link {
+		display: inline-block;
+
+		margin-bottom: 18px;
+
+		color: white;
+
+		font-size:
+			clamp(
+				1.6rem,
+				3vw,
+				2.2rem
+			);
+
+		font-weight: 900;
+
+		letter-spacing: -0.04em;
+	}
+
+	.phone-link:hover {
+		color: #ff464d;
+	}
+
+	.panel-copy {
+		margin-bottom: 20px;
+
+		color: #bdbdbd;
+
+		line-height: 1.65;
+	}
+
+	.panel-list {
+		border-top:
+			1px solid #333333;
+	}
+
+	.panel-list > div {
+		display: grid;
+
+		grid-template-columns:
+			32px minmax(0, 1fr);
+
+		gap: 12px;
+
+		padding: 15px 0;
+
+		border-bottom:
+			1px solid #333333;
+	}
+
+	.panel-list span {
+		color: #ed1c24;
+
+		font-size: 0.72rem;
+
+		font-weight: 900;
+	}
+
+	.panel-list p {
+		margin: 0;
+
+		color: #a9a9a9;
+
+		font-size: 0.85rem;
+
+		line-height: 1.5;
+	}
+
+	.panel-list strong {
+		display: block;
+
+		margin-bottom: 3px;
+
+		color: white;
+	}
+
+	.section-heading {
+		max-width: 820px;
+
+		margin-bottom: 44px;
+	}
+
+	.section-heading h2,
+	.send-copy h2,
+	.explore-grid h2,
+	.final-inner h2 {
+		margin-bottom: 18px;
+
+		font-size:
+			clamp(
+				2.25rem,
+				4vw,
+				3.55rem
+			);
+
+		line-height: 1.05;
+
+		letter-spacing: -0.045em;
+	}
+
+	.section-heading > p:last-child,
+	.explore-lead {
+		color: #666666;
+
+		line-height: 1.75;
+	}
+
+	.contact-options {
+		background: #f7f7f7;
+	}
+
+	.options-grid {
+		display: grid;
+
+		grid-template-columns:
+			repeat(3, minmax(0, 1fr));
+
+		gap: 16px;
+	}
+
+	.option-card {
+		display: flex;
+
+		flex-direction: column;
+
+		min-height: 330px;
+
+		padding: 28px;
+
+		background: white;
+
+		border:
+			1px solid #dedede;
+
+		border-radius: 12px;
+	}
+
+	.option-card.featured {
+		border-top:
+			4px solid #ed1c24;
+	}
+
+	.option-number {
+		margin-bottom: 44px;
+
+		color: #ed1c24;
+
+		font-size: 0.75rem;
+
+		font-weight: 900;
+	}
+
+	.option-card h3 {
+		margin-bottom: 10px;
+
+		font-size: 1.35rem;
+
+		letter-spacing: -0.02em;
+	}
+
+	.option-card p {
+		color: #666666;
+
+		line-height: 1.65;
+	}
+
+	.option-card a {
+		margin-top: auto;
+
+		color: #ed1c24;
+
+		font-weight: 900;
+	}
+
+	.send-section {
+		background: #111111;
+
+		color: white;
+	}
+
+	.send-grid {
+		display: grid;
+
+		grid-template-columns:
+			minmax(0, 0.85fr)
+			minmax(0, 1.15fr);
+
+		align-items: center;
+
+		gap: 70px;
+	}
+
+	.eyebrow-light {
+		color: #ff464d;
+	}
+
+	.send-copy > p:not(.eyebrow) {
+		color: #bdbdbd;
+
+		line-height: 1.75;
+	}
+
+	.send-copy h2 span {
+		color: #ff4047;
+	}
+
+	.button-light {
+		margin-top: 8px;
+
+		background: white;
+
+		color: #111111;
+	}
+
+	.button-light:hover {
+		background: #ed1c24;
+
+		color: white;
+	}
+
+	.send-cards {
+		display: grid;
+
+		grid-template-columns:
+			repeat(2, minmax(0, 1fr));
+
+		gap: 12px;
+	}
+
+	.send-cards article {
+		display: grid;
+
+		grid-template-columns:
+			32px minmax(0, 1fr);
+
+		gap: 12px;
+
+		padding: 22px;
+
+		background: #181818;
+
+		border:
+			1px solid #2f2f2f;
+
+		border-radius: 9px;
+	}
+
+	.send-cards .send-featured {
+		border-color: #ed1c24;
+
+		background: #1d1516;
+	}
+
+	.send-cards article > span {
+		color: #ed1c24;
+
+		font-size: 0.72rem;
+
+		font-weight: 900;
+	}
+
+	.send-cards h3 {
+		margin-bottom: 6px;
+
+		font-size: 1.1rem;
+	}
+
+	.send-cards p {
+		margin: 0;
+
+		color: #9f9f9f;
+
+		font-size: 0.85rem;
+
+		line-height: 1.55;
+	}
+
+	.process-section {
+		background: white;
+	}
+
+	.process-heading {
+		max-width: 760px;
+	}
+
+	.process-grid {
+		display: grid;
+
+		grid-template-columns:
+			repeat(4, minmax(0, 1fr));
+
+		border-top:
+			1px solid #dadada;
+
+		border-bottom:
+			1px solid #dadada;
+	}
+
+	.process-grid article {
+		min-height: 215px;
+
+		padding: 28px;
+
+		border-right:
+			1px solid #dadada;
+	}
+
+	.process-grid article:first-child {
+		border-left:
+			1px solid #dadada;
+	}
+
+	.process-grid span {
+		display: block;
+
+		margin-bottom: 38px;
+
+		color: #ed1c24;
+
+		font-size: 0.75rem;
+
+		font-weight: 900;
+	}
+
+	.process-grid h3 {
+		margin-bottom: 9px;
+
+		font-size: 1.18rem;
+	}
+
+	.process-grid p {
+		margin: 0;
+
+		color: #666666;
+
+		line-height: 1.6;
+	}
+
+	.explore-section {
+		background: #f7f7f7;
+	}
+
+	.explore-grid {
+		display: grid;
+
+		grid-template-columns:
+			minmax(0, 0.82fr)
+			minmax(0, 1.18fr);
+
+		align-items: center;
+
+		gap: 70px;
+	}
+
+	.explore-links {
+		display: grid;
+
+		grid-template-columns:
+			repeat(2, minmax(0, 1fr));
+
+		gap: 12px;
+	}
+
+	.explore-links a {
+		display: flex;
+
+		flex-direction: column;
+
+		min-height: 175px;
+
+		padding: 22px;
+
+		background: white;
+
+		border:
+			1px solid #dfdfdf;
+
+		border-radius: 9px;
+
+		transition:
+			border-color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.explore-links a:hover {
+		border-color: #ed1c24;
+
+		transform: translateY(-2px);
+	}
+
+	.explore-links span {
+		margin-bottom: 28px;
+
+		color: #ed1c24;
+
+		font-size: 0.65rem;
+
+		font-weight: 900;
+
+		letter-spacing: 0.09em;
+
+		text-transform: uppercase;
+	}
+
+	.explore-links strong {
+		margin-bottom: 8px;
+
+		font-size: 1.05rem;
+	}
+
+	.explore-links small {
+		margin-top: auto;
+
+		color: #666666;
+
+		font-weight: 800;
+	}
+
+	.final-cta {
+		background: white;
+
+		text-align: center;
+	}
+
+	.final-inner {
+		max-width: 800px;
+	}
+
+	.final-inner p:not(.eyebrow) {
+		max-width: 650px;
+
+		margin:
+			0 auto 28px;
+
+		color: #666666;
+
+		line-height: 1.7;
+	}
+
+	.contact-note {
+		padding:
+			18px 0;
+
+		background: #eeeeee;
+
+		border-top:
+			1px solid #dddddd;
+	}
+
+	.contact-note p {
+		max-width: 980px;
+
+		margin: 0 auto;
+
+		color: #858585;
+
+		font-size: 0.7rem;
+
+		line-height: 1.55;
+
+		text-align: center;
+	}
+
+	@media (max-width: 1250px) and (min-width: 901px) {
+		.contact-hero {
+			padding: 74px 0;
+		}
+
+		.hero-grid {
+			grid-template-columns:
+				minmax(0, 1fr)
+				minmax(340px, 0.88fr);
+
+			gap: 42px;
+		}
+
+		.hero-copy h1 {
+			font-size:
+				clamp(
+					3rem,
+					4.5vw,
+					4.25rem
+				);
+		}
+
+		.contact-panel {
+			padding: 30px;
+		}
+
+		.send-grid,
+		.explore-grid {
+			gap: 45px;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.hero-grid,
+		.send-grid,
+		.explore-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-grid,
+		.send-grid,
+		.explore-grid {
+			gap: 42px;
+		}
+
+		.options-grid {
+			grid-template-columns:
+				repeat(2, minmax(0, 1fr));
+		}
+
+		.option-card:last-child {
+			grid-column: 1 / -1;
+		}
+
+		.process-grid {
+			grid-template-columns:
+				repeat(2, minmax(0, 1fr));
+		}
+
+		.process-grid article:nth-child(3) {
+			border-left:
+				1px solid #dadada;
+		}
+
+		.process-grid article {
+			border-bottom:
+				1px solid #dadada;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.contact-hero {
+			padding: 50px 0;
+		}
+
+		.hero-copy h1 {
+			font-size: 2.45rem;
+
+			line-height: 0.99;
+		}
+
+		.hero-lead {
+			font-size: 1rem;
+
+			line-height: 1.65;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+		}
+
+		.contact-panel {
+			padding: 24px 22px;
+		}
+
+		.section-heading h2,
+		.send-copy h2,
+		.explore-grid h2,
+		.final-inner h2 {
+			font-size: 2.2rem;
+		}
+
+		.options-grid,
+		.send-cards,
+		.process-grid,
+		.explore-links {
+			grid-template-columns: 1fr;
+		}
+
+		.option-card:last-child {
+			grid-column: auto;
+		}
+
+		.option-card {
+			min-height: 0;
+		}
+
+		.send-cards article {
+			grid-template-columns: 1fr;
+
+			gap: 9px;
+		}
+
+		.process-grid {
+			border-bottom: 0;
+		}
+
+		.process-grid article,
+		.process-grid article:first-child,
+		.process-grid article:nth-child(3) {
+			min-height: 0;
+
+			border-left:
+				1px solid #dadada;
+
+			border-right:
+				1px solid #dadada;
+
+			border-bottom:
+				1px solid #dadada;
+		}
+	}
+</style>
