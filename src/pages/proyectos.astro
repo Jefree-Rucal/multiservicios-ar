@@ -6,7 +6,7 @@ const title =
 	"Proyectos de Obra Civil en Guatemala | Portafolio AR";
 
 const description =
-	"Portafolio de proyectos reales de Multiservicios Obra Civil AR en Guatemala: estructura metálica, oficinas, drenajes, seguridad industrial, instalaciones hidráulicas, remodelaciones y Deck WPC.";
+	"Proyectos reales de obra civil en Guatemala: oficinas, estructuras metálicas, drenajes, hidráulica, remodelaciones y Deck WPC ejecutados por AR.";
 
 const whatsappProjects = createWhatsAppLink(
 	`Hola, vi su portafolio de proyectos y quisiera solicitar una cotización.
@@ -24,7 +24,7 @@ const projects = [
 		category: "Construcción integral",
 		title: "Oficinas administrativas sobre estructura metálica",
 		image: "/images/projects/oficinas-administrativas-estructura-metalica.jpeg",
-		alt: "Proyecto terminado de oficinas administrativas construidas sobre estructura metálica en Guatemala",
+		alt: "Proyecto de obra civil en Guatemala con oficinas administrativas construidas sobre estructura metálica",
 		description:
 			"Construcción de un nivel completo de oficinas sobre un área existente de estacionamiento, integrando estructura, cerramientos, instalaciones y acabados.",
 		metrics: ["≈55.62 m²", "Estructura + acabados"],
@@ -38,7 +38,7 @@ const projects = [
 		category: "Obra civil + drenajes",
 		title: "Independización de drenaje pluvial bajo piso",
 		image: "/images/projects/drenaje-pluvial-pvc-bajo-piso.jpeg",
-		alt: "Instalación de drenaje pluvial con tubería PVC bajo piso en proyecto de obra civil",
+		alt: "Proyecto de drenaje pluvial con tubería PVC bajo piso ejecutado en Guatemala",
 		description:
 			"Intervención para separar la conducción de aguas pluviales y aguas negras mediante una nueva línea instalada bajo piso.",
 		metrics: ["≈44 m lineales", 'PVC Ø6"'],
@@ -52,7 +52,7 @@ const projects = [
 		category: "Herrería + seguridad industrial",
 		title: "Barandal metálico de protección para área de mercadería",
 		image: "/images/projects/barandal-seguridad-industrial.jpeg",
-		alt: "Barandal metálico de seguridad industrial instalado en área de mercadería",
+		alt: "Proyecto de herrería con barandal metálico de seguridad industrial instalado por AR",
 		description:
 			"Fabricación e instalación de protección metálica corrida para delimitar y resguardar un área operativa.",
 		metrics: ["≈46.24 m lineales", "Fabricación + instalación"],
@@ -66,12 +66,12 @@ const projects = [
 		category: "Plomería + hidráulica",
 		title: "Sistema de almacenamiento de agua con dos tinacos",
 		image: "/images/projects/instalacion-tinacos-2400-litros.jpeg",
-		alt: "Instalación hidráulica de dos tinacos de 2400 litros en azotea",
+		alt: "Proyecto de instalación hidráulica con dos tinacos de 2400 litros en azotea",
 		description:
 			"Instalación de almacenamiento de agua en azotea e integración del sistema con tubería, conexiones y bombeo.",
 		metrics: ["2 × 2,400 L", "Conexión a bomba"],
 		details:
-			"Montaje de los dos depósitos, interconexión hidráulica y conexión al sistema de suministro de la vivienda.",
+			"Montaje de los dos depósitos, interconexión hidráulica y conexión al sistema de suministro.",
 		href: "/suministros-hidraulicos-guatemala/",
 		linkLabel: "Ver soluciones hidráulicas",
 	},
@@ -80,7 +80,7 @@ const projects = [
 		category: "Remodelación + acabados",
 		title: "Renovación de piso interior en restaurante",
 		image: "/images/projects/remodelacion-piso-deck-pvc-restaurante.jpeg",
-		alt: "Renovación de piso interior de restaurante con Deck PVC después de preparación de base",
+		alt: "Proyecto de remodelación de piso interior en restaurante ejecutado por AR",
 		description:
 			"Renovación de un área interior afectada por humedad mediante preparación de la base e instalación de piso Deck en PVC.",
 		metrics: ["≈78 m²", "Preparación + instalación"],
@@ -108,11 +108,12 @@ const projects = [
 const portfolioSchema = {
 	"@context": "https://schema.org",
 	"@type": "CollectionPage",
-	name: "Proyectos de Multiservicios Obra Civil AR",
+	name: "Proyectos de obra civil en Guatemala | Multiservicios Obra Civil AR",
 	description,
 	inLanguage: "es-GT",
 	mainEntity: {
 		"@type": "ItemList",
+		numberOfItems: projects.length,
 		itemListElement: projects.map((project, index) => ({
 			"@type": "ListItem",
 			position: index + 1,
@@ -120,19 +121,47 @@ const portfolioSchema = {
 				"@type": "CreativeWork",
 				name: project.title,
 				description: project.description,
+				image: project.image,
+				about: project.category,
 			},
 		})),
 	},
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Inicio",
+			item: "/",
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "Proyectos de obra civil en Guatemala",
+			item: "/proyectos/",
+		},
+	],
 };
 ---
 
 <BaseLayout
 	title={title}
 	description={description}
+	image="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+	imageAlt="Proyecto de obra civil en Guatemala ejecutado por Multiservicios Obra Civil AR"
 >
 	<script
 		type="application/ld+json"
 		set:html={JSON.stringify(portfolioSchema)}
+	></script>
+
+	<script
+		type="application/ld+json"
+		set:html={JSON.stringify(breadcrumbSchema)}
 	></script>
 
 	<!-- ==================================================
@@ -147,14 +176,15 @@ const portfolioSchema = {
 				</p>
 
 				<h1>
-					Problemas reales.
-					<span>Soluciones ejecutadas.</span>
+					Proyectos de obra civil
+					<span>ejecutados en Guatemala.</span>
 				</h1>
 
 				<p class="hero-lead">
-					Obra civil, estructuras, remodelaciones,
-					instalaciones hidráulicas y Deck WPC respaldados
-					con proyectos reales ejecutados por AR.
+					Proyectos reales de construcción, estructuras,
+					drenajes, instalaciones hidráulicas, remodelaciones
+					y Deck WPC. Mostramos el problema, el alcance y
+					la solución ejecutada por AR.
 				</p>
 
 				<div class="hero-actions">
@@ -176,8 +206,8 @@ const portfolioSchema = {
 				</div>
 
 				<div class="hero-trust">
-					<span>✓ Evidencia fotográfica real</span>
-					<span>✓ Proyectos comerciales y residenciales</span>
+					<span>✓ Fotografías de trabajos reales</span>
+					<span>✓ Alcances documentados</span>
 					<span>✓ Ejecución en Guatemala</span>
 				</div>
 			</div>
@@ -185,7 +215,7 @@ const portfolioSchema = {
 			<div class="hero-showcase">
 				<img
 					src="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
-					alt="Oficinas administrativas terminadas en proyecto integral de estructura metálica y obra civil"
+					alt="Proyecto integral de oficinas administrativas con estructura metálica ejecutado en Guatemala"
 					loading="eager"
 					decoding="async"
 				/>
@@ -213,7 +243,7 @@ const portfolioSchema = {
 		<div class="container proof-grid">
 			<div>
 				<strong>6</strong>
-				<span>casos destacados en esta selección</span>
+				<span>proyectos destacados en esta selección</span>
 			</div>
 
 			<div>
@@ -222,13 +252,13 @@ const portfolioSchema = {
 			</div>
 
 			<div>
-				<strong>44 m</strong>
-				<span>de drenaje pluvial instalado</span>
+				<strong>≈44 m</strong>
+				<span>de drenaje pluvial bajo piso</span>
 			</div>
 
 			<div>
 				<strong>2 × 2,400 L</strong>
-				<span>en sistema de almacenamiento</span>
+				<span>en sistema de almacenamiento de agua</span>
 			</div>
 		</div>
 	</section>
@@ -242,7 +272,7 @@ const portfolioSchema = {
 			<div class="case-image">
 				<img
 					src="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
-					alt="Resultado de construcción integral de oficinas administrativas sobre estructura metálica"
+					alt="Resultado de construcción de oficinas administrativas sobre estructura metálica en Guatemala"
 					loading="lazy"
 					decoding="async"
 				/>
@@ -254,18 +284,18 @@ const portfolioSchema = {
 
 			<div class="case-copy">
 				<p class="eyebrow">
-					CASO DESTACADO · CONSTRUCCIÓN INTEGRAL
+					CASO DESTACADO · OBRA CIVIL
 				</p>
 
 				<h2>
-					Oficinas administrativas
-					<span>sin perder el área inferior.</span>
+					Construcción de oficinas
+					<span>sobre estructura metálica.</span>
 				</h2>
 
 				<p class="case-intro">
 					El requerimiento era habilitar un nivel completo
-					de oficinas manteniendo el espacio inferior
-					disponible para estacionamiento.
+					de oficinas manteniendo disponible el espacio
+					inferior para estacionamiento.
 				</p>
 
 				<div class="case-block">
@@ -278,11 +308,22 @@ const portfolioSchema = {
 				</div>
 
 				<div class="case-block">
+					<span>ALCANCE</span>
+
+					<p>
+						Integrar estructura, cerramientos, instalaciones,
+						cubierta, circulación y acabados dentro de una
+						misma ejecución.
+					</p>
+				</div>
+
+				<div class="case-block">
 					<span>SOLUCIÓN EJECUTADA</span>
 
 					<p>
 						Proyecto integral desde la estructura metálica
-						hasta cerramientos, instalaciones y acabados.
+						hasta tablayeso, DensGlass, techo, electricidad,
+						plomería, piso, pintura, gradas y acabados.
 					</p>
 				</div>
 
@@ -295,14 +336,23 @@ const portfolioSchema = {
 					<span>Gradas y acabados</span>
 				</div>
 
-				<a
-					class="button"
-					href={whatsappProjects}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Cotizar un proyecto similar
-				</a>
+				<div class="case-actions">
+					<a
+						class="button"
+						href={whatsappProjects}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Cotizar un proyecto similar
+					</a>
+
+					<a
+						class="case-text-link"
+						href="/servicios-obra-civil-guatemala/"
+					>
+						Ver servicios de obra civil →
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -322,15 +372,14 @@ const portfolioSchema = {
 				</p>
 
 				<h2>
-					Experiencia que cruza
-					<span>varias áreas de ejecución.</span>
+					Obra civil, instalaciones
+					<span>y remodelaciones reales.</span>
 				</h2>
 
 				<p>
-					Seleccionamos proyectos que muestran distintos
-					tipos de problema, alcance y solución. Los nombres
-					de clientes y datos comerciales internos no se
-					publican en este portafolio.
+					Esta selección muestra diferentes tipos de
+					requerimiento y ejecución. Los nombres de clientes
+					y datos comerciales internos no se publican.
 				</p>
 			</div>
 
@@ -395,6 +444,57 @@ const portfolioSchema = {
 	</section>
 
 	<!-- ==================================================
+	     SPECIALTIES
+	================================================== -->
+
+	<section class="section specialties-section">
+		<div class="container">
+			<div class="section-heading specialties-heading">
+				<p class="eyebrow">
+					DEL PORTAFOLIO A SU REQUERIMIENTO
+				</p>
+
+				<h2>
+					Explore la especialidad
+					<span>que más se parece a su proyecto.</span>
+				</h2>
+			</div>
+
+			<div class="specialties-grid">
+				<a href="/servicios-obra-civil-guatemala/">
+					<span>01</span>
+					<strong>Obra civil y mantenimiento</strong>
+					<p>
+						Remodelaciones, tablayeso, pintura,
+						plomería, impermeabilización y herrería.
+					</p>
+					<em>Ver servicios →</em>
+				</a>
+
+				<a href="/suministros-hidraulicos-guatemala/">
+					<span>02</span>
+					<strong>Suministros e instalaciones hidráulicas</strong>
+					<p>
+						Woltmann, Dresser, válvulas, accesorios
+						y requerimientos hidráulicos.
+					</p>
+					<em>Ver hidráulicos →</em>
+				</a>
+
+				<a href="/deck-wpc-guatemala/">
+					<span>03</span>
+					<strong>Piso Deck WPC</strong>
+					<p>
+						Material e instalación para terrazas,
+						balcones y áreas exteriores.
+					</p>
+					<em>Ver Deck WPC →</em>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
 	     CAPABILITIES
 	================================================== -->
 
@@ -406,15 +506,14 @@ const portfolioSchema = {
 				</p>
 
 				<h2>
-					No todos los trabajos
-					<span>tienen el mismo alcance.</span>
+					El alcance se define
+					<span>según la necesidad.</span>
 				</h2>
 
 				<p>
-					Algunos proyectos requieren una intervención
-					puntual. Otros combinan estructura, instalaciones,
+					Algunos trabajos son intervenciones puntuales.
+					Otros combinan estructura, instalaciones,
 					acabados y coordinación de varias especialidades.
-					La propuesta se construye alrededor de la necesidad.
 				</p>
 
 				<a
@@ -462,7 +561,7 @@ const portfolioSchema = {
 	</section>
 
 	<!-- ==================================================
-	     WHY PORTFOLIO
+	     EVIDENCE
 	================================================== -->
 
 	<section class="section evidence-section">
@@ -473,7 +572,7 @@ const portfolioSchema = {
 				</p>
 
 				<h2>
-					Cada proyecto debe
+					Un proyecto debe
 					<span>poder explicarse.</span>
 				</h2>
 			</div>
@@ -491,7 +590,7 @@ const portfolioSchema = {
 					<span>02</span>
 					<div>
 						<h3>El alcance</h3>
-						<p>Qué trabajos, materiales o especialidades fueron necesarios.</p>
+						<p>Qué trabajos, materiales y especialidades fueron necesarios.</p>
 					</div>
 				</article>
 
@@ -578,7 +677,7 @@ const portfolioSchema = {
 	}
 
 	.hero-copy h1 {
-		max-width: 780px;
+		max-width: 800px;
 		margin-bottom: 26px;
 		font-size: clamp(3rem, 5vw, 5rem);
 		line-height: 0.97;
@@ -814,6 +913,18 @@ const portfolioSchema = {
 		font-weight: 800;
 	}
 
+	.case-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 16px 20px;
+	}
+
+	.case-text-link {
+		color: #ed1c24;
+		font-weight: 900;
+	}
+
 	.portfolio-section {
 		background: #f7f7f7;
 	}
@@ -915,6 +1026,65 @@ const portfolioSchema = {
 
 	.project-link {
 		color: #ed1c24;
+		font-weight: 900;
+	}
+
+	.specialties-section {
+		background: white;
+	}
+
+	.specialties-heading {
+		max-width: 760px;
+	}
+
+	.specialties-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 14px;
+	}
+
+	.specialties-grid > a {
+		display: flex;
+		flex-direction: column;
+		min-height: 280px;
+		padding: 26px;
+		background: #f7f7f7;
+		border: 1px solid #dddddd;
+		border-radius: 12px;
+		transition:
+			transform 0.2s ease,
+			border-color 0.2s ease;
+	}
+
+	.specialties-grid > a:hover {
+		transform: translateY(-2px);
+		border-color: #ed1c24;
+	}
+
+	.specialties-grid > a > span {
+		margin-bottom: 44px;
+		color: #ed1c24;
+		font-size: 0.72rem;
+		font-weight: 900;
+	}
+
+	.specialties-grid strong {
+		margin-bottom: 10px;
+		color: #111111;
+		font-size: 1.25rem;
+	}
+
+	.specialties-grid p {
+		margin: 0 0 22px;
+		color: #666666;
+		line-height: 1.65;
+	}
+
+	.specialties-grid em {
+		margin-top: auto;
+		color: #ed1c24;
+		font-style: normal;
+		font-size: 0.86rem;
 		font-weight: 900;
 	}
 
@@ -1122,12 +1292,17 @@ const portfolioSchema = {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 
-		.proof-grid > div:nth-child(3) {
+		.proof-grid > div:nth-child(3),
+		.proof-grid > div:nth-child(4) {
 			border-top: 1px solid #303030;
 		}
 
-		.proof-grid > div:nth-child(4) {
-			border-top: 1px solid #303030;
+		.specialties-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.specialties-grid > a {
+			min-height: 0;
 		}
 	}
 
@@ -1185,6 +1360,11 @@ const portfolioSchema = {
 		.capability-cards article {
 			grid-template-columns: 1fr;
 			gap: 9px;
+		}
+
+		.case-actions {
+			align-items: stretch;
+			flex-direction: column;
 		}
 	}
 </style>
