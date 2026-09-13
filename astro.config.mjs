@@ -1,5 +1,12 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-// https://astro.build/config
-export default defineConfig({});
+// Cuando tengamos el dominio final agregaremos:
+//
+// site: "https://www.DOMINIO.com",
+//
+// y activaremos el sitemap.
+
+export default defineConfig({
+	trailingSlash: "ignore",
+});

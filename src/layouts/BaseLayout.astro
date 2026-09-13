@@ -1,23 +1,95 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { site } from "../config/site";
 
 import "../styles/global.css";
 
 interface Props {
 	title: string;
 	description: string;
+
+	image?: string;
+	imageAlt?: string;
+
+	canonical?: string;
+
+	noindex?: boolean;
+
+	type?: "website" | "article";
 }
 
 const {
 	title,
 	description,
+
+	image = site.defaultSocialImage,
+	imageAlt = site.name,
+
+	canonical,
+
+	noindex = false,
+
+	type = "website",
 } = Astro.props;
+
+const siteUrl = Astro.site;
+
+const canonicalUrl = canonical
+	? siteUrl
+		? new URL(canonical, siteUrl).href
+		: canonical
+	: siteUrl
+		? new URL(Astro.url.pathname, siteUrl).href
+		: undefined;
+
+const socialImageUrl = siteUrl
+	? new URL(image, siteUrl).href
+	: image;
+
+const robotsContent = noindex
+	? "noindex, nofollow"
+	: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+
+const isHomePage =
+	Astro.url.pathname === "/";
+
+const organizationSchema = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+
+	name: site.name,
+
+	...(siteUrl
+		? {
+				url: siteUrl.href,
+				logo: new URL(
+					site.logo,
+					siteUrl
+				).href,
+			}
+		: {}),
+
+	telephone: site.phoneDisplay,
+
+	areaServed: {
+		"@type": "Country",
+		name: site.country,
+	},
+
+	contactPoint: {
+		"@type": "ContactPoint",
+		telephone: site.phoneDisplay,
+		contactType: "sales",
+		areaServed: site.countryCode,
+		availableLanguage: "Spanish",
+	},
+};
 ---
 
 <!doctype html>
 
-<html lang="es">
+<html lang={site.language}>
 	<head>
 		<meta charset="UTF-8" />
 
@@ -32,6 +104,116 @@ const {
 			name="description"
 			content={description}
 		/>
+
+		<meta
+			name="robots"
+			content={robotsContent}
+		/>
+
+		<meta
+			name="theme-color"
+			content={site.themeColor}
+		/>
+
+		<link
+			rel="icon"
+			type="image/png"
+			href={site.logo}
+		/>
+
+		<link
+			rel="apple-touch-icon"
+			href={site.logo}
+		/>
+
+		{
+			canonicalUrl && (
+				<link
+					rel="canonical"
+					href={canonicalUrl}
+				/>
+			)
+		}
+
+		<meta
+			property="og:type"
+			content={type}
+		/>
+
+		<meta
+			property="og:locale"
+			content={site.locale}
+		/>
+
+		<meta
+			property="og:site_name"
+			content={site.name}
+		/>
+
+		<meta
+			property="og:title"
+			content={title}
+		/>
+
+		<meta
+			property="og:description"
+			content={description}
+		/>
+
+		<meta
+			property="og:image"
+			content={socialImageUrl}
+		/>
+
+		<meta
+			property="og:image:alt"
+			content={imageAlt}
+		/>
+
+		{
+			canonicalUrl && (
+				<meta
+					property="og:url"
+					content={canonicalUrl}
+				/>
+			)
+		}
+
+		<meta
+			name="twitter:card"
+			content="summary_large_image"
+		/>
+
+		<meta
+			name="twitter:title"
+			content={title}
+		/>
+
+		<meta
+			name="twitter:description"
+			content={description}
+		/>
+
+		<meta
+			name="twitter:image"
+			content={socialImageUrl}
+		/>
+
+		<meta
+			name="twitter:image:alt"
+			content={imageAlt}
+		/>
+
+		{
+			isHomePage && (
+				<script
+					type="application/ld+json"
+					set:html={JSON.stringify(
+						organizationSchema
+					)}
+				/>
+			)
+		}
 	</head>
 
 	<body>

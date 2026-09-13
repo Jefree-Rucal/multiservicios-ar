@@ -8,10 +8,19 @@ export function createWhatsAppLink(message: string) {
 export const site = {
 	name: "Multiservicios Obra Civil AR",
 	shortName: "AR",
+
 	country: "Guatemala",
+	countryCode: "GT",
+
+	language: "es-GT",
+	locale: "es_GT",
 
 	description:
 		"Obra civil, suministros hidráulicos y Deck WPC para empresas, proyectos y clientes en Guatemala.",
+
+	logo: "/images/brand/logo-ar-header.png",
+	defaultSocialImage: "/images/brand/logo-ar-header.png",
+	themeColor: "#ed1c24",
 
 	whatsapp: whatsappNumber,
 	phoneDisplay,
