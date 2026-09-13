@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { createWhatsAppLink } from "../config/site";
+import {
+	createWhatsAppLink,
+	whatsappNumber,
+} from "../config/site";
 
 const title =
 	"Piso WPC en Guatemala | Deck WPC Q875 por Caja | AR";
@@ -46,6 +49,30 @@ Ancho del área:
 ¿Necesito instalación?: Sí / No`
 );
 
+const whatsappBuyBoxes = createWhatsAppLink(
+	`Hola, vi el Deck WPC a Q875 por caja y quisiera comprar.
+
+Cantidad de cajas:
+Ubicación para entrega:
+Color o acabado de interés:
+¿Necesito instalación?: Sí / No
+
+¿Me pueden confirmar disponibilidad y entrega?`
+);
+
+const whatsappAccessories = createWhatsAppLink(
+	`Hola, vi el Deck WPC a Q875 por caja y también necesito accesorios para instalación.
+
+Área aproximada en m²:
+Cantidad de cajas si ya la conozco:
+Ubicación:
+¿Necesito bases para Piso Deck?: Sí / No / No sé
+¿Necesito separadores?: Sí / No / No sé
+¿Necesito instalación?: Sí / No
+
+¿Me pueden ayudar a completar los materiales necesarios?`
+);
+
 const faqSchema = {
 	"@context": "https://schema.org",
 	"@type": "FAQPage",
@@ -56,7 +83,25 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"AR maneja un precio comercial de referencia de Q875 por caja de Deck WPC. El precio, color y disponibilidad deben confirmarse al momento de cotizar.",
+					"El precio comercial de referencia es Q875 por caja de Deck WPC. Cada caja incluye únicamente 5 piezas de piso; bases para Piso Deck, separadores, otros materiales de fijación, entrega e instalación se cotizan por separado cuando aplican.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "¿Qué incluye la caja de Deck WPC de Q875?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"La caja de Q875 incluye únicamente 5 piezas de Piso Deck WPC de aproximadamente 2.90 metros por 14 centímetros. Los accesorios de instalación no están incluidos en ese precio.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "¿Pueden suministrar accesorios para instalar el Deck WPC?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"Sí. AR puede cotizar por separado bases para Piso Deck, separadores y otros materiales complementarios o de fijación según el sistema y las condiciones del proyecto.",
 			},
 		},
 		{
@@ -169,18 +214,18 @@ const breadcrumbSchema = {
 				<div class="hero-actions">
 					<a
 						class="button"
-						href={whatsappDeck}
+						href={whatsappBuyBoxes}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Cotizar Piso WPC
+						Comprar Deck WPC · Q875/caja
 					</a>
 
 					<a
 						class="button button-secondary"
-						href="#producto"
+						href="#calculadora"
 					>
-						Ver medidas y rendimiento
+						Calcular cuántas cajas necesito
 					</a>
 				</div>
 
@@ -202,7 +247,8 @@ const breadcrumbSchema = {
 				</div>
 
 				<p class="panel-copy">
-					Cada caja incluye 5 piezas de Deck WPC.
+					Cada caja incluye únicamente 5 piezas de Piso Deck WPC.
+					Los accesorios de instalación se venden por separado.
 				</p>
 
 				<div class="panel-specs">
@@ -243,11 +289,93 @@ const breadcrumbSchema = {
 					</div>
 				</div>
 
+				<a
+					class="panel-buy-button"
+					href={whatsappBuyBoxes}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Quiero comprar cajas →
+				</a>
+
 				<p class="price-note">
-					*Precio, color y disponibilidad sujetos a
-					confirmación al momento de cotizar.
+					*Q875 corresponde únicamente a las 5 piezas de piso.
+					Bases para Deck, separadores, fijaciones, entrega e
+					instalación no están incluidos y se cotizan cuando aplican.
 				</p>
 			</aside>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     COMPRA DIRECTA
+	================================================== -->
+
+	<section class="section direct-buy-section">
+		<div class="container direct-buy-grid">
+			<div class="direct-buy-copy">
+				<p class="eyebrow">
+					COMPRA DIRECTA DE MATERIAL
+				</p>
+
+				<h2>
+					El precio no está escondido:
+					<span>Q875 por caja.</span>
+				</h2>
+
+				<p>
+					Si ya conoce la cantidad que necesita, puede escribirnos
+					directamente para confirmar disponibilidad, color y entrega.
+					Si todavía no sabe cuántas cajas comprar, use la calculadora
+					de esta misma página.
+				</p>
+
+				<div class="direct-buy-actions">
+					<a
+						class="button"
+						href={whatsappBuyBoxes}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Comprar cajas por WhatsApp
+					</a>
+
+					<a
+						class="button button-secondary"
+						href="#calculadora"
+					>
+						Calcular cajas
+					</a>
+				</div>
+			</div>
+
+			<div class="buy-summary">
+				<div>
+					<span>PRECIO POR CAJA</span>
+					<strong>Q875</strong>
+				</div>
+
+				<div>
+					<span>CONTENIDO</span>
+					<strong>5 piezas</strong>
+				</div>
+
+				<div>
+					<span>RENDIMIENTO APROX.</span>
+					<strong>2.03 m²</strong>
+				</div>
+
+				<div>
+					<span>MEDIDA POR PIEZA</span>
+					<strong>2.90 m × 14 cm</strong>
+				</div>
+
+				<p>
+					El precio de Q875 cubre únicamente las 5 piezas de piso.
+					Bases para Piso Deck, separadores, fijaciones, entrega e
+					instalación se agregan por separado según lo que necesite.
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -321,11 +449,11 @@ const breadcrumbSchema = {
 
 				<a
 					class="button"
-					href={whatsappDeck}
+					href={whatsappBuyBoxes}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Solicitar cotización
+					Comprar material · Q875/caja
 				</a>
 			</div>
 		</div>
@@ -335,7 +463,10 @@ const breadcrumbSchema = {
 	     CALCULADORA
 	================================================== -->
 
-	<section class="section calculate-section">
+	<section
+		class="section calculate-section"
+		id="calculadora"
+	>
 		<div class="container calculate-grid">
 			<div>
 				<p class="eyebrow">
@@ -364,10 +495,37 @@ const breadcrumbSchema = {
 				</a>
 			</div>
 
-			<div class="formula-card">
+			<div
+				class="formula-card"
+				data-deck-calculator
+				data-whatsapp-number={whatsappNumber}
+			>
 				<p class="formula-label">
-					CÁLCULO INICIAL DE CAJAS
+					CALCULADORA DE CAJAS Y MATERIAL
 				</p>
+
+				<label class="calculator-label" for="deck-area">
+					Área aproximada del proyecto en m²
+				</label>
+
+				<div class="calculator-input-row">
+					<input
+						id="deck-area"
+						type="number"
+						min="0.1"
+						step="0.1"
+						inputmode="decimal"
+						placeholder="Ej. 20"
+						data-deck-area
+					/>
+
+					<button
+						type="button"
+						data-deck-calculate
+					>
+						Calcular
+					</button>
+				</div>
 
 				<div class="formula">
 					<span>Área del proyecto</span>
@@ -375,19 +533,52 @@ const breadcrumbSchema = {
 					<span>2.03 m² por caja</span>
 				</div>
 
+				<div
+					class="calculator-result"
+					data-deck-result
+					hidden
+				>
+					<span>ESTIMACIÓN INICIAL</span>
+
+					<strong data-deck-boxes></strong>
+
+					<p>
+						Piso estimado:
+						<b data-deck-total></b>
+					</p>
+
+					<small>
+						Este total corresponde únicamente a las cajas de piso.
+						No incluye bases, separadores, fijaciones, entrega
+						ni instalación.
+					</small>
+
+					<a
+						class="calculator-whatsapp"
+						href={whatsappBuyBoxes}
+						target="_blank"
+						rel="noopener noreferrer"
+						data-deck-whatsapp
+					>
+						Comprar estas cajas por WhatsApp →
+					</a>
+				</div>
+
 				<div class="formula-example">
 					<span>Ejemplo para 20 m²</span>
 
 					<p>
-						<strong>20 m² ÷ 2.03 = 9.85</strong>
-						El cálculo inicial requiere 10 cajas antes
-						de considerar cortes o desperdicio.
+						<strong>20 m² ÷ 2.03 = 9.85 → 10 cajas</strong>
+						10 cajas × Q875 = Q8,750 únicamente de piso,
+						antes de considerar cortes o desperdicio.
+						Los accesorios y la instalación se calculan aparte.
 					</p>
 				</div>
 
 				<p class="formula-note">
-					El rendimiento indicado es geométrico. La
-					cantidad final puede variar según el proyecto.
+					El cálculo es una referencia geométrica. La cantidad
+					final debe confirmarse según cortes, orientación y
+					condiciones de instalación.
 				</p>
 			</div>
 		</div>
@@ -401,17 +592,18 @@ const breadcrumbSchema = {
 		<div class="container">
 			<div class="section-heading">
 				<p class="eyebrow">
-					MATERIAL O INSTALACIÓN
+					ELIJA QUÉ NECESITA
 				</p>
 
 				<h2>
-					Compre el Piso WPC
-					<span>o cotice el proyecto completo.</span>
+					Compre solo el piso,
+					<span>agregue accesorios o resuelva todo.</span>
 				</h2>
 
 				<p>
-					Podemos preparar la propuesta según el alcance
-					que realmente necesita.
+					El precio de Q875 corresponde únicamente a la caja
+					de piso. Bases, separadores y demás materiales de
+					instalación se agregan solo cuando los necesita.
 				</p>
 			</div>
 
@@ -420,45 +612,88 @@ const breadcrumbSchema = {
 					<span class="scope-number">01</span>
 
 					<h3>
-						Solo material
+						Solo piso
 					</h3>
 
 					<p>
-						Para quien ya cuenta con instalador o desea
-						comprar el Deck WPC directamente por caja.
+						Para quien ya cuenta con instalador o únicamente
+						necesita las piezas de Deck WPC.
 					</p>
 
+					<strong class="scope-price">
+						Q875 / caja
+					</strong>
+
 					<ul>
-						<li>Deck WPC por caja</li>
-						<li>Consulta de tonos disponibles</li>
-						<li>Entrega coordinada según ubicación</li>
+						<li>5 piezas de Piso Deck WPC</li>
+						<li>2.90 m × 14 cm aprox. por pieza</li>
+						<li>≈2.03 m² geométricos por caja</li>
+						<li>No incluye accesorios de instalación</li>
 					</ul>
 
 					<a
-						href={whatsappMaterial}
+						href={whatsappBuyBoxes}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Cotizar material →
+						Comprar solo piso →
+					</a>
+				</article>
+
+				<article class="accessories-card">
+					<span class="scope-number">02</span>
+
+					<h3>
+						Piso + accesorios
+					</h3>
+
+					<p>
+						Si también necesita materiales para montar el
+						Deck, podemos revisar el sistema y completar
+						el suministro.
+					</p>
+
+					<strong class="scope-price scope-price-quote">
+						Se calcula según el proyecto
+					</strong>
+
+					<ul>
+						<li>Piso Deck WPC</li>
+						<li>Bases para Piso Deck</li>
+						<li>Separadores para Piso Deck</li>
+						<li>Otros materiales de fijación según necesidad</li>
+					</ul>
+
+					<a
+						href={whatsappAccessories}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Cotizar accesorios →
 					</a>
 				</article>
 
 				<article class="featured">
-					<span class="scope-number">02</span>
+					<span class="scope-number">03</span>
 
 					<h3>
-						Suministro + instalación
+						Piso + instalación
 					</h3>
 
 					<p>
-						Evaluamos área, producto, materiales
-						complementarios y mano de obra.
+						Para quien quiere resolver el proyecto completo
+						sin separar materiales y mano de obra.
 					</p>
+
+					<strong class="scope-price scope-price-quote">
+						Cotización por proyecto
+					</strong>
 
 					<ul>
 						<li>Piso Deck WPC</li>
-						<li>Materiales de instalación según alcance</li>
-						<li>Mano de obra</li>
+						<li>Materiales complementarios según alcance</li>
+						<li>Mano de obra e instalación</li>
+						<li>Revisión de condiciones del área</li>
 					</ul>
 
 					<a
@@ -466,7 +701,7 @@ const breadcrumbSchema = {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Cotizar instalación →
+						Cotizar proyecto completo →
 					</a>
 				</article>
 			</div>
@@ -800,10 +1035,33 @@ const breadcrumbSchema = {
 					</summary>
 
 					<p>
-						Actualmente manejamos un precio comercial
-						de referencia de Q875 por caja. El precio,
-						color y disponibilidad deben confirmarse
-						al momento de cotizar.
+						El precio comercial de referencia es Q875 por caja.
+						Ese precio incluye únicamente 5 piezas de Piso Deck WPC.
+						Los accesorios, entrega e instalación se calculan aparte.
+					</p>
+				</details>
+
+				<details>
+					<summary>
+						¿Qué incluye exactamente la caja de Q875?
+					</summary>
+
+					<p>
+						Incluye únicamente 5 piezas de Piso Deck WPC de
+						aproximadamente 2.90 m de largo por 14 cm de ancho.
+						No incluye bases, separadores, fijaciones ni instalación.
+					</p>
+				</details>
+
+				<details>
+					<summary>
+						¿Puedo comprar también los accesorios?
+					</summary>
+
+					<p>
+						Sí. Podemos cotizar por separado bases para Piso Deck,
+						separadores y otros materiales complementarios o de
+						fijación según el sistema y las condiciones del área.
 					</p>
 				</details>
 
@@ -813,10 +1071,10 @@ const breadcrumbSchema = {
 					</summary>
 
 					<p>
-						Multiservicios Obra Civil AR puede cotizar
-						Deck WPC para terrazas, balcones y otros
-						proyectos exteriores, ya sea solo material
-						o suministro más instalación.
+						Multiservicios Obra Civil AR puede suministrar
+						Deck WPC para terrazas, balcones y otros proyectos
+						exteriores. Puede comprar solo el piso, agregar
+						accesorios o solicitar suministro más instalación.
 					</p>
 				</details>
 
@@ -852,9 +1110,10 @@ const breadcrumbSchema = {
 					</summary>
 
 					<p>
-						Sí. Podemos cotizar únicamente las cajas
-						de Deck WPC si ya cuenta con instalador
-						o realizará el trabajo por su cuenta.
+						Sí. Puede comprar únicamente las cajas de
+						Deck WPC a Q875 cada una si ya cuenta con instalador.
+						Los accesorios no son obligatorios dentro de la compra
+						y se agregan únicamente cuando los necesita.
 					</p>
 				</details>
 
@@ -915,17 +1174,17 @@ const breadcrumbSchema = {
 	<section class="section final-cta">
 		<div class="container final-inner">
 			<p class="eyebrow">
-				COTIZACIÓN
+				COMPRA O COTIZACIÓN
 			</p>
 
 			<h2>
-				¿Quiere cotizar Piso Deck WPC?
+				¿Solo necesita cajas o quiere el sistema completo?
 			</h2>
 
 			<p>
-				Envíenos los metros cuadrados aproximados o las
-				medidas del área. Le ayudamos a calcular cajas y
-				preparar una propuesta de material o instalación.
+				Puede comprar únicamente el piso a Q875 por caja o
+				enviarnos las medidas del área para revisar bases,
+				separadores, materiales complementarios e instalación.
 			</p>
 
 			<a
@@ -934,7 +1193,7 @@ const breadcrumbSchema = {
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Cotizar Deck WPC
+				Comprar o cotizar Deck WPC
 			</a>
 		</div>
 	</section>
@@ -942,13 +1201,82 @@ const breadcrumbSchema = {
 	<section class="legal-note">
 		<div class="container">
 			<p>
-				Medidas, rendimiento, colores, precio y disponibilidad
-				sujetos a confirmación al momento de cotizar.
-				El rendimiento indicado es una referencia geométrica
-				y puede variar por cortes y condiciones de instalación.
+				Q875 es el precio comercial de referencia de una caja con
+				5 piezas de Piso Deck WPC. Ese precio no incluye bases para
+				Piso Deck, separadores, fijaciones, entrega ni instalación.
+				Estos elementos se cotizan por separado cuando aplican.
+				Disponibilidad y color se confirman antes de cerrar el pedido.
 			</p>
 		</div>
 	</section>
+
+	<script is:inline>
+		(() => {
+			const calculator = document.querySelector("[data-deck-calculator]");
+
+			if (!calculator) return;
+
+			const areaInput = calculator.querySelector("[data-deck-area]");
+			const calculateButton = calculator.querySelector("[data-deck-calculate]");
+			const result = calculator.querySelector("[data-deck-result]");
+			const boxesOutput = calculator.querySelector("[data-deck-boxes]");
+			const totalOutput = calculator.querySelector("[data-deck-total]");
+			const whatsappLink = calculator.querySelector("[data-deck-whatsapp]");
+			const whatsapp = calculator.dataset.whatsappNumber;
+
+			const BOX_COVERAGE = 2.03;
+			const BOX_PRICE = 875;
+
+			const formatQuetzales = (amount) =>
+				new Intl.NumberFormat("es-GT", {
+					style: "currency",
+					currency: "GTQ",
+					maximumFractionDigits: 0,
+				}).format(amount);
+
+			const calculate = () => {
+				const area = Number.parseFloat(areaInput?.value ?? "");
+
+				if (!Number.isFinite(area) || area <= 0) {
+					areaInput?.focus();
+					return;
+				}
+
+				const boxes = Math.ceil(area / BOX_COVERAGE);
+				const total = boxes * BOX_PRICE;
+
+				boxesOutput.textContent =
+					`${boxes} ${boxes === 1 ? "caja" : "cajas"}`;
+
+				totalOutput.textContent =
+					formatQuetzales(total);
+
+				if (whatsappLink && whatsapp) {
+					const message =
+						`Hola, vi el Deck WPC a Q875 por caja. ` +
+						`Mi área aproximada es de ${area} m² y la calculadora ` +
+						`me indicó ${boxes} caja(s), con un material estimado de ` +
+						`${formatQuetzales(total)}. ` +
+						`Quisiera comprar y confirmar cantidad final, color y disponibilidad. ` +
+						`También quisiera saber si necesito bases, separadores u otros materiales de instalación.`;
+
+					whatsappLink.href =
+						`https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`;
+				}
+
+				result.hidden = false;
+			};
+
+			calculateButton?.addEventListener("click", calculate);
+
+			areaInput?.addEventListener("keydown", (event) => {
+				if (event.key === "Enter") {
+					event.preventDefault();
+					calculate();
+				}
+			});
+		})();
+	</script>
 </BaseLayout>
 
 <style>
@@ -1126,6 +1454,113 @@ const breadcrumbSchema = {
 		line-height: 1.75;
 	}
 
+	.panel-buy-button {
+		display: block;
+		margin-top: 18px;
+		padding: 12px 14px;
+		background: #ed1c24;
+		border-radius: 7px;
+		color: white;
+		font-size: 0.84rem;
+		font-weight: 900;
+		text-align: center;
+	}
+
+	.panel-buy-button:hover {
+		background: #c9141b;
+		color: white;
+	}
+
+	.direct-buy-section {
+		background: #111111;
+		color: white;
+	}
+
+	.direct-buy-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(360px, 0.8fr);
+		align-items: center;
+		gap: 70px;
+	}
+
+	.direct-buy-copy h2 {
+		margin-bottom: 18px;
+		font-size: clamp(2.25rem, 4vw, 3.55rem);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.direct-buy-copy h2 span {
+		display: block;
+		color: #ff454c;
+	}
+
+	.direct-buy-copy > p:not(.eyebrow) {
+		max-width: 700px;
+		color: #bdbdbd;
+		line-height: 1.75;
+	}
+
+	.direct-buy-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 26px;
+	}
+
+	.direct-buy-actions .button-secondary {
+		background: transparent;
+		color: white;
+		border: 1px solid #5a5a5a;
+	}
+
+	.direct-buy-actions .button-secondary:hover {
+		background: white;
+		color: #111111;
+		border-color: white;
+	}
+
+	.buy-summary {
+		overflow: hidden;
+		background: #181818;
+		border: 1px solid #333333;
+		border-radius: 12px;
+	}
+
+	.buy-summary > div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 18px;
+		padding: 17px 20px;
+		border-bottom: 1px solid #303030;
+	}
+
+	.buy-summary span {
+		color: #8f8f8f;
+		font-size: 0.66rem;
+		font-weight: 900;
+		letter-spacing: 0.09em;
+	}
+
+	.buy-summary strong {
+		color: white;
+		text-align: right;
+	}
+
+	.buy-summary > div:first-child strong {
+		color: #ff454c;
+		font-size: 1.55rem;
+	}
+
+	.buy-summary > p {
+		margin: 0;
+		padding: 18px 20px;
+		color: #8e8e8e;
+		font-size: 0.74rem;
+		line-height: 1.55;
+	}
+
 	.product-section {
 		background: white;
 	}
@@ -1252,6 +1687,94 @@ const breadcrumbSchema = {
 		letter-spacing: 0.13em;
 	}
 
+	.calculator-label {
+		display: block;
+		margin-bottom: 8px;
+		color: #d0d0d0;
+		font-size: 0.82rem;
+		font-weight: 800;
+	}
+
+	.calculator-input-row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		gap: 9px;
+		margin-bottom: 20px;
+	}
+
+	.calculator-input-row input {
+		width: 100%;
+		min-width: 0;
+		padding: 13px 14px;
+		background: white;
+		border: 0;
+		border-radius: 7px;
+		color: #111111;
+		font: inherit;
+	}
+
+	.calculator-input-row button {
+		padding: 13px 17px;
+		background: #ed1c24;
+		border: 0;
+		border-radius: 7px;
+		color: white;
+		font: inherit;
+		font-weight: 900;
+		cursor: pointer;
+	}
+
+	.calculator-input-row button:hover {
+		background: #c9141b;
+	}
+
+	.calculator-result {
+		margin-top: 18px;
+		padding: 20px;
+		background: #211617;
+		border: 1px solid #ed1c24;
+		border-radius: 9px;
+	}
+
+	.calculator-result > span {
+		display: block;
+		margin-bottom: 6px;
+		color: #ff454c;
+		font-size: 0.64rem;
+		font-weight: 900;
+		letter-spacing: 0.1em;
+	}
+
+	.calculator-result > strong {
+		display: block;
+		margin-bottom: 7px;
+		color: white;
+		font-size: 1.7rem;
+	}
+
+	.calculator-result p {
+		margin: 0 0 12px;
+		color: #bdbdbd;
+	}
+
+	.calculator-result p b {
+		color: white;
+	}
+
+	.calculator-result small {
+		display: block;
+		margin: 0 0 12px;
+		color: #8f8f8f;
+		font-size: 0.7rem;
+		line-height: 1.5;
+	}
+
+	.calculator-whatsapp {
+		color: #ff454c;
+		font-size: 0.82rem;
+		font-weight: 900;
+	}
+
 	.formula {
 		display: grid;
 		grid-template-columns:
@@ -1317,7 +1840,7 @@ const breadcrumbSchema = {
 	.scope-grid {
 		display: grid;
 		grid-template-columns:
-			repeat(2, minmax(0, 1fr));
+			repeat(3, minmax(0, 1fr));
 		gap: 16px;
 	}
 
@@ -1336,6 +1859,15 @@ const breadcrumbSchema = {
 		background: #fff8f8;
 	}
 
+	.scope-grid article.accessories-card {
+		border-top: 4px solid #111111;
+	}
+
+	.scope-price-quote {
+		font-size: 1rem;
+		line-height: 1.35;
+	}
+
 	.scope-number {
 		margin-bottom: 42px;
 		color: #ed1c24;
@@ -1351,6 +1883,13 @@ const breadcrumbSchema = {
 	.scope-grid p {
 		color: #666666;
 		line-height: 1.65;
+	}
+
+	.scope-price {
+		display: block;
+		margin: 8px 0 2px;
+		color: #ed1c24;
+		font-size: 1.35rem;
 	}
 
 	.scope-grid ul {
@@ -1745,6 +2284,11 @@ const breadcrumbSchema = {
 	}
 
 	@media (max-width: 900px) {
+		.direct-buy-grid {
+			grid-template-columns: 1fr;
+			gap: 36px;
+		}
+
 		.hero-grid,
 		.product-grid,
 		.calculate-grid,
@@ -1760,7 +2304,8 @@ const breadcrumbSchema = {
 
 		.colors-heading,
 		.colors-bottom,
-		.proof-grid {
+		.proof-grid,
+		.scope-grid {
 			grid-template-columns: 1fr;
 			gap: 30px;
 		}
@@ -1803,6 +2348,28 @@ const breadcrumbSchema = {
 	}
 
 	@media (max-width: 560px) {
+		.direct-buy-copy h2 {
+			font-size: 2.2rem;
+		}
+
+		.calculator-input-row {
+			grid-template-columns: 1fr;
+		}
+
+		.direct-buy-actions {
+			flex-direction: column;
+		}
+
+		.buy-summary > div {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 5px;
+		}
+
+		.buy-summary strong {
+			text-align: left;
+		}
+
 		.deck-hero {
 			padding: 50px 0;
 		}

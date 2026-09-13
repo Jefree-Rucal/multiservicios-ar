@@ -7,7 +7,7 @@ const title =
 	"Suministros Hidráulicos en Guatemala | Woltmann, Dresser y Válvulas | AR";
 
 const description =
-	"Suministros hidráulicos en Guatemala para proyectos: contadores Woltmann, uniones Dresser, válvulas de compuerta, flanges, kits y accesorios. Cotice suministro e instalación.";
+	"Suministros hidráulicos en Guatemala con precios de referencia para Woltmann y Dresser, además de válvulas, flanges, kits y accesorios. Suministro e instalación.";
 
 const whatsappGeneral = createWhatsAppLink(
 	`Hola, vi su página de suministros hidráulicos y quisiera solicitar una cotización.
@@ -61,10 +61,137 @@ Cantidad:
 Ubicación del proyecto:`
 );
 
+const woltmannPrices = [
+	{
+		size: '3"',
+		ref: "6060A 11 · DN80",
+		price: "Q3,050",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 3" con precio de referencia Q3,050.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+	{
+		size: '4"',
+		ref: "6060A 12 · DN100",
+		price: "Q4,000",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 4" con precio de referencia Q4,000.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+	{
+		size: '6"',
+		ref: "6060A 14 · DN150",
+		price: "Q5,900",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 6" con precio de referencia Q5,900.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+	{
+		size: '8"',
+		ref: "6060A 16 · DN200",
+		price: "Q8,500",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 8" con precio de referencia Q8,500.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+];
+
+const dresserPrices = [
+	{
+		size: '3"',
+		ref: "HELMAN · 200 PSI",
+		price: "Q1,400",
+		href: createWhatsAppLink(
+			`Hola, vi la unión tipo Dresser HELMAN 200 PSI de 3" con precio de referencia Q1,400.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+Aplicación / tubería:
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+	{
+		size: '4"',
+		ref: "HELMAN · 200 PSI",
+		price: "Q2,350",
+		href: createWhatsAppLink(
+			`Hola, vi la unión tipo Dresser HELMAN 200 PSI de 4" con precio de referencia Q2,350.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+Aplicación / tubería:
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+	{
+		size: '6"',
+		ref: "HELMAN · 200 PSI",
+		price: "Q2,400",
+		href: createWhatsAppLink(
+			`Hola, vi la unión tipo Dresser HELMAN 200 PSI de 6" con precio de referencia Q2,400.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+Aplicación / tubería:
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+	{
+		size: '8"',
+		ref: "HELMAN · 200 PSI",
+		price: "Q3,400",
+		href: createWhatsAppLink(
+			`Hola, vi la unión tipo Dresser HELMAN 200 PSI de 8" con precio de referencia Q3,400.
+
+Quisiera comprar / confirmar disponibilidad.
+Cantidad:
+Aplicación / tubería:
+¿Necesito instalación?: Sí / No
+Ubicación:`
+		),
+	},
+];
+
 const faqSchema = {
 	"@context": "https://schema.org",
 	"@type": "FAQPage",
 	mainEntity: [
+		{
+			"@type": "Question",
+			name: "¿Qué precios de referencia tienen los suministros hidráulicos?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"AR publica precios de referencia para equipos comparables: Woltmann Genebre 6060A desde Q3,050 y uniones tipo Dresser HELMAN 200 PSI desde Q1,400. El precio y la disponibilidad se confirman antes de cerrar la compra.",
+			},
+		},
 		{
 			"@type": "Question",
 			name: "¿Qué suministros hidráulicos pueden cotizar en Guatemala?",
@@ -175,89 +302,213 @@ const breadcrumbSchema = {
 				</h1>
 
 				<p class="hero-lead">
-					Cotizamos contadores Woltmann, uniones tipo Dresser,
-					válvulas de compuerta flangeadas, flanges, kits y
-					accesorios para instalaciones hidráulicas. Puede
-					solicitar solo suministro o consultar suministro
-					más instalación.
+					Woltmann, uniones tipo Dresser, válvulas de
+					compuerta, flanges, kits y accesorios para
+					instalaciones hidráulicas. En los productos que
+					podemos comparar claramente publicamos el precio
+					de referencia antes de que nos escriba.
 				</p>
 
 				<div class="hero-actions">
 					<a
 						class="button"
-						href={whatsappGeneral}
-						target="_blank"
-						rel="noopener noreferrer"
+						href="#precios-hidraulicos"
 					>
-						Cotizar suministros
+						Ver precios
 					</a>
 
 					<a
 						class="button button-secondary"
-						href="#familias"
+						href={whatsappGeneral}
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						Ver productos
+						Comprar / consultar
 					</a>
 				</div>
 
 				<div class="hero-trust">
-					<span>✓ Cotización por requerimiento</span>
+					<span>✓ Precios de referencia publicados</span>
 					<span>✓ Instalación disponible</span>
 					<span>✓ Factura FEL</span>
 				</div>
 			</div>
 
-			<aside class="hero-panel">
+			<aside class="hero-panel price-preview-panel">
 				<p class="panel-label">
-					PARA COTIZAR MÁS RÁPIDO
+					PRECIOS VISIBLES
 				</p>
 
 				<h2>
-					Envíenos cuatro datos.
+					Sepa cuánto cuesta antes de escribir.
 				</h2>
 
-				<div class="panel-list">
+				<div class="preview-price-list">
 					<div>
-						<span>01</span>
-
 						<p>
-							<strong>Producto</strong>
-							Woltmann, Dresser, válvula, kit o accesorio.
+							<strong>Dresser HELMAN 3"</strong>
+							200 PSI
 						</p>
+						<span>Q1,400</span>
 					</div>
 
 					<div>
-						<span>02</span>
-
 						<p>
-							<strong>Medida</strong>
-							Por ejemplo 3", 4", 6" u 8".
+							<strong>Woltmann Genebre 3"</strong>
+							6060A 11 · DN80
 						</p>
+						<span>Q3,050</span>
 					</div>
 
 					<div>
-						<span>03</span>
-
 						<p>
-							<strong>Cantidad</strong>
-							Indique cuántas unidades necesita.
+							<strong>Contador de agua 3/4"</strong>
+							Opciones Genebre
 						</p>
-					</div>
-
-					<div>
-						<span>04</span>
-
-						<p>
-							<strong>Aplicación</strong>
-							Proyecto, reposición o instalación nueva.
-						</p>
+						<span>Desde Q420</span>
 					</div>
 				</div>
 
+				<a class="panel-link" href="#precios-hidraulicos">
+					Ver tabla completa de precios →
+				</a>
+
 				<p class="panel-note">
-					Precio, referencia y disponibilidad sujetos a confirmación.
+					Precios de referencia sujetos a confirmación
+					de disponibilidad.
 				</p>
 			</aside>
+		</div>
+\t</section>
+
+	<!-- ==================================================
+	     PRECIOS
+	================================================== -->
+
+	<section
+		class="section hydraulic-prices"
+		id="precios-hidraulicos"
+	>
+		<div class="container">
+			<div class="prices-heading">
+				<div>
+					<p class="eyebrow">
+						PRECIOS DE REFERENCIA
+					</p>
+
+					<h2>
+						Compare precios
+						<span>antes de solicitar la compra.</span>
+					</h2>
+				</div>
+
+				<p>
+					Estos precios corresponden a las referencias indicadas.
+					Confirmamos disponibilidad antes de cerrar la venta.
+					Instalación, transporte, kits y materiales complementarios
+					se agregan únicamente cuando aplican.
+				</p>
+			</div>
+
+			<div class="price-table-grid">
+				<article class="price-table-card">
+					<div class="price-table-head">
+						<div>
+							<span>CONTADORES WOLTMANN</span>
+							<h3>Genebre 6060A</h3>
+						</div>
+
+						<strong>Desde Q3,050</strong>
+					</div>
+
+					<div class="price-rows">
+						{
+							woltmannPrices.map((item) => (
+								<div class="price-row">
+									<div class="price-product">
+										<strong>{item.size}</strong>
+										<span>{item.ref}</span>
+									</div>
+
+									<strong class="row-price">
+										{item.price}
+									</strong>
+
+									<a
+										href={item.href}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Comprar / consultar →
+									</a>
+								</div>
+							))
+						}
+					</div>
+				</article>
+
+				<article class="price-table-card">
+					<div class="price-table-head">
+						<div>
+							<span>UNIONES TIPO DRESSER</span>
+							<h3>HELMAN · 200 PSI</h3>
+						</div>
+
+						<strong>Desde Q1,400</strong>
+					</div>
+
+					<div class="price-rows">
+						{
+							dresserPrices.map((item) => (
+								<div class="price-row">
+									<div class="price-product">
+										<strong>{item.size}</strong>
+										<span>{item.ref}</span>
+									</div>
+
+									<strong class="row-price">
+										{item.price}
+									</strong>
+
+									<a
+										href={item.href}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										Comprar / consultar →
+									</a>
+								</div>
+							))
+						}
+					</div>
+				</article>
+			</div>
+
+			<div class="price-quick-links">
+				<a href="/contador-agua-3-4-guatemala/">
+					<span>CONTADOR 3/4"</span>
+					<strong>Desde Q420</strong>
+					<em>Ver modelos y precios →</em>
+				</a>
+
+				<a href="/contadores-de-agua-guatemala/">
+					<span>CONTADORES DE AGUA</span>
+					<strong>Opciones para distintas medidas</strong>
+					<em>Ver precios disponibles →</em>
+				</a>
+
+				<a href="#valvulas">
+					<span>VÁLVULAS DE COMPUERTA</span>
+					<strong>Precio según especificación</strong>
+					<em>Ver cómo cotizamos →</em>
+				</a>
+			</div>
+
+			<p class="prices-disclaimer">
+				*Precios comerciales de referencia. No constituyen garantía
+				de inventario. La disponibilidad, entrega e instalación se
+				confirman antes de aceptar el pedido.
+			</p>
 		</div>
 	</section>
 
@@ -424,25 +675,15 @@ const breadcrumbSchema = {
 				</p>
 
 				<div class="size-list">
-					<div>
-						<strong>3"</strong>
-						<span>6060A 11 · DN80</span>
-					</div>
-
-					<div>
-						<strong>4"</strong>
-						<span>6060A 12 · DN100</span>
-					</div>
-
-					<div>
-						<strong>6"</strong>
-						<span>6060A 14 · DN150</span>
-					</div>
-
-					<div>
-						<strong>8"</strong>
-						<span>6060A 16 · DN200</span>
-					</div>
+					{
+						woltmannPrices.map((item) => (
+							<div>
+								<strong>{item.size}</strong>
+								<span>{item.ref}</span>
+								<b>{item.price}</b>
+							</div>
+						))
+					}
 				</div>
 
 				<ul class="feature-specs">
@@ -454,11 +695,9 @@ const breadcrumbSchema = {
 
 				<a
 					class="button"
-					href={whatsappWoltmann}
-					target="_blank"
-					rel="noopener noreferrer"
+					href="#precios-hidraulicos"
 				>
-					Cotizar Woltmann
+					Ver precios Woltmann
 				</a>
 			</div>
 		</div>
@@ -484,16 +723,21 @@ const breadcrumbSchema = {
 				</h2>
 
 				<p>
-					Podemos cotizar uniones tipo Dresser HELMAN
-					para unión de tubería de extremos lisos y
-					trabajos de reparación o adaptación.
+					Uniones tipo Dresser HELMAN para tubería de
+					extremos lisos, reparaciones y adaptaciones.
+					Publicamos el precio por medida para que pueda
+					comparar antes de comprar.
 				</p>
 
-				<div class="dresser-sizes">
-					<span>3"</span>
-					<span>4"</span>
-					<span>6"</span>
-					<span>8"</span>
+				<div class="dresser-price-list">
+					{
+						dresserPrices.map((item) => (
+							<div>
+								<strong>{item.size}</strong>
+								<span>{item.price}</span>
+							</div>
+						))
+					}
 				</div>
 
 				<div class="dresser-details">
@@ -509,17 +753,15 @@ const breadcrumbSchema = {
 				</div>
 
 				<p class="product-note">
-					La referencia exacta, precio y disponibilidad se
-					confirman antes de preparar la cotización.
+					Los precios publicados son de referencia para la
+					línea indicada y se confirman junto con disponibilidad.
 				</p>
 
 				<a
 					class="button"
-					href={whatsappDresser}
-					target="_blank"
-					rel="noopener noreferrer"
+					href="#precios-hidraulicos"
 				>
-					Cotizar unión Dresser
+					Ver precios Dresser
 				</a>
 			</div>
 
@@ -841,6 +1083,20 @@ const breadcrumbSchema = {
 			<div class="faq-list">
 				<details open>
 					<summary>
+						¿Qué precios de referencia tienen?
+					</summary>
+
+					<p>
+						Publicamos precios de referencia para productos
+						comparables. Los Woltmann Genebre 6060A van desde
+						Q3,050 y las uniones tipo Dresser HELMAN 200 PSI
+						desde Q1,400. Precio y disponibilidad se confirman
+						antes de cerrar la compra.
+					</p>
+				</details>
+
+				<details>
+					<summary>
 						¿Qué suministros hidráulicos pueden cotizar en Guatemala?
 					</summary>
 
@@ -961,10 +1217,10 @@ const breadcrumbSchema = {
 	<section class="legal-note">
 		<div class="container">
 			<p>
-				Las marcas y referencias mencionadas pertenecen
-				a sus respectivos titulares. Imágenes ilustrativas.
-				Precios, especificaciones y disponibilidad sujetos
-				a confirmación al momento de cotizar.
+				Las marcas y referencias mencionadas pertenecen a sus
+				respectivos titulares. Los precios publicados son referencias
+				comerciales para las medidas indicadas. Disponibilidad, entrega,
+				instalación y accesorios se confirman antes de aceptar el pedido.
 			</p>
 		</div>
 	</section>
@@ -1208,6 +1464,249 @@ const breadcrumbSchema = {
 	/* ==================================================
 	   FAMILIAS
 	================================================== */
+
+\t.price-preview-panel h2 {
+		margin-bottom: 22px;
+	}
+
+	.preview-price-list {
+		border-top: 1px solid #333333;
+	}
+
+	.preview-price-list > div {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		gap: 16px;
+		padding: 16px 0;
+		border-bottom: 1px solid #333333;
+	}
+
+	.preview-price-list p {
+		margin: 0;
+		color: #9f9f9f;
+		font-size: 0.82rem;
+		line-height: 1.45;
+	}
+
+	.preview-price-list p strong {
+		display: block;
+		margin-bottom: 3px;
+		color: white;
+		font-size: 0.92rem;
+	}
+
+	.preview-price-list > div > span {
+		color: #ff454c;
+		font-weight: 900;
+		white-space: nowrap;
+	}
+
+	.panel-link {
+		display: inline-block;
+		margin-top: 18px;
+		color: white;
+		font-size: 0.82rem;
+		font-weight: 900;
+	}
+
+	.panel-link:hover {
+		color: #ff454c;
+	}
+
+	.hydraulic-prices {
+		background: white;
+	}
+
+	.prices-heading {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+		align-items: end;
+		gap: 70px;
+		margin-bottom: 38px;
+	}
+
+	.prices-heading h2 {
+		margin-bottom: 0;
+		font-size: clamp(2.25rem, 4vw, 3.55rem);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.prices-heading h2 span {
+		display: block;
+		color: #ed1c24;
+	}
+
+	.prices-heading > p {
+		margin: 0;
+		color: #666666;
+		line-height: 1.75;
+	}
+
+	.price-table-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 16px;
+	}
+
+	.price-table-card {
+		overflow: hidden;
+		border: 1px solid #dedede;
+		border-radius: 12px;
+		background: #f8f8f8;
+	}
+
+	.price-table-head {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 20px;
+		padding: 24px;
+		background: #111111;
+		color: white;
+	}
+
+	.price-table-head span {
+		display: block;
+		margin-bottom: 5px;
+		color: #ff454c;
+		font-size: 0.64rem;
+		font-weight: 900;
+		letter-spacing: 0.11em;
+	}
+
+	.price-table-head h3 {
+		margin: 0;
+		font-size: 1.28rem;
+	}
+
+	.price-table-head > strong {
+		color: white;
+		font-size: 1rem;
+		white-space: nowrap;
+	}
+
+	.price-row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		gap: 8px 20px;
+		padding: 18px 22px;
+		border-bottom: 1px solid #e1e1e1;
+	}
+
+	.price-row:last-child {
+		border-bottom: 0;
+	}
+
+	.price-product strong {
+		display: block;
+		font-size: 1.05rem;
+	}
+
+	.price-product span {
+		color: #777777;
+		font-size: 0.74rem;
+	}
+
+	.row-price {
+		color: #111111;
+		font-size: 1.2rem;
+		white-space: nowrap;
+	}
+
+	.price-row > a {
+		grid-column: 1 / -1;
+		color: #ed1c24;
+		font-size: 0.78rem;
+		font-weight: 900;
+	}
+
+	.price-quick-links {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 12px;
+		margin-top: 16px;
+	}
+
+	.price-quick-links > a {
+		display: flex;
+		flex-direction: column;
+		min-height: 150px;
+		padding: 20px;
+		background: #f7f7f7;
+		border: 1px solid #dfdfdf;
+		border-radius: 10px;
+	}
+
+	.price-quick-links span {
+		margin-bottom: 18px;
+		color: #ed1c24;
+		font-size: 0.64rem;
+		font-weight: 900;
+		letter-spacing: 0.1em;
+	}
+
+	.price-quick-links strong {
+		color: #111111;
+		font-size: 1.08rem;
+	}
+
+	.price-quick-links em {
+		margin-top: auto;
+		padding-top: 20px;
+		color: #ed1c24;
+		font-style: normal;
+		font-size: 0.78rem;
+		font-weight: 900;
+	}
+
+	.prices-disclaimer {
+		max-width: 900px;
+		margin: 18px 0 0;
+		color: #818181;
+		font-size: 0.72rem;
+		line-height: 1.55;
+	}
+
+	.size-list > div b {
+		display: block;
+		margin-top: 5px;
+		color: #ff454c;
+		font-size: 0.9rem;
+	}
+
+	.dresser-price-list {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 8px;
+		margin: 24px 0;
+	}
+
+	.dresser-price-list > div {
+		padding: 14px 10px;
+		background: #f5f5f5;
+		border: 1px solid #dfdfdf;
+		border-radius: 8px;
+		text-align: center;
+	}
+
+	.dresser-price-list strong,
+	.dresser-price-list span {
+		display: block;
+	}
+
+	.dresser-price-list strong {
+		margin-bottom: 4px;
+		color: #111111;
+	}
+
+	.dresser-price-list span {
+		color: #ed1c24;
+		font-size: 0.9rem;
+		font-weight: 900;
+	}
 
 	.families-section {
 		background: #f7f7f7;
@@ -1965,6 +2464,27 @@ const breadcrumbSchema = {
 	================================================== */
 
 	@media (max-width: 900px) {
+		.prices-heading,
+		.price-table-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.prices-heading {
+			gap: 24px;
+		}
+
+		.price-quick-links {
+			grid-template-columns: 1fr;
+		}
+
+		.price-quick-links > a {
+			min-height: 0;
+		}
+
+		.dresser-price-list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
 		.hero-grid,
 		.product-feature-grid,
 		.dresser-grid,
@@ -2034,6 +2554,23 @@ const breadcrumbSchema = {
 	================================================== */
 
 	@media (max-width: 560px) {
+		.price-table-head {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.price-row {
+			grid-template-columns: 1fr;
+		}
+
+		.row-price {
+			font-size: 1.3rem;
+		}
+
+		.dresser-price-list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
 		.hydraulic-hero {
 			padding: 50px 0;
 		}
