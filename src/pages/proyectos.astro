@@ -1,0 +1,1190 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { createWhatsAppLink } from "../config/site";
+
+const title =
+	"Proyectos de Obra Civil en Guatemala | Portafolio AR";
+
+const description =
+	"Portafolio de proyectos reales de Multiservicios Obra Civil AR en Guatemala: estructura metálica, oficinas, drenajes, seguridad industrial, instalaciones hidráulicas, remodelaciones y Deck WPC.";
+
+const whatsappProjects = createWhatsAppLink(
+	`Hola, vi su portafolio de proyectos y quisiera solicitar una cotización.
+
+Tipo de proyecto:
+Ubicación:
+Área o medidas aproximadas:
+¿Puedo enviar fotografías o planos?: Sí
+Información adicional:`
+);
+
+const projects = [
+	{
+		number: "01",
+		category: "Construcción integral",
+		title: "Oficinas administrativas sobre estructura metálica",
+		image: "/images/projects/oficinas-administrativas-estructura-metalica.jpeg",
+		alt: "Proyecto terminado de oficinas administrativas construidas sobre estructura metálica en Guatemala",
+		description:
+			"Construcción de un nivel completo de oficinas sobre un área existente de estacionamiento, integrando estructura, cerramientos, instalaciones y acabados.",
+		metrics: ["≈55.62 m²", "Estructura + acabados"],
+		details:
+			"Estructura metálica, tablayeso y DensGlass, techo, ventanas, puertas, piso, pintura, electricidad, plomería, gradas y acabados finales.",
+		href: "/servicios-obra-civil-guatemala/",
+		linkLabel: "Ver servicios de obra civil",
+	},
+	{
+		number: "02",
+		category: "Obra civil + drenajes",
+		title: "Independización de drenaje pluvial bajo piso",
+		image: "/images/projects/drenaje-pluvial-pvc-bajo-piso.jpeg",
+		alt: "Instalación de drenaje pluvial con tubería PVC bajo piso en proyecto de obra civil",
+		description:
+			"Intervención para separar la conducción de aguas pluviales y aguas negras mediante una nueva línea instalada bajo piso.",
+		metrics: ["≈44 m lineales", 'PVC Ø6"'],
+		details:
+			"Apertura y excavación, colocación de tubería, relleno con material selecto y restitución final con concreto.",
+		href: "/servicios-obra-civil-guatemala/",
+		linkLabel: "Ver plomería y obra civil",
+	},
+	{
+		number: "03",
+		category: "Herrería + seguridad industrial",
+		title: "Barandal metálico de protección para área de mercadería",
+		image: "/images/projects/barandal-seguridad-industrial.jpeg",
+		alt: "Barandal metálico de seguridad industrial instalado en área de mercadería",
+		description:
+			"Fabricación e instalación de protección metálica corrida para delimitar y resguardar un área operativa.",
+		metrics: ["≈46.24 m lineales", "Fabricación + instalación"],
+		details:
+			"Solución metálica ejecutada a medida para mejorar la delimitación y seguridad del área.",
+		href: "/servicios-obra-civil-guatemala/",
+		linkLabel: "Ver herrería y soldadura",
+	},
+	{
+		number: "04",
+		category: "Plomería + hidráulica",
+		title: "Sistema de almacenamiento de agua con dos tinacos",
+		image: "/images/projects/instalacion-tinacos-2400-litros.jpeg",
+		alt: "Instalación hidráulica de dos tinacos de 2400 litros en azotea",
+		description:
+			"Instalación de almacenamiento de agua en azotea e integración del sistema con tubería, conexiones y bombeo.",
+		metrics: ["2 × 2,400 L", "Conexión a bomba"],
+		details:
+			"Montaje de los dos depósitos, interconexión hidráulica y conexión al sistema de suministro de la vivienda.",
+		href: "/suministros-hidraulicos-guatemala/",
+		linkLabel: "Ver soluciones hidráulicas",
+	},
+	{
+		number: "05",
+		category: "Remodelación + acabados",
+		title: "Renovación de piso interior en restaurante",
+		image: "/images/projects/remodelacion-piso-deck-pvc-restaurante.jpeg",
+		alt: "Renovación de piso interior de restaurante con Deck PVC después de preparación de base",
+		description:
+			"Renovación de un área interior afectada por humedad mediante preparación de la base e instalación de piso Deck en PVC.",
+		metrics: ["≈78 m²", "Preparación + instalación"],
+		details:
+			"Se trabajó la base antes de colocar el acabado final para resolver la condición existente y renovar el espacio.",
+		href: "/servicios-obra-civil-guatemala/",
+		linkLabel: "Ver remodelaciones",
+	},
+	{
+		number: "06",
+		category: "Deck WPC",
+		title: "Instalación de Deck WPC en área exterior",
+		image: "/images/projects/hero-deck.jpeg",
+		alt: "Proyecto exterior terminado con Piso Deck WPC instalado por Multiservicios Obra Civil AR",
+		description:
+			"Instalación de Deck WPC para renovar un espacio exterior con acabado tipo madera y una solución pensada para el uso del área.",
+		metrics: ["Área exterior", "Suministro + instalación"],
+		details:
+			"Proyecto ejecutado por AR con suministro de material e instalación del sistema de Deck WPC.",
+		href: "/deck-wpc-guatemala/",
+		linkLabel: "Ver Piso Deck WPC",
+	},
+];
+
+const portfolioSchema = {
+	"@context": "https://schema.org",
+	"@type": "CollectionPage",
+	name: "Proyectos de Multiservicios Obra Civil AR",
+	description,
+	inLanguage: "es-GT",
+	mainEntity: {
+		"@type": "ItemList",
+		itemListElement: projects.map((project, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			item: {
+				"@type": "CreativeWork",
+				name: project.title,
+				description: project.description,
+			},
+		})),
+	},
+};
+---
+
+<BaseLayout
+	title={title}
+	description={description}
+>
+	<script
+		type="application/ld+json"
+		set:html={JSON.stringify(portfolioSchema)}
+	></script>
+
+	<!-- ==================================================
+	     HERO
+	================================================== -->
+
+	<section class="projects-hero">
+		<div class="container hero-grid">
+			<div class="hero-copy">
+				<p class="eyebrow">
+					PORTAFOLIO DE PROYECTOS EN GUATEMALA
+				</p>
+
+				<h1>
+					Problemas reales.
+					<span>Soluciones ejecutadas.</span>
+				</h1>
+
+				<p class="hero-lead">
+					Obra civil, estructuras, remodelaciones,
+					instalaciones hidráulicas y Deck WPC respaldados
+					con proyectos reales ejecutados por AR.
+				</p>
+
+				<div class="hero-actions">
+					<a
+						class="button"
+						href="#proyectos"
+					>
+						Ver proyectos
+					</a>
+
+					<a
+						class="button button-secondary"
+						href={whatsappProjects}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Cotizar un proyecto
+					</a>
+				</div>
+
+				<div class="hero-trust">
+					<span>✓ Evidencia fotográfica real</span>
+					<span>✓ Proyectos comerciales y residenciales</span>
+					<span>✓ Ejecución en Guatemala</span>
+				</div>
+			</div>
+
+			<div class="hero-showcase">
+				<img
+					src="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+					alt="Oficinas administrativas terminadas en proyecto integral de estructura metálica y obra civil"
+					loading="eager"
+					decoding="async"
+				/>
+
+				<div class="hero-showcase-overlay">
+					<span>PROYECTO DESTACADO</span>
+
+					<strong>
+						Construcción integral de oficinas
+					</strong>
+
+					<p>
+						≈55.62 m² · estructura, instalaciones y acabados
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     PROOF STRIP
+	================================================== -->
+
+	<section class="proof-strip">
+		<div class="container proof-grid">
+			<div>
+				<strong>6</strong>
+				<span>casos destacados en esta selección</span>
+			</div>
+
+			<div>
+				<strong>55.62 m²</strong>
+				<span>oficinas en proyecto integral</span>
+			</div>
+
+			<div>
+				<strong>44 m</strong>
+				<span>de drenaje pluvial instalado</span>
+			</div>
+
+			<div>
+				<strong>2 × 2,400 L</strong>
+				<span>en sistema de almacenamiento</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     FEATURED CASE
+	================================================== -->
+
+	<section class="section case-study">
+		<div class="container case-grid">
+			<div class="case-image">
+				<img
+					src="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+					alt="Resultado de construcción integral de oficinas administrativas sobre estructura metálica"
+					loading="lazy"
+					decoding="async"
+				/>
+
+				<span class="photo-badge">
+					PROYECTO REAL
+				</span>
+			</div>
+
+			<div class="case-copy">
+				<p class="eyebrow">
+					CASO DESTACADO · CONSTRUCCIÓN INTEGRAL
+				</p>
+
+				<h2>
+					Oficinas administrativas
+					<span>sin perder el área inferior.</span>
+				</h2>
+
+				<p class="case-intro">
+					El requerimiento era habilitar un nivel completo
+					de oficinas manteniendo el espacio inferior
+					disponible para estacionamiento.
+				</p>
+
+				<div class="case-block">
+					<span>NECESIDAD</span>
+
+					<p>
+						Crear aproximadamente 55.62 m² de oficinas
+						administrativas sobre una superficie existente.
+					</p>
+				</div>
+
+				<div class="case-block">
+					<span>SOLUCIÓN EJECUTADA</span>
+
+					<p>
+						Proyecto integral desde la estructura metálica
+						hasta cerramientos, instalaciones y acabados.
+					</p>
+				</div>
+
+				<div class="scope-tags">
+					<span>Estructura metálica</span>
+					<span>Tablayeso / DensGlass</span>
+					<span>Electricidad</span>
+					<span>Plomería</span>
+					<span>Piso y pintura</span>
+					<span>Gradas y acabados</span>
+				</div>
+
+				<a
+					class="button"
+					href={whatsappProjects}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Cotizar un proyecto similar
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     PROJECT GRID
+	================================================== -->
+
+	<section
+		class="section portfolio-section"
+		id="proyectos"
+	>
+		<div class="container">
+			<div class="section-heading">
+				<p class="eyebrow">
+					PROYECTOS DESTACADOS
+				</p>
+
+				<h2>
+					Experiencia que cruza
+					<span>varias áreas de ejecución.</span>
+				</h2>
+
+				<p>
+					Seleccionamos proyectos que muestran distintos
+					tipos de problema, alcance y solución. Los nombres
+					de clientes y datos comerciales internos no se
+					publican en este portafolio.
+				</p>
+			</div>
+
+			<div class="portfolio-grid">
+				{
+					projects.map((project) => (
+						<article class="project-card">
+							<a
+								class="project-image"
+								href={project.href}
+								aria-label={`${project.linkLabel}: ${project.title}`}
+							>
+								<img
+									src={project.image}
+									alt={project.alt}
+									loading="lazy"
+									decoding="async"
+								/>
+
+								<span class="project-number">
+									{project.number}
+								</span>
+							</a>
+
+							<div class="project-body">
+								<p class="project-category">
+									{project.category}
+								</p>
+
+								<h3>
+									{project.title}
+								</h3>
+
+								<p class="project-description">
+									{project.description}
+								</p>
+
+								<div class="project-metrics">
+									{
+										project.metrics.map((metric) => (
+											<span>{metric}</span>
+										))
+									}
+								</div>
+
+								<p class="project-detail">
+									{project.details}
+								</p>
+
+								<a
+									class="project-link"
+									href={project.href}
+								>
+									{project.linkLabel} →
+								</a>
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     CAPABILITIES
+	================================================== -->
+
+	<section class="section capabilities-section">
+		<div class="container capabilities-grid">
+			<div class="capabilities-copy">
+				<p class="eyebrow eyebrow-light">
+					DE LA REPARACIÓN AL PROYECTO INTEGRAL
+				</p>
+
+				<h2>
+					No todos los trabajos
+					<span>tienen el mismo alcance.</span>
+				</h2>
+
+				<p>
+					Algunos proyectos requieren una intervención
+					puntual. Otros combinan estructura, instalaciones,
+					acabados y coordinación de varias especialidades.
+					La propuesta se construye alrededor de la necesidad.
+				</p>
+
+				<a
+					class="button button-light"
+					href="/servicios-obra-civil-guatemala/"
+				>
+					Ver servicios de obra civil
+				</a>
+			</div>
+
+			<div class="capability-cards">
+				<article>
+					<span>01</span>
+					<div>
+						<h3>Obra civil</h3>
+						<p>Intervenciones, adecuaciones y ejecución de infraestructura.</p>
+					</div>
+				</article>
+
+				<article>
+					<span>02</span>
+					<div>
+						<h3>Estructuras y herrería</h3>
+						<p>Fabricación, protecciones, barandales y elementos metálicos.</p>
+					</div>
+				</article>
+
+				<article>
+					<span>03</span>
+					<div>
+						<h3>Hidráulica</h3>
+						<p>Tuberías, almacenamiento, contadores, válvulas y conexiones.</p>
+					</div>
+				</article>
+
+				<article class="capability-featured">
+					<span>04</span>
+					<div>
+						<h3>Remodelaciones</h3>
+						<p>Preparación, reparación, acabados, pisos y renovación de espacios.</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     WHY PORTFOLIO
+	================================================== -->
+
+	<section class="section evidence-section">
+		<div class="container evidence-grid">
+			<div>
+				<p class="eyebrow">
+					EVIDENCIA ANTES QUE PROMESAS
+				</p>
+
+				<h2>
+					Cada proyecto debe
+					<span>poder explicarse.</span>
+				</h2>
+			</div>
+
+			<div class="evidence-list">
+				<article>
+					<span>01</span>
+					<div>
+						<h3>El problema</h3>
+						<p>Qué condición o necesidad debía resolverse.</p>
+					</div>
+				</article>
+
+				<article>
+					<span>02</span>
+					<div>
+						<h3>El alcance</h3>
+						<p>Qué trabajos, materiales o especialidades fueron necesarios.</p>
+					</div>
+				</article>
+
+				<article>
+					<span>03</span>
+					<div>
+						<h3>La ejecución</h3>
+						<p>Cómo se materializó la solución en el sitio.</p>
+					</div>
+				</article>
+
+				<article>
+					<span>04</span>
+					<div>
+						<h3>El resultado</h3>
+						<p>Una referencia real para futuros proyectos similares.</p>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     FINAL CTA
+	================================================== -->
+
+	<section class="section final-cta">
+		<div class="container final-inner">
+			<p class="eyebrow">
+				SU PROYECTO
+			</p>
+
+			<h2>
+				¿Tiene una necesidad similar?
+			</h2>
+
+			<p>
+				Envíenos fotografías, ubicación y medidas aproximadas.
+				Revisamos el alcance antes de preparar la cotización.
+			</p>
+
+			<a
+				class="button"
+				href={whatsappProjects}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Cotizar por WhatsApp
+			</a>
+		</div>
+	</section>
+
+	<section class="portfolio-note">
+		<div class="container">
+			<p>
+				Las fotografías corresponden a trabajos ejecutados y se
+				presentan como referencia del tipo de proyecto. Los alcances
+				y cantidades indicados corresponden a los casos documentados;
+				cada nueva cotización se evalúa de forma independiente.
+			</p>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.projects-hero {
+		padding: 82px 0;
+		background:
+			linear-gradient(
+				115deg,
+				#ffffff 0%,
+				#ffffff 58%,
+				#f0f0f0 100%
+			);
+	}
+
+	.hero-grid {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 0.92fr)
+			minmax(420px, 1.08fr);
+		align-items: center;
+		gap: 64px;
+	}
+
+	.hero-copy h1 {
+		max-width: 780px;
+		margin-bottom: 26px;
+		font-size: clamp(3rem, 5vw, 5rem);
+		line-height: 0.97;
+		letter-spacing: -0.055em;
+	}
+
+	.hero-copy h1 span,
+	.section-heading h2 span,
+	.case-copy h2 span,
+	.capabilities-copy h2 span,
+	.evidence-grid h2 span {
+		display: block;
+		color: #ed1c24;
+	}
+
+	.hero-lead {
+		max-width: 690px;
+		color: #606060;
+		font-size: 1.08rem;
+		line-height: 1.75;
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+		margin-top: 32px;
+	}
+
+	.hero-trust {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px 22px;
+		margin-top: 30px;
+		color: #555555;
+		font-size: 0.88rem;
+		font-weight: 700;
+	}
+
+	.hero-showcase {
+		position: relative;
+		min-height: 570px;
+		overflow: hidden;
+		border-radius: 14px;
+		background: #111111;
+		box-shadow: 0 30px 70px rgba(0, 0, 0, 0.16);
+	}
+
+	.hero-showcase img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	.hero-showcase::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.78) 0%,
+				rgba(0, 0, 0, 0.08) 50%,
+				transparent 100%
+			);
+	}
+
+	.hero-showcase-overlay {
+		position: absolute;
+		z-index: 2;
+		left: 28px;
+		right: 28px;
+		bottom: 28px;
+		color: white;
+	}
+
+	.hero-showcase-overlay span {
+		display: block;
+		margin-bottom: 8px;
+		color: #ff464d;
+		font-size: 0.68rem;
+		font-weight: 900;
+		letter-spacing: 0.13em;
+	}
+
+	.hero-showcase-overlay strong {
+		display: block;
+		font-size: 1.7rem;
+	}
+
+	.hero-showcase-overlay p {
+		margin: 7px 0 0;
+		color: #d0d0d0;
+		font-size: 0.84rem;
+	}
+
+	.proof-strip {
+		background: #111111;
+		color: white;
+	}
+
+	.proof-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.proof-grid > div {
+		padding: 24px;
+		border-left: 1px solid #303030;
+	}
+
+	.proof-grid > div:last-child {
+		border-right: 1px solid #303030;
+	}
+
+	.proof-grid strong {
+		display: block;
+		margin-bottom: 4px;
+		color: #ed1c24;
+		font-size: 1.35rem;
+	}
+
+	.proof-grid span {
+		color: #aaa;
+		font-size: 0.76rem;
+		line-height: 1.45;
+	}
+
+	.section-heading {
+		max-width: 850px;
+		margin-bottom: 46px;
+	}
+
+	.section-heading h2,
+	.case-copy h2,
+	.capabilities-copy h2,
+	.evidence-grid h2,
+	.final-inner h2 {
+		margin-bottom: 18px;
+		font-size: clamp(2.25rem, 4vw, 3.55rem);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.section-heading > p:last-child,
+	.case-intro,
+	.capabilities-copy > p:not(.eyebrow) {
+		color: #666666;
+		line-height: 1.75;
+	}
+
+	.case-study {
+		background: white;
+	}
+
+	.case-grid {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 1.07fr)
+			minmax(0, 0.93fr);
+		align-items: center;
+		gap: 70px;
+	}
+
+	.case-image {
+		position: relative;
+		min-height: 620px;
+		overflow: hidden;
+		border-radius: 14px;
+		background: #111111;
+	}
+
+	.case-image img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	.photo-badge {
+		position: absolute;
+		left: 20px;
+		bottom: 20px;
+		padding: 8px 11px;
+		background: rgba(17, 17, 17, 0.86);
+		border-radius: 999px;
+		color: white;
+		font-size: 0.62rem;
+		font-weight: 900;
+		letter-spacing: 0.08em;
+		backdrop-filter: blur(8px);
+	}
+
+	.case-block {
+		padding: 18px 0;
+		border-top: 1px solid #dedede;
+	}
+
+	.case-block span {
+		display: block;
+		margin-bottom: 5px;
+		color: #ed1c24;
+		font-size: 0.64rem;
+		font-weight: 900;
+		letter-spacing: 0.1em;
+	}
+
+	.case-block p {
+		margin: 0;
+		color: #555555;
+		line-height: 1.65;
+	}
+
+	.scope-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin: 20px 0 28px;
+	}
+
+	.scope-tags span {
+		padding: 8px 11px;
+		background: #f3f3f3;
+		border: 1px solid #dddddd;
+		border-radius: 999px;
+		color: #444444;
+		font-size: 0.72rem;
+		font-weight: 800;
+	}
+
+	.portfolio-section {
+		background: #f7f7f7;
+	}
+
+	.portfolio-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.project-card {
+		overflow: hidden;
+		background: white;
+		border: 1px solid #dedede;
+		border-radius: 14px;
+	}
+
+	.project-image {
+		position: relative;
+		display: block;
+		aspect-ratio: 16 / 10;
+		overflow: hidden;
+		background: #111111;
+	}
+
+	.project-image img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+		transition: transform 260ms ease;
+	}
+
+	.project-card:hover .project-image img {
+		transform: scale(1.025);
+	}
+
+	.project-number {
+		position: absolute;
+		top: 16px;
+		left: 16px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		background: #111111;
+		border-radius: 50%;
+		color: white;
+		font-size: 0.72rem;
+		font-weight: 900;
+	}
+
+	.project-body {
+		padding: 26px;
+	}
+
+	.project-category {
+		margin: 0 0 8px;
+		color: #ed1c24;
+		font-size: 0.66rem;
+		font-weight: 900;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+	}
+
+	.project-body h3 {
+		margin-bottom: 10px;
+		font-size: 1.4rem;
+		letter-spacing: -0.025em;
+	}
+
+	.project-description,
+	.project-detail {
+		color: #666666;
+		line-height: 1.65;
+	}
+
+	.project-metrics {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		margin: 18px 0;
+	}
+
+	.project-metrics span {
+		padding: 7px 10px;
+		background: #f4f4f4;
+		border-radius: 999px;
+		color: #333333;
+		font-size: 0.7rem;
+		font-weight: 900;
+	}
+
+	.project-detail {
+		margin-bottom: 20px;
+		font-size: 0.88rem;
+	}
+
+	.project-link {
+		color: #ed1c24;
+		font-weight: 900;
+	}
+
+	.capabilities-section {
+		background: #111111;
+		color: white;
+	}
+
+	.capabilities-grid {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 0.84fr)
+			minmax(0, 1.16fr);
+		align-items: center;
+		gap: 70px;
+	}
+
+	.eyebrow-light {
+		color: #ff464d;
+	}
+
+	.capabilities-copy > p:not(.eyebrow) {
+		color: #bdbdbd;
+	}
+
+	.capabilities-copy h2 span {
+		color: #ff4047;
+	}
+
+	.button-light {
+		margin-top: 8px;
+		background: white;
+		color: #111111;
+	}
+
+	.button-light:hover {
+		background: #ed1c24;
+		color: white;
+	}
+
+	.capability-cards {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	.capability-cards article {
+		display: grid;
+		grid-template-columns: 32px minmax(0, 1fr);
+		gap: 12px;
+		padding: 22px;
+		background: #181818;
+		border: 1px solid #2f2f2f;
+		border-radius: 9px;
+	}
+
+	.capability-cards .capability-featured {
+		border-color: #ed1c24;
+		background: #1d1516;
+	}
+
+	.capability-cards article > span {
+		color: #ed1c24;
+		font-size: 0.72rem;
+		font-weight: 900;
+	}
+
+	.capability-cards h3 {
+		margin-bottom: 6px;
+		font-size: 1.1rem;
+	}
+
+	.capability-cards p {
+		margin: 0;
+		color: #9f9f9f;
+		font-size: 0.85rem;
+		line-height: 1.55;
+	}
+
+	.evidence-section {
+		background: white;
+	}
+
+	.evidence-grid {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 0.8fr)
+			minmax(0, 1.2fr);
+		align-items: start;
+		gap: 70px;
+	}
+
+	.evidence-list {
+		border-top: 1px solid #dddddd;
+	}
+
+	.evidence-list article {
+		display: grid;
+		grid-template-columns: 42px minmax(0, 1fr);
+		gap: 14px;
+		padding: 22px 0;
+		border-bottom: 1px solid #dddddd;
+	}
+
+	.evidence-list article > span {
+		color: #ed1c24;
+		font-size: 0.72rem;
+		font-weight: 900;
+	}
+
+	.evidence-list h3 {
+		margin-bottom: 5px;
+		font-size: 1.08rem;
+	}
+
+	.evidence-list p {
+		margin: 0;
+		color: #666666;
+		line-height: 1.6;
+	}
+
+	.final-cta {
+		background: #f7f7f7;
+		text-align: center;
+	}
+
+	.final-inner {
+		max-width: 800px;
+	}
+
+	.final-inner p:not(.eyebrow) {
+		max-width: 650px;
+		margin: 0 auto 28px;
+		color: #666666;
+		line-height: 1.7;
+	}
+
+	.portfolio-note {
+		padding: 18px 0;
+		background: #eeeeee;
+		border-top: 1px solid #dddddd;
+	}
+
+	.portfolio-note p {
+		max-width: 980px;
+		margin: 0 auto;
+		color: #858585;
+		font-size: 0.7rem;
+		line-height: 1.55;
+		text-align: center;
+	}
+
+	@media (max-width: 1250px) and (min-width: 901px) {
+		.projects-hero {
+			padding: 72px 0;
+		}
+
+		.hero-grid {
+			grid-template-columns:
+				minmax(0, 0.95fr)
+				minmax(390px, 1.05fr);
+			gap: 42px;
+		}
+
+		.hero-copy h1 {
+			font-size: clamp(3rem, 4.5vw, 4.25rem);
+		}
+
+		.hero-showcase {
+			min-height: 510px;
+		}
+
+		.case-grid,
+		.capabilities-grid,
+		.evidence-grid {
+			gap: 45px;
+		}
+
+		.case-image {
+			min-height: 540px;
+		}
+	}
+
+	@media (max-width: 900px) {
+		.hero-grid,
+		.case-grid,
+		.capabilities-grid,
+		.evidence-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-grid,
+		.case-grid,
+		.capabilities-grid,
+		.evidence-grid {
+			gap: 42px;
+		}
+
+		.hero-showcase,
+		.case-image {
+			min-height: 500px;
+		}
+
+		.proof-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.proof-grid > div:nth-child(3) {
+			border-top: 1px solid #303030;
+		}
+
+		.proof-grid > div:nth-child(4) {
+			border-top: 1px solid #303030;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.projects-hero {
+			padding: 50px 0;
+		}
+
+		.hero-copy h1 {
+			font-size: 2.45rem;
+			line-height: 0.99;
+		}
+
+		.hero-lead {
+			font-size: 1rem;
+			line-height: 1.65;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+		}
+
+		.hero-showcase,
+		.case-image {
+			min-height: 390px;
+		}
+
+		.proof-grid,
+		.portfolio-grid,
+		.capability-cards {
+			grid-template-columns: 1fr;
+		}
+
+		.proof-grid > div {
+			border-right: 1px solid #303030;
+			border-bottom: 1px solid #303030;
+		}
+
+		.section-heading h2,
+		.case-copy h2,
+		.capabilities-copy h2,
+		.evidence-grid h2,
+		.final-inner h2 {
+			font-size: 2.2rem;
+		}
+
+		.project-image {
+			aspect-ratio: 4 / 3;
+		}
+
+		.project-body {
+			padding: 22px;
+		}
+
+		.capability-cards article {
+			grid-template-columns: 1fr;
+			gap: 9px;
+		}
+	}
+</style>
