@@ -1,0 +1,383 @@
+---
+import { site } from "../config/site";
+---
+
+<section class="hero">
+	<div class="container hero-grid">
+		<div class="hero-copy">
+			<p class="eyebrow">
+				CONSTRUCCIÓN · SUMINISTRO · INSTALACIÓN
+			</p>
+
+			<h1>
+				Soluciones para
+				<span>
+					infraestructura y proyectos.
+				</span>
+			</h1>
+
+			<p class="lead">
+				Obra civil, suministros hidráulicos y
+				Deck WPC para empresas, proyectos y
+				clientes en Guatemala.
+			</p>
+
+			<div class="hero-actions">
+				<a
+					class="button"
+					href={site.quoteHref}
+				>
+					Solicitar cotización
+				</a>
+
+				<a
+					class="button button-secondary"
+					href="#soluciones"
+				>
+					Ver soluciones
+				</a>
+			</div>
+
+			<div class="hero-trust">
+				<span>✓ Suministro</span>
+				<span>✓ Instalación</span>
+				<span>✓ Facturación</span>
+			</div>
+		</div>
+
+		<div class="hero-project">
+			<img
+				src="/images/projects/hero-deck.jpeg"
+				alt="Proyecto de Deck WPC instalado por Multiservicios Obra Civil AR"
+			/>
+
+			<div class="project-overlay">
+				<span class="project-label">
+					PROYECTO EJECUTADO POR AR
+				</span>
+
+				<strong>
+					Suministro + instalación
+				</strong>
+
+				<p>
+					Deck WPC para exterior
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+
+		overflow: hidden;
+
+		padding: 92px 0;
+
+		background:
+			linear-gradient(
+				90deg,
+				#ffffff 0%,
+				#ffffff 54%,
+				#f2f2f2 100%
+			);
+	}
+
+	.hero::after {
+		content: "";
+
+		position: absolute;
+
+		width: 450px;
+		height: 450px;
+
+		right: -180px;
+		bottom: -250px;
+
+		border-radius: 50%;
+
+		background:
+			rgba(237, 28, 36, 0.07);
+	}
+
+	.hero-grid {
+		position: relative;
+
+		z-index: 1;
+
+		display: grid;
+
+		grid-template-columns:
+			minmax(0, 1.05fr)
+			minmax(420px, 0.95fr);
+
+		align-items: center;
+
+		gap: 48px;
+	}
+
+	.hero-copy {
+		min-width: 0;
+	}
+
+	h1 {
+		max-width: 720px;
+
+		margin-bottom: 28px;
+
+		font-size:
+			clamp(
+				3rem,
+				4.6vw,
+				5.15rem
+			);
+
+		line-height: 0.96;
+
+		letter-spacing: -0.055em;
+	}
+
+	h1 span {
+		display: block;
+
+		color: #ed1c24;
+	}
+
+	.lead {
+		max-width: 650px;
+
+		color: #5f5f5f;
+
+		font-size: 1.12rem;
+
+		line-height: 1.7;
+	}
+
+	.hero-actions {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 12px;
+
+		margin-top: 34px;
+	}
+
+	.hero-trust {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 22px;
+
+		margin-top: 30px;
+
+		color: #555555;
+
+		font-size: 0.92rem;
+
+		font-weight: 600;
+	}
+
+	/* FOTO DEL PROYECTO */
+
+	.hero-project {
+		position: relative;
+
+		min-height: 500px;
+
+		overflow: hidden;
+
+		border-radius: 14px;
+
+		background: #111111;
+
+		box-shadow:
+			0 30px 70px
+			rgba(0, 0, 0, 0.16);
+	}
+
+	.hero-project img {
+		position: absolute;
+
+		inset: 0;
+
+		width: 100%;
+		height: 100%;
+
+		object-fit: cover;
+
+		display: block;
+	}
+
+	.hero-project::after {
+		content: "";
+
+		position: absolute;
+
+		inset: 0;
+
+		background:
+			linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.82) 0%,
+				rgba(0, 0, 0, 0.2) 52%,
+				rgba(0, 0, 0, 0.02) 100%
+			);
+	}
+
+	.project-overlay {
+		position: absolute;
+
+		z-index: 2;
+
+		left: 28px;
+		right: 28px;
+		bottom: 28px;
+
+		color: white;
+	}
+
+	.project-label {
+		display: inline-block;
+
+		margin-bottom: 10px;
+
+		color: #ff3b42;
+
+		font-size: 0.72rem;
+
+		font-weight: 900;
+
+		letter-spacing: 0.14em;
+	}
+
+	.project-overlay strong {
+		display: block;
+
+		margin-bottom: 6px;
+
+		font-size: 1.45rem;
+	}
+
+	.project-overlay p {
+		margin: 0;
+
+		color: #dddddd;
+	}
+
+	/* LAPTOP */
+
+	@media (max-width: 1250px) and (min-width: 901px) {
+		.hero {
+			padding: 76px 0;
+		}
+
+		.hero-grid {
+			grid-template-columns:
+				minmax(0, 1fr)
+				minmax(380px, 0.88fr);
+
+			gap: 36px;
+		}
+
+		h1 {
+			max-width: 620px;
+
+			font-size:
+				clamp(
+					3.25rem,
+					4.5vw,
+					4.35rem
+				);
+		}
+
+		.lead {
+			max-width: 580px;
+
+			font-size: 1.05rem;
+		}
+
+		.hero-project {
+			min-height: 455px;
+		}
+	}
+
+	/* TABLET */
+
+	@media (max-width: 900px) {
+		.hero {
+			padding: 62px 0;
+		}
+
+		.hero-grid {
+			grid-template-columns: 1fr;
+
+			gap: 42px;
+		}
+
+		h1 {
+			max-width: 720px;
+		}
+
+		.hero-project {
+			min-height: 460px;
+		}
+	}
+
+	/* MÓVIL */
+
+	@media (max-width: 560px) {
+		.hero {
+			padding: 48px 0 55px;
+		}
+
+		h1 {
+			max-width: 100%;
+
+			font-size: 2.55rem;
+
+			line-height: 0.98;
+
+			letter-spacing: -0.055em;
+		}
+
+		.lead {
+			font-size: 1rem;
+
+			line-height: 1.65;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+		}
+
+		.hero-trust {
+			gap: 10px 18px;
+
+			font-size: 0.82rem;
+		}
+
+		.hero-project {
+			min-height: 390px;
+
+			border-radius: 10px;
+		}
+
+		.project-overlay {
+			left: 20px;
+			right: 20px;
+			bottom: 20px;
+		}
+
+		.project-label {
+			font-size: 0.65rem;
+		}
+
+		.project-overlay strong {
+			font-size: 1.25rem;
+		}
+	}
+</style>

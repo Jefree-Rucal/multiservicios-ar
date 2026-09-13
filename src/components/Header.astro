@@ -1,0 +1,280 @@
+---
+import { site } from "../config/site";
+---
+
+<header class="header">
+	<div class="container nav">
+		<a
+			href="/"
+			class="brand"
+			aria-label={site.name}
+		>
+			<img
+				src="/images/brand/logo-ar-header.png"
+				alt={site.name}
+			/>
+		</a>
+
+		<nav
+			class="desktop-nav"
+			aria-label="Navegación principal"
+		>
+			{
+				site.navigation.map((item) => (
+					<a href={item.href}>
+						{item.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<div class="nav-actions">
+			<a
+				class="button button-small"
+				href={site.quoteHref}
+			>
+				Cotizar
+			</a>
+
+			<details class="mobile-menu">
+				<summary aria-label="Abrir menú">
+					<span></span>
+					<span></span>
+					<span></span>
+				</summary>
+
+				<nav class="mobile-menu-panel">
+					{
+						site.navigation.map((item) => (
+							<a href={item.href}>
+								{item.label}
+							</a>
+						))
+					}
+
+					<a
+						href={site.quoteHref}
+						class="mobile-quote"
+					>
+						Solicitar cotización
+					</a>
+				</nav>
+			</details>
+		</div>
+	</div>
+</header>
+
+<style>
+	.header {
+		position: sticky;
+
+		top: 0;
+
+		z-index: 100;
+
+		background:
+			rgba(255, 255, 255, 0.97);
+
+		backdrop-filter: blur(14px);
+
+		border-bottom:
+			1px solid #e8e8e8;
+	}
+
+	.nav {
+		min-height: 76px;
+
+		display: flex;
+
+		align-items: center;
+
+		justify-content: space-between;
+
+		gap: 30px;
+	}
+
+	.brand {
+		display: flex;
+
+		align-items: center;
+
+		flex-shrink: 0;
+	}
+
+	.brand img {
+		display: block;
+
+		width: 120px;
+
+		height: auto;
+	}
+
+	.desktop-nav {
+		display: flex;
+
+		align-items: center;
+
+		gap: 30px;
+
+		font-size: 0.92rem;
+
+		font-weight: 700;
+	}
+
+	.desktop-nav a {
+		transition:
+			color 0.2s ease;
+	}
+
+	.desktop-nav a:hover {
+		color: #ed1c24;
+	}
+
+	.nav-actions {
+		display: flex;
+
+		align-items: center;
+
+		gap: 12px;
+	}
+
+	/* MENÚ MÓVIL */
+
+	.mobile-menu {
+		display: none;
+
+		position: relative;
+
+		z-index: 120;
+	}
+
+	.mobile-menu summary {
+		width: 42px;
+
+		height: 42px;
+
+		display: flex;
+
+		flex-direction: column;
+
+		align-items: center;
+
+		justify-content: center;
+
+		gap: 5px;
+
+		cursor: pointer;
+
+		list-style: none;
+
+		background: white;
+
+		border:
+			1px solid #dedede;
+
+		border-radius: 6px;
+	}
+
+	.mobile-menu summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.mobile-menu summary span {
+		width: 18px;
+
+		height: 2px;
+
+		display: block;
+
+		background: #111111;
+	}
+
+	.mobile-menu-panel {
+		position: absolute;
+
+		top: 52px;
+
+		right: 0;
+
+		z-index: 130;
+
+		width: 245px;
+
+		display: flex;
+
+		flex-direction: column;
+
+		padding: 10px;
+
+		background: white;
+
+		border:
+			1px solid #dedede;
+
+		border-radius: 10px;
+
+		box-shadow:
+			0 18px 50px
+			rgba(0, 0, 0, 0.14);
+	}
+
+	.mobile-menu-panel a {
+		padding: 13px 14px;
+
+		font-weight: 700;
+
+		border-radius: 6px;
+	}
+
+	.mobile-menu-panel a:hover {
+		background: #f5f5f5;
+	}
+
+	.mobile-menu-panel .mobile-quote {
+		margin-top: 6px;
+
+		background: #ed1c24;
+
+		color: white;
+
+		text-align: center;
+	}
+
+	.mobile-menu-panel .mobile-quote:hover {
+		background: #c9141b;
+	}
+
+	/* LAPTOP */
+
+	@media (max-width: 1250px) and (min-width: 901px) {
+		.desktop-nav {
+			gap: 22px;
+		}
+	}
+
+	/* TABLET / MÓVIL */
+
+	@media (max-width: 900px) {
+		.desktop-nav {
+			display: none;
+		}
+
+		.mobile-menu {
+			display: block;
+		}
+
+		.button-small {
+			display: none;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.nav {
+			min-height: 66px;
+		}
+
+		.brand img {
+			width: 105px;
+		}
+	}
+</style>

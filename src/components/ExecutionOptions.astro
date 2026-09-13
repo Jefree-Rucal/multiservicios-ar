@@ -1,0 +1,344 @@
+---
+import { site } from "../config/site";
+---
+
+<section
+	class="section dark-section"
+	id="proyectos"
+>
+	<div class="container execution-grid">
+		<div class="execution-copy">
+			<p class="eyebrow eyebrow-light">
+				SUMINISTRO + EJECUCIÓN
+			</p>
+
+			<h2>
+				Compre el material
+				<span>
+					o resuelva el proyecto completo.
+				</span>
+			</h2>
+
+			<p>
+				Nos adaptamos al alcance que necesita:
+				desde el suministro de materiales hasta
+				la instalación y ejecución del proyecto.
+			</p>
+
+			<a
+				class="button button-light"
+				href={site.quoteHref}
+			>
+				Cuéntenos qué necesita
+			</a>
+		</div>
+
+		<div class="execution-options">
+			<article class="execution-option">
+				<span class="option-number">
+					01
+				</span>
+
+				<div>
+					<h3>
+						Solo suministro
+					</h3>
+
+					<p>
+						¿Ya cuenta con instalador o personal
+						técnico? Le cotizamos únicamente el
+						producto o material.
+					</p>
+
+					<span class="option-detail">
+						Unidad · Volumen · Proyecto
+					</span>
+				</div>
+			</article>
+
+			<article
+				class="execution-option execution-option-featured"
+			>
+				<span class="option-number">
+					02
+				</span>
+
+				<div>
+					<h3>
+						Suministro + instalación
+					</h3>
+
+					<p>
+						Podemos evaluar el suministro,
+						instalación y ejecución necesaria
+						para entregar una solución completa.
+					</p>
+
+					<span class="option-detail">
+						Material + Mano de obra
+					</span>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+
+<style>
+	.dark-section {
+		background: #111111;
+		color: white;
+	}
+
+	.execution-grid {
+		display: grid;
+
+		grid-template-columns:
+			minmax(0, 1fr)
+			minmax(0, 1.08fr);
+
+		align-items: center;
+
+		gap: 52px;
+	}
+
+	.execution-copy {
+		min-width: 0;
+	}
+
+	.execution-copy h2 {
+		max-width: 620px;
+
+		margin-bottom: 22px;
+
+		font-size:
+			clamp(
+				2.7rem,
+				3.4vw,
+				3.5rem
+			);
+
+		line-height: 1.06;
+
+		letter-spacing: -0.045em;
+
+		word-break: normal;
+
+		overflow-wrap: normal;
+
+		hyphens: none;
+	}
+
+	.execution-copy h2 span {
+		display: block;
+
+		color: #ff4047;
+	}
+
+	.execution-copy > p:not(.eyebrow) {
+		max-width: 590px;
+
+		margin-bottom: 24px;
+
+		color: #c4c4c4;
+
+		font-size: 1.05rem;
+
+		line-height: 1.75;
+	}
+
+	.eyebrow-light {
+		color: #ff4b52;
+	}
+
+	.button-light {
+		margin-top: 8px;
+
+		background: white;
+
+		color: #111111;
+	}
+
+	.button-light:hover {
+		background: #ed1c24;
+
+		color: white;
+	}
+
+	.execution-options {
+		display: grid;
+
+		gap: 16px;
+
+		min-width: 0;
+	}
+
+	.execution-option {
+		display: grid;
+
+		grid-template-columns:
+			34px minmax(0, 1fr);
+
+		gap: 14px;
+
+		padding: 34px;
+
+		border: 1px solid #333333;
+
+		border-radius: 12px;
+
+		background: #181818;
+	}
+
+	.execution-option-featured {
+		border-color: #ed1c24;
+
+		background: #1c1516;
+	}
+
+	.option-number {
+		padding-top: 3px;
+
+		color: #ed1c24;
+
+		font-size: 0.82rem;
+
+		font-weight: 900;
+	}
+
+	.execution-option h3 {
+		margin-bottom: 16px;
+
+		color: white;
+
+		font-size: 1.4rem;
+
+		line-height: 1.25;
+	}
+
+	.execution-option p {
+		max-width: 100%;
+
+		margin-bottom: 20px;
+
+		color: #c4c4c4;
+
+		font-size: 1rem;
+
+		line-height: 1.65;
+
+		word-break: normal;
+
+		overflow-wrap: normal;
+
+		hyphens: none;
+	}
+
+	.option-detail {
+		display: block;
+
+		color: white;
+
+		font-size: 0.82rem;
+
+		font-weight: 800;
+
+		letter-spacing: 0.03em;
+	}
+
+	/* LAPTOP */
+
+	@media (max-width: 1250px) and (min-width: 901px) {
+		.execution-grid {
+			grid-template-columns:
+				minmax(0, 0.95fr)
+				minmax(0, 1.05fr);
+
+			gap: 38px;
+		}
+
+		.execution-copy h2 {
+			max-width: 540px;
+
+			font-size:
+				clamp(
+					2.6rem,
+					3.7vw,
+					3.15rem
+				);
+		}
+
+		.execution-copy > p:not(.eyebrow) {
+			font-size: 1rem;
+		}
+
+		.execution-option {
+			padding: 28px;
+		}
+	}
+
+	/* TABLET */
+
+	@media (max-width: 900px) {
+		.execution-grid {
+			grid-template-columns: 1fr;
+
+			gap: 42px;
+		}
+
+		.execution-copy {
+			max-width: 680px;
+		}
+
+		.execution-copy h2 {
+			max-width: 680px;
+		}
+
+		.execution-copy > p:not(.eyebrow) {
+			max-width: 620px;
+		}
+
+		.execution-options {
+			width: 100%;
+		}
+	}
+
+	/* MÓVIL */
+
+	@media (max-width: 560px) {
+		.execution-grid {
+			gap: 34px;
+		}
+
+		.execution-copy h2 {
+			max-width: 100%;
+
+			font-size: 2.35rem;
+
+			line-height: 1.04;
+
+			letter-spacing: -0.045em;
+		}
+
+		.execution-copy > p:not(.eyebrow) {
+			font-size: 1rem;
+
+			line-height: 1.7;
+		}
+
+		.execution-option {
+			grid-template-columns: 1fr;
+
+			gap: 10px;
+
+			padding: 23px;
+		}
+
+		.option-number {
+			padding-top: 0;
+		}
+
+		.execution-option h3 {
+			font-size: 1.25rem;
+		}
+	}
+</style>

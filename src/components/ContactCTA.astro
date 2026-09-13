@@ -1,0 +1,77 @@
+---
+import { site } from "../config/site";
+---
+
+<section
+	class="section contact"
+	id="contacto"
+>
+	<div class="container contact-container">
+		<p class="eyebrow">
+			COTIZACIONES
+		</p>
+
+		<h2>
+			¿Tiene un proyecto o necesita un producto?
+		</h2>
+
+		<p>
+			Indíquenos qué necesita, cantidad o medidas
+			y le ayudamos a preparar una cotización.
+		</p>
+
+		<a
+			class="button"
+			href={site.quoteHref}
+		>
+			Contactar por WhatsApp
+		</a>
+	</div>
+</section>
+
+<style>
+	.contact {
+		text-align: center;
+
+		background: white;
+	}
+
+	.contact-container {
+		max-width: 760px;
+	}
+
+	.contact h2 {
+		max-width: 720px;
+
+		margin-inline: auto;
+
+		margin-bottom: 18px;
+
+		font-size:
+			clamp(
+				2.1rem,
+				4vw,
+				3.4rem
+			);
+
+		line-height: 1.05;
+
+		letter-spacing: -0.04em;
+	}
+
+	.contact p:not(.eyebrow) {
+		color: #666666;
+
+		line-height: 1.7;
+	}
+
+	.contact .button {
+		margin-top: 16px;
+	}
+
+	@media (max-width: 560px) {
+		.contact h2 {
+			font-size: 2.1rem;
+		}
+	}
+</style>

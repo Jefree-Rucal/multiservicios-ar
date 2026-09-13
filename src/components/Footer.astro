@@ -1,0 +1,94 @@
+---
+import { site } from "../config/site";
+---
+
+<footer class="footer-wrapper">
+	<div class="container footer">
+		<div class="footer-brand">
+			<img
+				src="/images/brand/logo-ar-header.png"
+				alt={site.name}
+			/>
+
+			<p>
+				{site.country}
+			</p>
+		</div>
+
+		<p class="footer-divisions">
+			Obra Civil · Hidráulicos · Deck WPC
+		</p>
+	</div>
+</footer>
+
+<style>
+	.footer-wrapper {
+		background: #f3f3f3;
+
+		border-top:
+			1px solid #dedede;
+	}
+
+	.footer {
+		display: flex;
+
+		align-items: center;
+
+		justify-content:
+			space-between;
+
+		gap: 30px;
+
+		padding: 26px 0;
+	}
+
+	.footer-brand img {
+		display: block;
+
+		width: 110px;
+
+		height: auto;
+	}
+
+	.footer-brand p {
+		margin: 7px 0 0;
+
+		color: #666666;
+	}
+
+	.footer-divisions {
+		margin: 0;
+
+		color: #666666;
+	}
+
+	@media (max-width: 900px) {
+		.footer {
+			gap: 20px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.footer {
+			flex-direction: column;
+
+			align-items: center;
+
+			text-align: center;
+
+			gap: 14px;
+
+			padding: 24px 0;
+		}
+
+		.footer-brand img {
+			width: 100px;
+
+			margin-inline: auto;
+		}
+
+		.footer-divisions {
+			font-size: 0.84rem;
+		}
+	}
+</style>
