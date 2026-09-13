@@ -1,12 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site } from "../config/site";
+import {
+	createWhatsAppLink,
+} from "../config/site";
 
 const title =
 	"Contadores de Agua en Guatemala | Venta e Instalación | AR";
 
 const description =
 	"Contadores de agua en Guatemala para instalaciones, proyectos y reposición. Opciones Genebre de 3/4, contadores Woltmann bridados y servicio de suministro e instalación.";
+
+const whatsappGeneral = createWhatsAppLink(
+	`Hola, vi su página de contadores de agua y quisiera solicitar una cotización.
+
+Medida que necesito:
+Cantidad:
+Aplicación:
+¿Necesito instalación?:`
+);
+
+const whatsapp6029P = createWhatsAppLink(
+	`Hola, quisiera cotizar un contador de agua Genebre 6029P de 3/4".
+
+¿Me pueden confirmar precio y disponibilidad?
+
+Cantidad requerida:`
+);
+
+const whatsapp6110C = createWhatsAppLink(
+	`Hola, quisiera cotizar un contador de agua Genebre 6110C de 3/4".
+
+¿Me pueden confirmar precio y disponibilidad?
+
+Cantidad requerida:`
+);
+
+const whatsapp6029 = createWhatsAppLink(
+	`Hola, quisiera cotizar un contador de agua Genebre 6029 de 3/4".
+
+¿Me pueden confirmar precio y disponibilidad?
+
+Cantidad requerida:`
+);
+
+const whatsappWoltmann = createWhatsAppLink(
+	`Hola, necesito cotizar un contador Woltmann Genebre 6060A.
+
+Medida requerida:
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No`
+);
 
 const faqSchema = {
 	"@context": "https://schema.org",
@@ -89,11 +133,13 @@ const faqSchema = {
 
 				<div class="hero-actions">
 					<a
-						class="button"
-						href={site.quoteHref}
-					>
-						Cotizar contador
-					</a>
+                        class="button"
+                        href={whatsappGeneral}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Cotizar contador
+                    </a>
 
 					<a
 						class="button button-secondary"
@@ -259,9 +305,13 @@ const faqSchema = {
 							</strong>
 						</div>
 
-						<a href={site.quoteHref}>
-							Cotizar →
-						</a>
+						<a
+                            href={whatsapp6029P}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Cotizar →
+                        </a>
 					</div>
 				</article>
 
@@ -337,7 +387,11 @@ const faqSchema = {
 							</strong>
 						</div>
 
-						<a href={site.quoteHref}>
+						<a
+							href={whatsapp6110C}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							Cotizar →
 						</a>
 					</div>
@@ -411,7 +465,11 @@ const faqSchema = {
 							</strong>
 						</div>
 
-						<a href={site.quoteHref}>
+						<a
+							href={whatsapp6029}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							Cotizar →
 						</a>
 					</div>
@@ -449,11 +507,13 @@ const faqSchema = {
 				</p>
 
 				<a
-					class="button"
-					href={site.quoteHref}
-				>
-					Enviar requerimiento
-				</a>
+                    class="button"
+                    href={whatsappGeneral}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Enviar requerimiento
+                </a>
 			</div>
 
 			<div class="comparison-table-wrapper">
@@ -697,11 +757,13 @@ const faqSchema = {
 				</p>
 
 				<a
-					class="button"
-					href={site.quoteHref}
-				>
-					Cotizar Woltmann
-				</a>
+                    class="button"
+                    href={whatsappWoltmann}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Cotizar Woltmann
+                </a>
 			</div>
 		</div>
 	</section>
@@ -1015,11 +1077,13 @@ const faqSchema = {
 			</p>
 
 			<a
-				class="button"
-				href={site.quoteHref}
-			>
-				Solicitar cotización
-			</a>
+                class="button"
+                href={whatsappGeneral}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Solicitar cotización
+            </a>
 		</div>
 	</section>
 
