@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductMedia from "../components/ProductMedia.astro";
 import {
 	createWhatsAppLink,
 } from "../config/site";
@@ -250,6 +251,13 @@ const faqSchema = {
 						</span>
 					</div>
 
+					<ProductMedia
+						src="/images/contadores/genebre-6029p-contador-tecnopolimero-3-4.png"
+						alt='Imagen ilustrativa de contador de agua Genebre 6029P de 3/4"'
+						model="Genebre 6029P"
+						label='Contador de agua 3/4"'
+					/>
+
 					<div class="product-type">
 						TECNOPOLÍMERO
 					</div>
@@ -332,6 +340,13 @@ const faqSchema = {
 						</span>
 					</div>
 
+					<ProductMedia
+						src="/images/contadores/genebre-6110c-contador-niquelado-3-4.png"
+						alt='Imagen ilustrativa de contador de agua Genebre 6110C niquelado de 3/4"'
+						model="Genebre 6110C"
+						label='Contador de agua 3/4"'
+					/>
+
 					<div class="product-type">
 						METÁLICO NIQUELADO
 					</div>
@@ -409,6 +424,13 @@ const faqSchema = {
 							GENEBRE
 						</span>
 					</div>
+
+					<ProductMedia
+						src="/images/contadores/genebre-6029-contador-metalico-3-4.png"
+						alt='Imagen ilustrativa de contador de agua Genebre 6029 metálico de 3/4"'
+						model="Genebre 6029"
+						label='Contador de agua 3/4"'
+					/>
 
 					<div class="product-type">
 						CUERPO METÁLICO
@@ -633,6 +655,15 @@ const faqSchema = {
 				</div>
 
 				<div class="woltmann-intro">
+					<ProductMedia
+						src="/images/contadores/genebre-6060a-woltmann-bridado.png"
+						alt="Imagen ilustrativa de contador de agua Woltmann bridado Genebre 6060A"
+						model="Genebre 6060A"
+						label="Contador Woltmann con bridas ANSI"
+						variant="dark"
+						aspect="wide"
+					/>
+
 					<p>
 						Para instalaciones que requieren mayores
 						caudales podemos cotizar la línea Genebre
@@ -1492,6 +1523,11 @@ const faqSchema = {
 		letter-spacing: 0.12em;
 	}
 
+
+	.product-card :global(.product-media) {
+		margin-bottom: 24px;
+	}
+
 	.product-type {
 		margin-bottom: 9px;
 
@@ -1746,6 +1782,11 @@ const faqSchema = {
 
 	.woltmann-intro {
 		max-width: 540px;
+	}
+
+
+	.woltmann-intro :global(.product-media) {
+		margin-bottom: 24px;
 	}
 
 	.woltmann-intro p {

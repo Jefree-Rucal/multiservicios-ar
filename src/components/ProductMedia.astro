@@ -1,0 +1,278 @@
+---
+interface Props {
+	src?: string;
+	alt?: string;
+	model: string;
+	label?: string;
+	variant?: "light" | "dark";
+	aspect?: "card" | "wide";
+}
+
+const {
+	src,
+	alt,
+	model,
+	label = "Imagen del producto",
+	variant = "light",
+	aspect = "card",
+} = Astro.props;
+---
+
+<div
+	class:list={[
+		"product-media",
+		`product-media--${variant}`,
+		`product-media--${aspect}`,
+	]}
+>
+	{
+	src ? (
+		<>
+			<img
+				src={src}
+				alt={alt ?? `${model} - ${label}`}
+				loading="lazy"
+				decoding="async"
+			/>
+
+			<span class="illustrative-badge">
+				Imagen ilustrativa
+			</span>
+		</>
+	) : (
+			<div
+				class="product-placeholder"
+				aria-label={`Espacio reservado para fotografía de ${model}`}
+			>
+				<div class="placeholder-icon" aria-hidden="true">
+					<svg
+						viewBox="0 0 64 64"
+						role="img"
+						focusable="false"
+					>
+						<rect
+							x="11"
+							y="14"
+							width="42"
+							height="36"
+							rx="6"
+						/>
+						<circle
+							cx="26"
+							cy="28"
+							r="5"
+						/>
+						<path d="M16 44l11-10 8 7 6-5 7 8" />
+					</svg>
+				</div>
+
+				<span class="placeholder-label">
+					FOTO DEL PRODUCTO
+				</span>
+
+				<strong>
+					{model}
+				</strong>
+
+				<p>
+					{label}
+				</p>
+			</div>
+		)
+	}
+</div>
+
+<style>
+	.product-media {
+		position: relative;
+
+		width: 100%;
+
+		overflow: hidden;
+
+		border: 1px solid #e3e3e3;
+
+		border-radius: 10px;
+
+		background:
+			linear-gradient(
+				145deg,
+				#fafafa 0%,
+				#f1f1f1 100%
+			);
+	}
+
+	.product-media--card {
+		aspect-ratio: 4 / 3;
+	}
+
+	.product-media--wide {
+		aspect-ratio: 16 / 9;
+	}
+
+	.product-media img {
+		width: 100%;
+		height: 100%;
+
+		display: block;
+
+		object-fit: contain;
+
+		padding: 14px;
+
+		background: white;
+	}
+
+	.product-placeholder {
+		position: absolute;
+
+		inset: 0;
+
+		display: flex;
+
+		flex-direction: column;
+
+		align-items: center;
+
+		justify-content: center;
+
+		padding: 22px;
+
+		text-align: center;
+	}
+
+	.product-placeholder::before,
+	.product-placeholder::after {
+		content: "";
+
+		position: absolute;
+
+		width: 90px;
+		height: 1px;
+
+		background: rgba(237, 28, 36, 0.13);
+	}
+
+	.product-placeholder::before {
+		transform: rotate(35deg);
+	}
+
+	.product-placeholder::after {
+		transform: rotate(-35deg);
+	}
+
+	.placeholder-icon {
+		position: relative;
+
+		z-index: 1;
+
+		width: 48px;
+		height: 48px;
+
+		display: flex;
+
+		align-items: center;
+
+		justify-content: center;
+
+		margin-bottom: 12px;
+
+		border-radius: 50%;
+
+		background: rgba(237, 28, 36, 0.08);
+	}
+
+	.placeholder-icon svg {
+		width: 27px;
+		height: 27px;
+
+		fill: none;
+
+		stroke: #ed1c24;
+
+		stroke-width: 2;
+
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	.placeholder-label {
+		position: relative;
+
+		z-index: 1;
+
+		margin-bottom: 5px;
+
+		color: #ed1c24;
+
+		font-size: 0.62rem;
+
+		font-weight: 900;
+
+		letter-spacing: 0.14em;
+	}
+
+	.product-placeholder strong {
+		position: relative;
+
+		z-index: 1;
+
+		margin-bottom: 3px;
+
+		color: #222222;
+
+		font-size: 1rem;
+	}
+
+	.product-placeholder p {
+		position: relative;
+
+		z-index: 1;
+
+		margin: 0;
+
+		color: #888888;
+
+		font-size: 0.75rem;
+	}
+
+	/* Variante oscura para Woltmann */
+
+	.product-media--dark {
+		border-color: #333333;
+
+		background:
+			linear-gradient(
+				145deg,
+				#1b1b1b 0%,
+				#131313 100%
+			);
+	}
+
+	.product-media--dark .placeholder-icon {
+		background: rgba(237, 28, 36, 0.14);
+	}
+
+	.product-media--dark .product-placeholder strong {
+		color: white;
+	}
+
+	.product-media--dark .product-placeholder p {
+		color: #999999;
+	}
+
+	.product-media--dark .product-placeholder::before,
+	.product-media--dark .product-placeholder::after {
+		background: rgba(237, 28, 36, 0.18);
+	}
+
+	@media (max-width: 560px) {
+		.product-media--card {
+			aspect-ratio: 16 / 11;
+		}
+
+		.product-placeholder {
+			padding: 18px;
+		}
+	}
+</style>
