@@ -10,8 +10,9 @@ const description =
 	'Precio de contador de agua 3/4 en Guatemala desde Q420. Compare Genebre 6029P, 6110C y 6029. Suministro e instalación sujetos a confirmación.';
 
 const whatsappGeneral = createWhatsAppLink(
-	`Hola, vi su página de contadores de agua de 3/4" y quisiera solicitar una cotización.
+	`Hola, vi sus contadores de agua de 3/4" desde Q420 y quiero comprar o confirmar disponibilidad.
 
+Modelo que me interesa / no sé cuál elegir:
 Cantidad:
 Aplicación:
 ¿Necesito instalación?: Sí / No
@@ -19,33 +20,30 @@ Ubicación del proyecto:`
 );
 
 const whatsapp6029P = createWhatsAppLink(
-	`Hola, quisiera cotizar un contador de agua Genebre 6029P de 3/4".
+	`Hola, vi el contador de agua Genebre 6029P de 3/4" a Q420 como precio de referencia.
 
+Quiero comprar / confirmar disponibilidad.
 Cantidad requerida:
 ¿Necesito instalación?: Sí / No
-Ubicación del proyecto:
-
-¿Me pueden confirmar precio y disponibilidad?`
+Ubicación del proyecto:`
 );
 
 const whatsapp6110C = createWhatsAppLink(
-	`Hola, quisiera cotizar un contador de agua Genebre 6110C de 3/4".
+	`Hola, vi el contador de agua Genebre 6110C de 3/4" a Q450 como precio de referencia.
 
+Quiero comprar / confirmar disponibilidad.
 Cantidad requerida:
 ¿Necesito instalación?: Sí / No
-Ubicación del proyecto:
-
-¿Me pueden confirmar precio y disponibilidad?`
+Ubicación del proyecto:`
 );
 
 const whatsapp6029 = createWhatsAppLink(
-	`Hola, quisiera cotizar un contador de agua Genebre 6029 de 3/4".
+	`Hola, vi el contador de agua Genebre 6029 de 3/4" a Q560 como precio de referencia.
 
+Quiero comprar / confirmar disponibilidad.
 Cantidad requerida:
 ¿Necesito instalación?: Sí / No
-Ubicación del proyecto:
-
-¿Me pueden confirmar precio y disponibilidad?`
+Ubicación del proyecto:`
 );
 
 const whatsappInstallation = createWhatsAppLink(
@@ -67,7 +65,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					'AR maneja opciones de contador de agua de 3/4 desde Q420 como precio de referencia. El precio final depende del modelo y debe confirmarse según disponibilidad.',
+					'AR publica precios de referencia para tres opciones de contador de agua de 3/4: Genebre 6029P Q420, 6110C Q450 y 6029 Q560. El precio y la disponibilidad se confirman antes de cerrar la compra.',
 			},
 		},
 		{
@@ -76,7 +74,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					'Multiservicios Obra Civil AR puede cotizar contadores de agua de 3/4 en Guatemala para reposición, instalaciones nuevas y proyectos, con opción de solo suministro o suministro más instalación.',
+					'Multiservicios Obra Civil AR ofrece contadores de agua de 3/4 con precios publicados para compra sujeta a confirmación de disponibilidad. También puede cotizar suministro más instalación.',
 			},
 		},
 		{
@@ -85,7 +83,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					'La selección depende de la construcción del contador, tipo de medición, posición de montaje y requerimiento de la instalación. AR puede revisar estos datos antes de cotizar.',
+					'La selección depende de la construcción del contador, tipo de medición, posición de montaje y requerimiento de la instalación. Si el cliente no sabe cuál elegir, AR puede revisar estos datos antes de confirmar la compra.',
 			},
 		},
 		{
@@ -103,7 +101,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					'Sí. AR puede cotizar únicamente el contador o preparar una propuesta con suministro, materiales complementarios e instalación.',
+					'Sí. El cliente puede comprar únicamente el contador al precio publicado, sujeto a disponibilidad, o solicitar una propuesta con materiales complementarios e instalación.',
 			},
 		},
 		{
@@ -180,27 +178,28 @@ const breadcrumbSchema = {
 				</h1>
 
 				<p class="hero-lead">
-					Consulte el precio de contador de agua de 3/4"
-					en Guatemala y compare tres opciones Genebre
-					para reposición, instalaciones nuevas y proyectos.
-					Podemos cotizar solo el equipo o incluir instalación.
+					Compare precios publicados de tres contadores Genebre
+					de 3/4" para reposición, instalaciones nuevas y proyectos.
+					Si ya sabe cuál necesita, puede comprar el equipo y
+					confirmar disponibilidad por WhatsApp. También podemos
+					cotizar la instalación.
 				</p>
 
 				<div class="hero-actions">
 					<a
 						class="button"
-						href={whatsappGeneral}
-						target="_blank"
-						rel="noopener noreferrer"
+						href="#precios-modelos"
 					>
-						Cotizar contador 3/4"
+						Ver precios y comprar
 					</a>
 
 					<a
 						class="button button-secondary"
-						href="#precios-modelos"
+						href={whatsappGeneral}
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						Ver precios y modelos
+						Ayúdenme a elegir
 					</a>
 				</div>
 
@@ -222,8 +221,9 @@ const breadcrumbSchema = {
 				</div>
 
 				<p class="panel-copy">
-					El precio cambia según el modelo y debe
-					confirmarse al momento de cotizar.
+					Precios de referencia por unidad del contador.
+					La instalación y materiales complementarios
+					se cotizan por separado cuando aplican.
 				</p>
 
 				<div class="price-list">
@@ -243,10 +243,13 @@ const breadcrumbSchema = {
 					</div>
 				</div>
 
+				<a class="panel-buy-link" href="#precios-modelos">
+					Elegir modelo y comprar →
+				</a>
+
 				<p class="price-note">
 					*Precios comerciales de referencia sujetos a
-					confirmación de disponibilidad y actualización
-					del proveedor.
+					confirmación de disponibilidad antes de cerrar la compra.
 				</p>
 			</aside>
 		</div>
@@ -273,8 +276,9 @@ const breadcrumbSchema = {
 
 				<p>
 					El diámetro es el mismo, pero la construcción,
-					el sistema de medición, la posición de montaje
-					y el precio cambian según el modelo.
+					el sistema de medición y la posición de montaje
+					cambian según el modelo. Elija el que necesita y
+					confirme disponibilidad para comprar.
 				</p>
 			</div>
 
@@ -361,7 +365,7 @@ const breadcrumbSchema = {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Cotizar →
+							Comprar / confirmar →
 						</a>
 					</div>
 				</article>
@@ -453,7 +457,7 @@ const breadcrumbSchema = {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Cotizar →
+							Comprar / confirmar →
 						</a>
 					</div>
 				</article>
@@ -540,16 +544,63 @@ const breadcrumbSchema = {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Cotizar →
+							Comprar / confirmar →
 						</a>
 					</div>
 				</article>
 			</div>
 
 			<p class="products-note">
-				Imágenes ilustrativas. Precios y disponibilidad sujetos
-				a confirmación al momento de solicitar la cotización.
+				Imágenes ilustrativas. Los precios publicados corresponden
+				al contador por unidad. Instalación, materiales complementarios
+				y disponibilidad se confirman por separado antes de la compra.
 			</p>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     COMPRA DIRECTA
+	================================================== -->
+
+	<section class="section direct-purchase-section">
+		<div class="container direct-purchase-grid">
+			<div class="direct-purchase-copy">
+				<p class="eyebrow eyebrow-light">
+					COMPRA DIRECTA
+				</p>
+
+				<h2>
+					El precio ya está publicado.
+					<span>Solo falta confirmar disponibilidad.</span>
+				</h2>
+
+				<p>
+					Si ya conoce el modelo que necesita, puede iniciar
+					la compra directamente. Si no está seguro, envíenos
+					una foto o los datos de la instalación y le ayudamos
+					a revisar cuál opción corresponde.
+				</p>
+			</div>
+
+			<div class="direct-purchase-options">
+				<a href={whatsapp6029P} target="_blank" rel="noopener noreferrer">
+					<span>GENEBRE 6029P · 3/4"</span>
+					<strong>Q420</strong>
+					<em>Comprar / confirmar →</em>
+				</a>
+
+				<a href={whatsapp6110C} target="_blank" rel="noopener noreferrer">
+					<span>GENEBRE 6110C · 3/4"</span>
+					<strong>Q450</strong>
+					<em>Comprar / confirmar →</em>
+				</a>
+
+				<a href={whatsapp6029} target="_blank" rel="noopener noreferrer">
+					<span>GENEBRE 6029 · 3/4"</span>
+					<strong>Q560</strong>
+					<em>Comprar / confirmar →</em>
+				</a>
+			</div>
 		</div>
 	</section>
 
@@ -725,8 +776,9 @@ const breadcrumbSchema = {
 				</h2>
 
 				<p>
-					La cotización puede prepararse solo con
-					el equipo o incluir materiales complementarios,
+					Puede comprar únicamente el contador al precio
+					publicado, sujeto a disponibilidad, o pedir una
+					propuesta adicional con materiales complementarios,
 					mano de obra y coordinación de instalación.
 				</p>
 
@@ -779,7 +831,7 @@ const breadcrumbSchema = {
 	</section>
 
 	<!-- ==================================================
-	     PARA COTIZAR
+	     PARA COMPRAR O INSTALAR
 	================================================== -->
 
 	<section class="section quote-section">
@@ -790,13 +842,13 @@ const breadcrumbSchema = {
 				</p>
 
 				<h2>
-					Envíenos cuatro datos.
+					Confirme su compra con cuatro datos.
 				</h2>
 
 				<p>
-					Con esto podemos entender mejor el
-					requerimiento antes de confirmar modelo,
-					precio y disponibilidad.
+					Con esto confirmamos el modelo, la cantidad,
+					la disponibilidad y si necesita únicamente
+					el contador o también instalación.
 				</p>
 			</div>
 
@@ -864,10 +916,10 @@ const breadcrumbSchema = {
 					</summary>
 
 					<p>
-						Actualmente manejamos opciones con precios
-						de referencia desde Q420. El precio final
-						debe confirmarse según modelo y disponibilidad
-						al momento de cotizar.
+						Publicamos tres precios de referencia: Genebre
+						6029P Q420, 6110C Q450 y 6029 Q560.
+						La disponibilidad se confirma antes de cerrar
+						la compra.
 					</p>
 				</details>
 
@@ -877,10 +929,10 @@ const breadcrumbSchema = {
 					</summary>
 
 					<p>
-						Multiservicios Obra Civil AR puede cotizar
-						contadores de 3/4 para reposición, instalaciones
-						nuevas y proyectos. Puede solicitar solo el
-						suministro o consultar suministro más instalación.
+						Puede comprar el contador directamente con AR,
+						confirmando primero disponibilidad del modelo elegido.
+						Si también necesita instalación, se prepara una
+						propuesta adicional según el trabajo.
 					</p>
 				</details>
 
@@ -904,9 +956,10 @@ const breadcrumbSchema = {
 					</summary>
 
 					<p>
-						Sí. Podemos cotizar únicamente el contador
-						o preparar una propuesta que incluya equipo,
-						materiales complementarios y mano de obra.
+						Sí. Puede comprar únicamente el contador al
+						precio publicado, sujeto a disponibilidad, o
+						solicitar una propuesta que incluya materiales
+						complementarios y mano de obra.
 					</p>
 				</details>
 
@@ -957,7 +1010,7 @@ const breadcrumbSchema = {
 	<section class="section final-cta">
 		<div class="container final-inner">
 			<p class="eyebrow">
-				COTIZACIÓN
+				COMPRA O INSTALACIÓN
 			</p>
 
 			<h2>
@@ -965,9 +1018,9 @@ const breadcrumbSchema = {
 			</h2>
 
 			<p>
-				Indíquenos cantidad, aplicación, ubicación y si
-				también requiere instalación. Revisamos el modelo,
-				precio y disponibilidad antes de preparar la propuesta.
+				Elija el modelo, indíquenos la cantidad y confirme
+				si necesita instalación. Verificamos disponibilidad
+				antes de cerrar la compra.
 			</p>
 
 			<a
@@ -976,7 +1029,7 @@ const breadcrumbSchema = {
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Cotizar por WhatsApp
+				Comprar / confirmar por WhatsApp
 			</a>
 		</div>
 	</section>
@@ -987,7 +1040,7 @@ const breadcrumbSchema = {
 				Genebre y las demás marcas mencionadas pertenecen
 				a sus respectivos titulares. Imágenes ilustrativas.
 				Precios, referencias y disponibilidad sujetos a
-				confirmación al momento de cotizar.
+				confirmación antes de cerrar la compra.
 			</p>
 		</div>
 	</section>
@@ -1227,6 +1280,20 @@ const breadcrumbSchema = {
 
 	.price-list strong {
 		color: white;
+	}
+
+	.panel-buy-link {
+		position: relative;
+		z-index: 1;
+		display: inline-block;
+		margin-top: 18px;
+		color: white;
+		font-size: 0.82rem;
+		font-weight: 900;
+	}
+
+	.panel-buy-link:hover {
+		color: #ff454c;
 	}
 
 	.price-note {
@@ -1543,6 +1610,83 @@ const breadcrumbSchema = {
 		line-height: 1.6;
 
 		text-align: center;
+	}
+
+	/* ==================================================
+	   COMPRA DIRECTA
+	================================================== */
+
+	.direct-purchase-section {
+		background: #111111;
+		color: white;
+	}
+
+	.direct-purchase-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+		align-items: center;
+		gap: 64px;
+	}
+
+	.direct-purchase-copy h2 {
+		margin-bottom: 20px;
+		font-size: clamp(2.3rem, 4vw, 3.6rem);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.direct-purchase-copy h2 span {
+		display: block;
+		color: #ff454c;
+	}
+
+	.direct-purchase-copy > p:not(.eyebrow) {
+		margin: 0;
+		color: #bdbdbd;
+		line-height: 1.75;
+	}
+
+	.direct-purchase-options {
+		display: grid;
+		gap: 10px;
+	}
+
+	.direct-purchase-options > a {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		align-items: center;
+		gap: 6px 18px;
+		padding: 20px 22px;
+		background: #181818;
+		border: 1px solid #333333;
+		border-radius: 10px;
+		transition: border-color 0.2s ease, transform 0.2s ease;
+	}
+
+	.direct-purchase-options > a:hover {
+		border-color: #ed1c24;
+		transform: translateY(-1px);
+	}
+
+	.direct-purchase-options span {
+		color: #bdbdbd;
+		font-size: 0.76rem;
+		font-weight: 900;
+		letter-spacing: 0.05em;
+	}
+
+	.direct-purchase-options strong {
+		grid-row: 1 / span 2;
+		grid-column: 2;
+		color: white;
+		font-size: 1.45rem;
+	}
+
+	.direct-purchase-options em {
+		color: #ff454c;
+		font-size: 0.78rem;
+		font-style: normal;
+		font-weight: 900;
 	}
 
 	/* ==================================================
@@ -2059,6 +2203,11 @@ const breadcrumbSchema = {
 	================================================== */
 
 	@media (max-width: 900px) {
+		.direct-purchase-grid {
+			grid-template-columns: 1fr;
+			gap: 34px;
+		}
+
 		.hero-grid,
 		.guide-grid,
 		.installation-grid,
@@ -2108,6 +2257,19 @@ const breadcrumbSchema = {
 	================================================== */
 
 	@media (max-width: 560px) {
+		.direct-purchase-copy h2 {
+			font-size: 2.2rem;
+		}
+
+		.direct-purchase-options > a {
+			grid-template-columns: 1fr;
+		}
+
+		.direct-purchase-options strong {
+			grid-row: auto;
+			grid-column: auto;
+		}
+
 		.product-hero {
 			padding:
 				44px 0 52px;
