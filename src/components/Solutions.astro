@@ -9,101 +9,109 @@
 			</p>
 
 			<h2>
-				Una empresa. Tres líneas de trabajo.
+				Tres líneas de trabajo.
+				<span>Un solo punto de contacto.</span>
 			</h2>
 
 			<p>
-				Puede contratar únicamente el suministro
-				o solicitar una solución completa con
-				instalación.
+				Cada área tiene información y cotización específica.
+				Así evitamos mezclar productos, medidas y alcances
+				que requieren una evaluación diferente.
 			</p>
 		</div>
 
 		<div class="cards">
-			<!-- OBRA CIVIL -->
-
-			<article
-				class="card"
-				id="servicios"
-			>
+			<article class="card">
 				<div class="card-top">
-					<span class="card-number">
-						01
-					</span>
-
+					<span class="card-number">01</span>
 					<span class="card-line"></span>
 				</div>
+
+				<p class="card-kicker">
+					SERVICIOS
+				</p>
 
 				<h3>
 					Obra Civil y Mantenimiento
 				</h3>
 
 				<p>
-					Remodelaciones, reparaciones,
-					drenajes, plomería, tablayeso,
-					pintura, herrería e infraestructura.
+					Mantenimiento, remodelaciones, tablayeso,
+					pintura, plomería, drenajes, impermeabilización,
+					herrería e infraestructura.
 				</p>
 
-				<a href="#">
-					Ver servicios →
+				<a
+					class="card-main-link"
+					href="/servicios-obra-civil-guatemala/"
+				>
+					Ver servicios de obra civil →
 				</a>
 			</article>
 
-			<!-- HIDRÁULICOS -->
-
-			<article
-				class="card card-featured"
-				id="hidraulicos"
-			>
+			<article class="card card-featured">
 				<div class="card-top">
-					<span class="card-number">
-						02
-					</span>
-
+					<span class="card-number">02</span>
 					<span class="card-line"></span>
 				</div>
+
+				<p class="card-kicker">
+					SUMINISTROS
+				</p>
 
 				<h3>
 					Suministros Hidráulicos
 				</h3>
 
 				<p>
-					Contadores de agua, válvulas de
-					compuerta, uniones Dresser,
-					medidores bridados y accesorios.
+					Contadores de agua, Woltmann, válvulas de
+					compuerta, uniones tipo Dresser, flanges,
+					kits y accesorios.
 				</p>
 
-				<a href="#">
-					Ver catálogo →
+				<a
+					class="card-main-link"
+					href="/suministros-hidraulicos-guatemala/"
+				>
+					Ver suministros hidráulicos →
 				</a>
+
+				<div class="card-sub-links">
+					<a href="/contadores-de-agua-guatemala/">
+						Contadores de agua
+					</a>
+
+					<a href="/contador-agua-3-4-guatemala/">
+						Contador 3/4"
+					</a>
+				</div>
 			</article>
 
-			<!-- DECK -->
-
-			<article
-				class="card"
-				id="deck"
-			>
+			<article class="card">
 				<div class="card-top">
-					<span class="card-number">
-						03
-					</span>
-
+					<span class="card-number">03</span>
 					<span class="card-line"></span>
 				</div>
 
+				<p class="card-kicker">
+					PRODUCTO + INSTALACIÓN
+				</p>
+
 				<h3>
-					Deck WPC
+					Piso Deck WPC
 				</h3>
 
 				<p>
-					Venta por caja o volumen para
-					terrazas, exteriores y proyectos.
-					Instalación disponible.
+					Deck WPC para terrazas, balcones y exteriores.
+					Venta por caja y opción de suministro
+					más instalación.
 				</p>
 
-				<a href="#">
-					Ver Deck →
+				<a
+					class="card-main-link"
+					href="/deck-wpc-guatemala/"
+				>
+					Ver Piso Deck WPC →
 				</a>
 			</article>
 		</div>
@@ -111,122 +119,129 @@
 </section>
 
 <style>
-	.section-heading {
-		max-width: 760px;
+	.solutions {
+		background: #f7f7f7;
+	}
 
+	.section-heading {
+		max-width: 790px;
 		margin-bottom: 42px;
 	}
 
 	.section-heading h2 {
 		margin-bottom: 18px;
-
 		font-size:
 			clamp(
 				2.1rem,
 				4vw,
 				3.4rem
 			);
-
 		line-height: 1.05;
-
 		letter-spacing: -0.04em;
+	}
+
+	.section-heading h2 span {
+		display: block;
+		color: #ed1c24;
 	}
 
 	.section-heading > p:last-child {
 		color: #666666;
-
 		line-height: 1.7;
 	}
 
 	.cards {
 		display: grid;
-
 		grid-template-columns:
 			repeat(3, minmax(0, 1fr));
-
 		gap: 18px;
 	}
 
 	.card {
-		min-height: 330px;
-
+		min-height: 370px;
 		display: flex;
-
 		flex-direction: column;
-
 		padding: 30px;
-
 		background: white;
-
 		border:
 			1px solid #e2e2e2;
-
 		border-radius: 12px;
-
 		transition:
 			transform 0.2s ease,
 			box-shadow 0.2s ease;
 	}
 
 	.card:hover {
-		transform:
-			translateY(-3px);
-
+		transform: translateY(-3px);
 		box-shadow:
 			0 18px 45px
 			rgba(0, 0, 0, 0.07);
 	}
 
 	.card-featured {
-		border-top:
-			4px solid #ed1c24;
+		border-top: 4px solid #ed1c24;
 	}
 
 	.card-top {
 		display: flex;
-
 		align-items: center;
-
 		gap: 12px;
-
-		margin-bottom: auto;
+		margin-bottom: 34px;
 	}
 
 	.card-number {
 		color: #ed1c24;
-
 		font-weight: 900;
 	}
 
 	.card-line {
 		height: 1px;
-
 		flex: 1;
-
 		background: #e1e1e1;
 	}
 
-	.card h3 {
-		margin-top: 38px;
+	.card-kicker {
+		margin: 0 0 8px !important;
+		color: #8a8a8a !important;
+		font-size: 0.65rem;
+		font-weight: 900;
+		letter-spacing: 0.1em;
+	}
 
+	.card h3 {
+		margin-bottom: 12px;
 		font-size: 1.45rem;
 	}
 
 	.card p {
 		color: #666666;
-
 		line-height: 1.7;
 	}
 
-	.card a {
+	.card-main-link {
 		margin-top: auto;
-
 		color: #ed1c24;
+		font-weight: 900;
+	}
 
+	.card-sub-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 14px;
+		margin-top: 14px;
+		padding-top: 14px;
+		border-top: 1px solid #e6e6e6;
+	}
+
+	.card-sub-links a {
+		color: #555555;
+		font-size: 0.78rem;
 		font-weight: 800;
 	}
 
-	/* LAPTOP */
+	.card-sub-links a:hover {
+		color: #ed1c24;
+	}
 
 	@media (max-width: 1250px) and (min-width: 901px) {
 		.card {
@@ -238,21 +253,16 @@
 		}
 	}
 
-	/* TABLET */
-
 	@media (max-width: 900px) {
 		.cards {
 			grid-template-columns: 1fr;
-
 			gap: 16px;
 		}
 
 		.card {
-			min-height: 280px;
+			min-height: 300px;
 		}
 	}
-
-	/* MÓVIL */
 
 	@media (max-width: 560px) {
 		.section-heading {
@@ -264,14 +274,11 @@
 		}
 
 		.card {
-			min-height: 285px;
-
+			min-height: 0;
 			padding: 25px;
 		}
 
 		.card h3 {
-			margin-top: 34px;
-
 			font-size: 1.35rem;
 		}
 	}

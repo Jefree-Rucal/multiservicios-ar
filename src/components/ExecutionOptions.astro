@@ -4,7 +4,7 @@ import { site } from "../config/site";
 
 <section
 	class="section dark-section"
-	id="proyectos"
+	id="alcance"
 >
 	<div class="container execution-grid">
 		<div class="execution-copy">
@@ -20,14 +20,16 @@ import { site } from "../config/site";
 			</h2>
 
 			<p>
-				Nos adaptamos al alcance que necesita:
-				desde el suministro de materiales hasta
-				la instalación y ejecución del proyecto.
+				Dependiendo del requerimiento podemos cotizar
+				únicamente el producto, materiales complementarios
+				o una propuesta que incluya instalación y ejecución.
 			</p>
 
 			<a
 				class="button button-light"
 				href={site.quoteHref}
+				target="_blank"
+				rel="noopener noreferrer"
 			>
 				Cuéntenos qué necesita
 			</a>
@@ -45,9 +47,9 @@ import { site } from "../config/site";
 					</h3>
 
 					<p>
-						¿Ya cuenta con instalador o personal
-						técnico? Le cotizamos únicamente el
-						producto o material.
+						Si ya cuenta con instalador o personal técnico,
+						podemos cotizar únicamente el producto o material
+						según medida, cantidad y disponibilidad.
 					</p>
 
 					<span class="option-detail">
@@ -69,9 +71,9 @@ import { site } from "../config/site";
 					</h3>
 
 					<p>
-						Podemos evaluar el suministro,
-						instalación y ejecución necesaria
-						para entregar una solución completa.
+						Evaluamos materiales, mano de obra y condiciones
+						del sitio para preparar una propuesta con el
+						alcance necesario.
 					</p>
 
 					<span class="option-detail">
@@ -91,13 +93,10 @@ import { site } from "../config/site";
 
 	.execution-grid {
 		display: grid;
-
 		grid-template-columns:
 			minmax(0, 1fr)
 			minmax(0, 1.08fr);
-
 		align-items: center;
-
 		gap: 52px;
 	}
 
@@ -107,42 +106,30 @@ import { site } from "../config/site";
 
 	.execution-copy h2 {
 		max-width: 620px;
-
 		margin-bottom: 22px;
-
 		font-size:
 			clamp(
 				2.7rem,
 				3.4vw,
 				3.5rem
 			);
-
 		line-height: 1.06;
-
 		letter-spacing: -0.045em;
-
 		word-break: normal;
-
 		overflow-wrap: normal;
-
 		hyphens: none;
 	}
 
 	.execution-copy h2 span {
 		display: block;
-
 		color: #ff4047;
 	}
 
 	.execution-copy > p:not(.eyebrow) {
 		max-width: 590px;
-
 		margin-bottom: 24px;
-
 		color: #c4c4c4;
-
 		font-size: 1.05rem;
-
 		line-height: 1.75;
 	}
 
@@ -152,113 +139,80 @@ import { site } from "../config/site";
 
 	.button-light {
 		margin-top: 8px;
-
 		background: white;
-
 		color: #111111;
 	}
 
 	.button-light:hover {
 		background: #ed1c24;
-
 		color: white;
 	}
 
 	.execution-options {
 		display: grid;
-
 		gap: 16px;
-
 		min-width: 0;
 	}
 
 	.execution-option {
 		display: grid;
-
 		grid-template-columns:
 			34px minmax(0, 1fr);
-
 		gap: 14px;
-
 		padding: 34px;
-
 		border: 1px solid #333333;
-
 		border-radius: 12px;
-
 		background: #181818;
 	}
 
 	.execution-option-featured {
 		border-color: #ed1c24;
-
 		background: #1c1516;
 	}
 
 	.option-number {
 		padding-top: 3px;
-
 		color: #ed1c24;
-
 		font-size: 0.82rem;
-
 		font-weight: 900;
 	}
 
 	.execution-option h3 {
 		margin-bottom: 16px;
-
 		color: white;
-
 		font-size: 1.4rem;
-
 		line-height: 1.25;
 	}
 
 	.execution-option p {
 		max-width: 100%;
-
 		margin-bottom: 20px;
-
 		color: #c4c4c4;
-
 		font-size: 1rem;
-
 		line-height: 1.65;
-
 		word-break: normal;
-
 		overflow-wrap: normal;
-
 		hyphens: none;
 	}
 
 	.option-detail {
 		display: block;
-
 		color: white;
-
 		font-size: 0.82rem;
-
 		font-weight: 800;
-
 		letter-spacing: 0.03em;
 	}
-
-	/* LAPTOP */
 
 	@media (max-width: 1250px) and (min-width: 901px) {
 		.execution-grid {
 			grid-template-columns:
 				minmax(0, 0.95fr)
 				minmax(0, 1.05fr);
-
 			gap: 38px;
 		}
 
 		.execution-copy h2 {
 			max-width: 540px;
-
 			font-size:
 				clamp(
 					2.6rem,
@@ -276,12 +230,9 @@ import { site } from "../config/site";
 		}
 	}
 
-	/* TABLET */
-
 	@media (max-width: 900px) {
 		.execution-grid {
 			grid-template-columns: 1fr;
-
 			gap: 42px;
 		}
 
@@ -302,8 +253,6 @@ import { site } from "../config/site";
 		}
 	}
 
-	/* MÓVIL */
-
 	@media (max-width: 560px) {
 		.execution-grid {
 			gap: 34px;
@@ -311,25 +260,19 @@ import { site } from "../config/site";
 
 		.execution-copy h2 {
 			max-width: 100%;
-
 			font-size: 2.35rem;
-
 			line-height: 1.04;
-
 			letter-spacing: -0.045em;
 		}
 
 		.execution-copy > p:not(.eyebrow) {
 			font-size: 1rem;
-
 			line-height: 1.7;
 		}
 
 		.execution-option {
 			grid-template-columns: 1fr;
-
 			gap: 10px;
-
 			padding: 23px;
 		}
 

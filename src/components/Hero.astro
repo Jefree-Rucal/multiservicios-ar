@@ -10,22 +10,25 @@ import { site } from "../config/site";
 			</p>
 
 			<h1>
-				Soluciones para
+				Soluciones para proyectos
 				<span>
-					infraestructura y proyectos.
+					en Guatemala.
 				</span>
 			</h1>
 
 			<p class="lead">
-				Obra civil, suministros hidráulicos y
-				Deck WPC para empresas, proyectos y
-				clientes en Guatemala.
+				Obra civil, mantenimiento, suministros hidráulicos,
+				contadores de agua y Deck WPC para empresas,
+				comercios y proyectos. Podemos cotizar solo suministro
+				o una solución con instalación y ejecución.
 			</p>
 
 			<div class="hero-actions">
 				<a
 					class="button"
 					href={site.quoteHref}
+					target="_blank"
+					rel="noopener noreferrer"
 				>
 					Solicitar cotización
 				</a>
@@ -39,30 +42,36 @@ import { site } from "../config/site";
 			</div>
 
 			<div class="hero-trust">
-				<span>✓ Suministro</span>
-				<span>✓ Instalación</span>
-				<span>✓ Facturación</span>
+				<span>✓ Obra civil</span>
+				<span>✓ Suministro + instalación</span>
+				<span>✓ Factura FEL</span>
 			</div>
 		</div>
 
 		<div class="hero-project">
 			<img
-				src="/images/projects/hero-deck.jpeg"
-				alt="Proyecto de Deck WPC instalado por Multiservicios Obra Civil AR"
+				src="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+				alt="Proyecto integral de oficinas y estructura metálica ejecutado por Multiservicios Obra Civil AR en Guatemala"
+				loading="eager"
+				decoding="async"
 			/>
 
 			<div class="project-overlay">
 				<span class="project-label">
-					PROYECTO EJECUTADO POR AR
+					PROYECTO REAL · OBRA CIVIL
 				</span>
 
 				<strong>
-					Suministro + instalación
+					Construcción integral de oficinas
 				</strong>
 
 				<p>
-					Deck WPC para exterior
+					Estructura · instalaciones · acabados
 				</p>
+
+				<a href="/proyectos/">
+					Ver proyectos realizados →
+				</a>
 			</div>
 		</div>
 	</div>
@@ -71,11 +80,8 @@ import { site } from "../config/site";
 <style>
 	.hero {
 		position: relative;
-
 		overflow: hidden;
-
 		padding: 92px 0;
-
 		background:
 			linear-gradient(
 				90deg,
@@ -87,34 +93,23 @@ import { site } from "../config/site";
 
 	.hero::after {
 		content: "";
-
 		position: absolute;
-
 		width: 450px;
 		height: 450px;
-
 		right: -180px;
 		bottom: -250px;
-
 		border-radius: 50%;
-
-		background:
-			rgba(237, 28, 36, 0.07);
+		background: rgba(237, 28, 36, 0.07);
 	}
 
 	.hero-grid {
 		position: relative;
-
 		z-index: 1;
-
 		display: grid;
-
 		grid-template-columns:
 			minmax(0, 1.05fr)
 			minmax(420px, 0.95fr);
-
 		align-items: center;
-
 		gap: 48px;
 	}
 
@@ -123,77 +118,53 @@ import { site } from "../config/site";
 	}
 
 	h1 {
-		max-width: 720px;
-
+		max-width: 760px;
 		margin-bottom: 28px;
-
 		font-size:
 			clamp(
 				3rem,
 				4.6vw,
 				5.15rem
 			);
-
 		line-height: 0.96;
-
 		letter-spacing: -0.055em;
 	}
 
 	h1 span {
 		display: block;
-
 		color: #ed1c24;
 	}
 
 	.lead {
-		max-width: 650px;
-
+		max-width: 670px;
 		color: #5f5f5f;
-
 		font-size: 1.12rem;
-
 		line-height: 1.7;
 	}
 
 	.hero-actions {
 		display: flex;
-
 		flex-wrap: wrap;
-
 		gap: 12px;
-
 		margin-top: 34px;
 	}
 
 	.hero-trust {
 		display: flex;
-
 		flex-wrap: wrap;
-
 		gap: 22px;
-
 		margin-top: 30px;
-
 		color: #555555;
-
 		font-size: 0.92rem;
-
 		font-weight: 600;
 	}
 
-	/* FOTO DEL PROYECTO */
-
 	.hero-project {
 		position: relative;
-
 		min-height: 500px;
-
 		overflow: hidden;
-
 		border-radius: 14px;
-
 		background: #111111;
-
 		box-shadow:
 			0 30px 70px
 			rgba(0, 0, 0, 0.16);
@@ -201,74 +172,64 @@ import { site } from "../config/site";
 
 	.hero-project img {
 		position: absolute;
-
 		inset: 0;
-
 		width: 100%;
 		height: 100%;
-
 		object-fit: cover;
-
 		display: block;
 	}
 
 	.hero-project::after {
 		content: "";
-
 		position: absolute;
-
 		inset: 0;
-
 		background:
 			linear-gradient(
 				to top,
 				rgba(0, 0, 0, 0.82) 0%,
-				rgba(0, 0, 0, 0.2) 52%,
+				rgba(0, 0, 0, 0.18) 52%,
 				rgba(0, 0, 0, 0.02) 100%
 			);
 	}
 
 	.project-overlay {
 		position: absolute;
-
 		z-index: 2;
-
 		left: 28px;
 		right: 28px;
 		bottom: 28px;
-
 		color: white;
 	}
 
 	.project-label {
 		display: inline-block;
-
 		margin-bottom: 10px;
-
 		color: #ff3b42;
-
 		font-size: 0.72rem;
-
 		font-weight: 900;
-
 		letter-spacing: 0.14em;
 	}
 
 	.project-overlay strong {
 		display: block;
-
 		margin-bottom: 6px;
-
 		font-size: 1.45rem;
 	}
 
 	.project-overlay p {
-		margin: 0;
-
+		margin: 0 0 12px;
 		color: #dddddd;
 	}
 
-	/* LAPTOP */
+	.project-overlay a {
+		color: white;
+		font-size: 0.82rem;
+		font-weight: 900;
+	}
+
+	.project-overlay a:hover {
+		color: #ff4b52;
+	}
 
 	@media (max-width: 1250px) and (min-width: 901px) {
 		.hero {
@@ -279,13 +240,11 @@ import { site } from "../config/site";
 			grid-template-columns:
 				minmax(0, 1fr)
 				minmax(380px, 0.88fr);
-
 			gap: 36px;
 		}
 
 		h1 {
-			max-width: 620px;
-
+			max-width: 650px;
 			font-size:
 				clamp(
 					3.25rem,
@@ -295,8 +254,7 @@ import { site } from "../config/site";
 		}
 
 		.lead {
-			max-width: 580px;
-
+			max-width: 600px;
 			font-size: 1.05rem;
 		}
 
@@ -305,8 +263,6 @@ import { site } from "../config/site";
 		}
 	}
 
-	/* TABLET */
-
 	@media (max-width: 900px) {
 		.hero {
 			padding: 62px 0;
@@ -314,7 +270,6 @@ import { site } from "../config/site";
 
 		.hero-grid {
 			grid-template-columns: 1fr;
-
 			gap: 42px;
 		}
 
@@ -327,8 +282,6 @@ import { site } from "../config/site";
 		}
 	}
 
-	/* MÓVIL */
-
 	@media (max-width: 560px) {
 		.hero {
 			padding: 48px 0 55px;
@@ -336,17 +289,13 @@ import { site } from "../config/site";
 
 		h1 {
 			max-width: 100%;
-
 			font-size: 2.55rem;
-
 			line-height: 0.98;
-
 			letter-spacing: -0.055em;
 		}
 
 		.lead {
 			font-size: 1rem;
-
 			line-height: 1.65;
 		}
 
@@ -356,13 +305,11 @@ import { site } from "../config/site";
 
 		.hero-trust {
 			gap: 10px 18px;
-
 			font-size: 0.82rem;
 		}
 
 		.hero-project {
 			min-height: 390px;
-
 			border-radius: 10px;
 		}
 

@@ -1,0 +1,229 @@
+<section class="section projects-preview">
+	<div class="container">
+		<div class="preview-heading">
+			<div>
+				<p class="eyebrow">
+					PROYECTOS EJECUTADOS
+				</p>
+
+				<h2>
+					Experiencia real
+					<span>antes que promesas.</span>
+				</h2>
+			</div>
+
+			<div class="preview-copy">
+				<p>
+					Nuestro portafolio documenta trabajos de obra civil,
+					drenajes, estructuras, instalaciones hidráulicas,
+					remodelaciones y Deck WPC ejecutados por AR.
+				</p>
+
+				<a
+					class="button button-secondary"
+					href="/proyectos/"
+				>
+					Ver portafolio completo
+				</a>
+			</div>
+		</div>
+
+		<div class="preview-grid">
+			<a
+				class="project-card project-card-large"
+				href="/proyectos/"
+			>
+				<img
+					src="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+					alt="Proyecto de oficinas sobre estructura metálica ejecutado por AR en Guatemala"
+					loading="lazy"
+					decoding="async"
+				/>
+
+				<div class="card-overlay">
+					<span>OBRA CIVIL</span>
+					<strong>Construcción integral de oficinas</strong>
+					<p>≈55.62 m² · estructura + instalaciones + acabados</p>
+				</div>
+			</a>
+
+			<a
+				class="project-card"
+				href="/proyectos/"
+			>
+				<img
+					src="/images/projects/drenaje-pluvial-pvc-bajo-piso.jpeg"
+					alt="Instalación de drenaje pluvial PVC bajo piso ejecutada por AR"
+					loading="lazy"
+					decoding="async"
+				/>
+
+				<div class="card-overlay">
+					<span>DRENAJES</span>
+					<strong>Independización pluvial</strong>
+					<p>≈44 m lineales · PVC de 6"</p>
+				</div>
+			</a>
+
+			<a
+				class="project-card"
+				href="/deck-wpc-guatemala/"
+			>
+				<img
+					src="/images/projects/hero-deck.jpeg"
+					alt="Proyecto exterior de Piso Deck WPC instalado por AR"
+					loading="lazy"
+					decoding="async"
+				/>
+
+				<div class="card-overlay">
+					<span>DECK WPC</span>
+					<strong>Suministro + instalación</strong>
+					<p>Proyecto exterior terminado</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.projects-preview {
+		background: white;
+	}
+
+	.preview-heading {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 1fr)
+			minmax(0, 0.72fr);
+		align-items: end;
+		gap: 70px;
+		margin-bottom: 42px;
+	}
+
+	.preview-heading h2 {
+		margin-bottom: 0;
+		font-size:
+			clamp(
+				2.25rem,
+				4vw,
+				3.55rem
+			);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.preview-heading h2 span {
+		display: block;
+		color: #ed1c24;
+	}
+
+	.preview-copy p {
+		margin: 0 0 20px;
+		color: #666666;
+		line-height: 1.75;
+	}
+
+	.preview-grid {
+		display: grid;
+		grid-template-columns:
+			repeat(2, minmax(0, 1fr));
+		gap: 14px;
+	}
+
+	.project-card {
+		position: relative;
+		min-height: 300px;
+		overflow: hidden;
+		border-radius: 12px;
+		background: #111111;
+	}
+
+	.project-card-large {
+		grid-column: 1 / -1;
+		min-height: 470px;
+	}
+
+	.project-card img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+		transition: transform 0.25s ease;
+	}
+
+	.project-card:hover img {
+		transform: scale(1.025);
+	}
+
+	.project-card::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.8) 0%,
+				rgba(0, 0, 0, 0.08) 58%,
+				transparent 100%
+			);
+	}
+
+	.card-overlay {
+		position: absolute;
+		z-index: 2;
+		left: 24px;
+		right: 24px;
+		bottom: 22px;
+		color: white;
+	}
+
+	.card-overlay span {
+		display: block;
+		margin-bottom: 6px;
+		color: #ff454c;
+		font-size: 0.64rem;
+		font-weight: 900;
+		letter-spacing: 0.12em;
+	}
+
+	.card-overlay strong {
+		display: block;
+		font-size: 1.3rem;
+	}
+
+	.card-overlay p {
+		margin: 6px 0 0;
+		color: #d0d0d0;
+		font-size: 0.8rem;
+	}
+
+	@media (max-width: 900px) {
+		.preview-heading {
+			grid-template-columns: 1fr;
+			gap: 26px;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.preview-heading h2 {
+			font-size: 2.2rem;
+		}
+
+		.preview-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.project-card,
+		.project-card-large {
+			grid-column: auto;
+			min-height: 300px;
+		}
+
+		.preview-copy .button {
+			width: 100%;
+		}
+	}
+</style>

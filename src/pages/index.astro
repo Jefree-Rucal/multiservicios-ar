@@ -3,23 +3,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import Hero from "../components/Hero.astro";
 import Solutions from "../components/Solutions.astro";
+import ProjectsPreview from "../components/ProjectsPreview.astro";
 import ExecutionOptions from "../components/ExecutionOptions.astro";
 import ContactCTA from "../components/ContactCTA.astro";
 
 const title =
-	"Multiservicios Obra Civil AR | Guatemala";
+	"Multiservicios Obra Civil AR | Obra Civil y Suministros Guatemala";
 
 const description =
-	"Obra civil, suministros hidráulicos y Deck WPC para empresas, proyectos y clientes en Guatemala. Suministro e instalación disponibles.";
+	"Obra civil, mantenimiento, suministros hidráulicos, contadores de agua y Deck WPC en Guatemala. Cotice suministro, instalación y ejecución con AR.";
 ---
 
 <BaseLayout
 	title={title}
 	description={description}
+	image="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+	imageAlt="Proyecto de obra civil ejecutado por Multiservicios Obra Civil AR en Guatemala"
 >
 	<Hero />
 
 	<Solutions />
+
+	<ProjectsPreview />
 
 	<ExecutionOptions />
 
