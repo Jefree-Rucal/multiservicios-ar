@@ -1,4 +1,5 @@
 export const whatsappNumber = "50251180794";
+export const phoneDisplay = "+502 5118 0794";
 
 export function createWhatsAppLink(message: string) {
 	return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -13,27 +14,61 @@ export const site = {
 		"Obra civil, suministros hidráulicos y Deck WPC para empresas, proyectos y clientes en Guatemala.",
 
 	whatsapp: whatsappNumber,
+	phoneDisplay,
 
 	quoteHref: createWhatsAppLink(
 		"Hola, vi la página de Multiservicios Obra Civil AR y quisiera solicitar una cotización."
 	),
 
+	contactHref: "/contacto/",
+
 	navigation: [
 		{
+			label: "Inicio",
+			href: "/",
+		},
+		{
 			label: "Servicios",
-			href: "/#servicios",
+			href: "/servicios-obra-civil-guatemala/",
 		},
 		{
 			label: "Hidráulicos",
-			href: "/#hidraulicos",
+			href: "/suministros-hidraulicos-guatemala/",
 		},
 		{
 			label: "Deck WPC",
-			href: "/#deck",
+			href: "/deck-wpc-guatemala/",
 		},
 		{
 			label: "Proyectos",
-			href: "/#proyectos",
+			href: "/proyectos/",
+		},
+		{
+			label: "Contacto",
+			href: "/contacto/",
+		},
+	],
+
+	services: [
+		{
+			label: "Obra civil y mantenimiento",
+			href: "/servicios-obra-civil-guatemala/",
+		},
+		{
+			label: "Suministros hidráulicos",
+			href: "/suministros-hidraulicos-guatemala/",
+		},
+		{
+			label: "Contadores de agua",
+			href: "/contadores-de-agua-guatemala/",
+		},
+		{
+			label: "Contador de agua 3/4",
+			href: "/contador-agua-3-4-guatemala/",
+		},
+		{
+			label: "Piso Deck WPC",
+			href: "/deck-wpc-guatemala/",
 		},
 	],
 };

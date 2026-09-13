@@ -1,35 +1,306 @@
 ---
 import { site } from "../config/site";
+
+const currentYear = new Date().getFullYear();
+
+const quickLinks = [
+	{
+		label: "Inicio",
+		href: "/",
+	},
+	{
+		label: "Servicios",
+		href: "/servicios-obra-civil-guatemala/",
+	},
+	{
+		label: "Proyectos",
+		href: "/proyectos/",
+	},
+	{
+		label: "Contacto",
+		href: "/contacto/",
+	},
+];
 ---
 
 <footer class="footer-wrapper">
-	<div class="container footer">
+	<div class="container footer-main">
 		<div class="footer-brand">
-			<img
-				src="/images/brand/logo-ar-header.png"
-				alt={site.name}
-			/>
+			<a
+				href="/"
+				class="footer-logo"
+				aria-label={`${site.name} - Inicio`}
+			>
+				<img
+					src="/images/brand/logo-ar-header.png"
+					alt={site.name}
+				/>
+			</a>
 
-			<p>
-				{site.country}
+			<p class="footer-description">
+				Construcción, suministro e instalación para
+				empresas, proyectos y clientes en Guatemala.
 			</p>
+
+			<div class="footer-badges">
+				<span>Obra Civil</span>
+				<span>Hidráulicos</span>
+				<span>Deck WPC</span>
+			</div>
 		</div>
 
-		<p class="footer-divisions">
-			Obra Civil · Hidráulicos · Deck WPC
-		</p>
+		<div class="footer-column">
+			<p class="footer-title">
+				NAVEGACIÓN
+			</p>
+
+			<nav aria-label="Navegación del pie de página">
+				{
+					quickLinks.map((item) => (
+						<a href={item.href}>
+							{item.label}
+						</a>
+					))
+				}
+			</nav>
+		</div>
+
+		<div class="footer-column">
+			<p class="footer-title">
+				SOLUCIONES
+			</p>
+
+			<nav aria-label="Soluciones">
+				{
+					site.services.map((item) => (
+						<a href={item.href}>
+							{item.label}
+						</a>
+					))
+				}
+			</nav>
+		</div>
+
+		<div class="footer-column footer-contact">
+			<p class="footer-title">
+				COTIZACIONES
+			</p>
+
+			<p>
+				Envíenos fotografías, medidas o la referencia
+				del producto que necesita.
+			</p>
+
+			<a
+				class="footer-phone"
+				href={site.quoteHref}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{site.phoneDisplay}
+			</a>
+
+			<a
+				class="footer-cta"
+				href={site.quoteHref}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Cotizar por WhatsApp →
+			</a>
+
+			<p class="footer-meta">
+				Guatemala · Factura FEL
+			</p>
+		</div>
+	</div>
+
+	<div class="footer-bottom">
+		<div class="container footer-bottom-inner">
+			<p>
+				© {currentYear} {site.name}
+			</p>
+
+			<p>
+				Construcción · Suministro · Instalación
+			</p>
+		</div>
 	</div>
 </footer>
 
 <style>
 	.footer-wrapper {
-		background: #f3f3f3;
+		background: #111111;
+
+		color: white;
 
 		border-top:
-			1px solid #dedede;
+			4px solid #ed1c24;
 	}
 
-	.footer {
+	.footer-main {
+		display: grid;
+
+		grid-template-columns:
+			minmax(0, 1.35fr)
+			minmax(150px, 0.62fr)
+			minmax(190px, 0.88fr)
+			minmax(220px, 0.95fr);
+
+		gap: 46px;
+
+		padding:
+			58px 0 48px;
+	}
+
+	.footer-logo {
+		display: inline-flex;
+
+		padding: 10px 12px;
+
+		background: white;
+
+		border-radius: 8px;
+	}
+
+	.footer-logo img {
+		display: block;
+
+		width: 118px;
+
+		height: auto;
+	}
+
+	.footer-description {
+		max-width: 330px;
+
+		margin:
+			22px 0 20px;
+
+		color: #adadad;
+
+		font-size: 0.9rem;
+
+		line-height: 1.65;
+	}
+
+	.footer-badges {
+		display: flex;
+
+		flex-wrap: wrap;
+
+		gap: 7px;
+	}
+
+	.footer-badges span {
+		padding:
+			6px 8px;
+
+		background: #1b1b1b;
+
+		border:
+			1px solid #333333;
+
+		border-radius: 999px;
+
+		color: #c6c6c6;
+
+		font-size: 0.65rem;
+
+		font-weight: 800;
+	}
+
+	.footer-title {
+		margin:
+			3px 0 19px;
+
+		color: #ff474e;
+
+		font-size: 0.67rem;
+
+		font-weight: 900;
+
+		letter-spacing: 0.12em;
+	}
+
+	.footer-column nav {
+		display: flex;
+
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 11px;
+	}
+
+	.footer-column nav a {
+		color: #bdbdbd;
+
+		font-size: 0.85rem;
+
+		line-height: 1.4;
+
+		transition:
+			color 0.2s ease;
+	}
+
+	.footer-column nav a:hover {
+		color: white;
+	}
+
+	.footer-contact > p:not(.footer-title):not(.footer-meta) {
+		margin-bottom: 15px;
+
+		color: #a9a9a9;
+
+		font-size: 0.85rem;
+
+		line-height: 1.6;
+	}
+
+	.footer-phone {
+		display: block;
+
+		margin-bottom: 8px;
+
+		color: white;
+
+		font-size: 1.2rem;
+
+		font-weight: 900;
+
+		letter-spacing: -0.02em;
+	}
+
+	.footer-phone:hover {
+		color: #ff474e;
+	}
+
+	.footer-cta {
+		display: inline-block;
+
+		color: #ff474e;
+
+		font-size: 0.85rem;
+
+		font-weight: 900;
+	}
+
+	.footer-meta {
+		margin:
+			20px 0 0;
+
+		color: #737373;
+
+		font-size: 0.72rem;
+	}
+
+	.footer-bottom {
+		border-top:
+			1px solid #2d2d2d;
+	}
+
+	.footer-bottom-inner {
 		display: flex;
 
 		align-items: center;
@@ -37,58 +308,49 @@ import { site } from "../config/site";
 		justify-content:
 			space-between;
 
-		gap: 30px;
+		gap: 20px;
 
-		padding: 26px 0;
+		padding:
+			18px 0;
 	}
 
-	.footer-brand img {
-		display: block;
-
-		width: 110px;
-
-		height: auto;
-	}
-
-	.footer-brand p {
-		margin: 7px 0 0;
-
-		color: #666666;
-	}
-
-	.footer-divisions {
+	.footer-bottom p {
 		margin: 0;
 
-		color: #666666;
+		color: #777777;
+
+		font-size: 0.68rem;
 	}
 
-	@media (max-width: 900px) {
-		.footer {
-			gap: 20px;
+	@media (max-width: 1000px) {
+		.footer-main {
+			grid-template-columns:
+				repeat(2, minmax(0, 1fr));
+
+			gap: 42px 36px;
 		}
 	}
 
 	@media (max-width: 560px) {
-		.footer {
+		.footer-main {
+			grid-template-columns: 1fr;
+
+			gap: 34px;
+
+			padding:
+				44px 0 36px;
+		}
+
+		.footer-description {
+			max-width: none;
+		}
+
+		.footer-bottom-inner {
 			flex-direction: column;
 
-			align-items: center;
+			align-items: flex-start;
 
-			text-align: center;
-
-			gap: 14px;
-
-			padding: 24px 0;
-		}
-
-		.footer-brand img {
-			width: 100px;
-
-			margin-inline: auto;
-		}
-
-		.footer-divisions {
-			font-size: 0.84rem;
+			gap: 7px;
 		}
 	}
 </style>
