@@ -18,6 +18,19 @@ Ubicación:
 Información adicional:`
 );
 
+function createProjectQuoteLink(projectName: string, requestedData: string) {
+	return createWhatsAppLink(
+		`Hola, vi en su portafolio el proyecto "${projectName}" y necesito algo similar.
+
+${requestedData}
+Ubicación:
+¿Puedo enviar fotografías o planos?: Sí
+Información adicional:
+
+¿Me pueden indicar qué necesitan para revisar el proyecto?`
+	);
+}
+
 const projects = [
 	{
 		number: "01",
@@ -32,6 +45,12 @@ const projects = [
 			"Estructura metálica, tablayeso y DensGlass, techo, ventanas, puertas, piso, pintura, electricidad, plomería, gradas y acabados finales.",
 		href: "/servicios-obra-civil-guatemala/",
 		linkLabel: "Ver servicios de obra civil",
+		quoteLabel: "Quiero un proyecto similar",
+		quoteHref: createProjectQuoteLink(
+			"Oficinas administrativas sobre estructura metálica",
+			`Área aproximada que necesito:
+¿Es construcción nueva, ampliación o remodelación?:`
+		),
 	},
 	{
 		number: "02",
@@ -46,6 +65,13 @@ const projects = [
 			"Apertura y excavación, colocación de tubería, relleno con material selecto y restitución final con concreto.",
 		href: "/servicios-obra-civil-guatemala/",
 		linkLabel: "Ver plomería y obra civil",
+		quoteLabel: "Cotizar drenaje similar",
+		quoteHref: createProjectQuoteLink(
+			"Independización de drenaje pluvial bajo piso",
+			`Metros lineales aproximados:
+Diámetro de tubería si lo conozco:
+¿La tubería iría bajo piso?: Sí / No / No sé`
+		),
 	},
 	{
 		number: "03",
@@ -60,6 +86,13 @@ const projects = [
 			"Solución metálica ejecutada a medida para mejorar la delimitación y seguridad del área.",
 		href: "/servicios-obra-civil-guatemala/",
 		linkLabel: "Ver herrería y soldadura",
+		quoteLabel: "Cotizar herrería similar",
+		quoteHref: createProjectQuoteLink(
+			"Barandal metálico de protección para área de mercadería",
+			`Metros lineales aproximados:
+Uso o área donde se instalará:
+¿Tiene medidas o diseño de referencia?: Sí / No`
+		),
 	},
 	{
 		number: "04",
@@ -74,6 +107,13 @@ const projects = [
 			"Montaje de los dos depósitos, interconexión hidráulica y conexión al sistema de suministro.",
 		href: "/suministros-hidraulicos-guatemala/",
 		linkLabel: "Ver soluciones hidráulicas",
+		quoteLabel: "Cotizar sistema hidráulico",
+		quoteHref: createProjectQuoteLink(
+			"Sistema de almacenamiento de agua con dos tinacos",
+			`Capacidad aproximada que necesita:
+Cantidad de depósitos:
+¿Necesita bomba / conexiones?: Sí / No / No sé`
+		),
 	},
 	{
 		number: "05",
@@ -88,6 +128,13 @@ const projects = [
 			"Se trabajó la base antes de colocar el acabado final para resolver la condición existente y renovar el espacio.",
 		href: "/servicios-obra-civil-guatemala/",
 		linkLabel: "Ver remodelaciones",
+		quoteLabel: "Cotizar remodelación similar",
+		quoteHref: createProjectQuoteLink(
+			"Renovación de piso interior en restaurante",
+			`Área aproximada en m²:
+Problema o condición actual:
+Tipo de acabado que busca si ya lo sabe:`
+		),
 	},
 	{
 		number: "06",
@@ -102,6 +149,13 @@ const projects = [
 			"Proyecto ejecutado por AR con suministro de material e instalación del sistema de Deck WPC.",
 		href: "/deck-wpc-guatemala/",
 		linkLabel: "Ver Piso Deck WPC",
+		quoteLabel: "Cotizar Deck instalado",
+		quoteHref: createProjectQuoteLink(
+			"Instalación de Deck WPC en área exterior",
+			`Área aproximada en m²:
+¿Necesita solo material o instalación completa?:
+¿La superficie ya está preparada?: Sí / No / No sé`
+		),
 	},
 ];
 
@@ -339,11 +393,11 @@ const breadcrumbSchema = {
 				<div class="case-actions">
 					<a
 						class="button"
-						href={whatsappProjects}
+						href={projects[0].quoteHref}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Cotizar un proyecto similar
+						Quiero un proyecto similar
 					</a>
 
 					<a
@@ -378,8 +432,9 @@ const breadcrumbSchema = {
 
 				<p>
 					Esta selección muestra diferentes tipos de
-					requerimiento y ejecución. Los nombres de clientes
-					y datos comerciales internos no se publican.
+					requerimiento y ejecución. Si algún caso se parece
+					a lo que necesita, puede escribirnos directamente
+					desde ese proyecto para revisar su propio alcance.
 				</p>
 			</div>
 
@@ -429,17 +484,53 @@ const breadcrumbSchema = {
 									{project.details}
 								</p>
 
-								<a
-									class="project-link"
-									href={project.href}
-								>
-									{project.linkLabel} →
-								</a>
+								<div class="project-actions">
+									<a
+										class="project-quote"
+										href={project.quoteHref}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{project.quoteLabel}
+									</a>
+
+									<a
+										class="project-link"
+										href={project.href}
+									>
+										{project.linkLabel} →
+									</a>
+								</div>
 							</div>
 						</article>
 					))
 				}
 			</div>
+		</div>
+	</section>
+
+	<section class="project-conversion-strip">
+		<div class="container conversion-strip-inner">
+			<div>
+				<span>¿NO SABE CÓMO PEDIRLO?</span>
+				<strong>
+					Mándenos una foto del problema o del área.
+				</strong>
+				<p>
+					Podemos empezar con fotografías, ubicación y medidas
+					aproximadas. Después le indicamos qué hace falta
+					para definir el alcance.
+				</p>
+			</div>
+
+			<a
+				class="button"
+				href={whatsappProjects}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Enviar mi requerimiento
+			</a>
 		</div>
 	</section>
 
@@ -624,12 +715,13 @@ const breadcrumbSchema = {
 			</p>
 
 			<h2>
-				¿Tiene una necesidad similar?
+				¿Vio un proyecto parecido al suyo?
 			</h2>
 
 			<p>
-				Envíenos fotografías, ubicación y medidas aproximadas.
-				Revisamos el alcance antes de preparar la cotización.
+				No necesita tener planos perfectos para iniciar.
+				Envíenos fotografías, ubicación y medidas aproximadas;
+				revisamos qué información falta antes de cotizar.
 			</p>
 
 			<a
@@ -638,7 +730,7 @@ const breadcrumbSchema = {
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Cotizar por WhatsApp
+				Revisar mi proyecto por WhatsApp
 			</a>
 		</div>
 	</section>
@@ -1024,9 +1116,87 @@ const breadcrumbSchema = {
 		font-size: 0.88rem;
 	}
 
+	.project-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 12px 16px;
+		margin-top: 4px;
+	}
+
+	.project-quote {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 42px;
+		padding: 10px 15px;
+		background: #ed1c24;
+		border: 1px solid #ed1c24;
+		border-radius: 7px;
+		color: white;
+		font-size: 0.78rem;
+		font-weight: 900;
+		transition:
+			background 0.2s ease,
+			border-color 0.2s ease,
+			transform 0.2s ease;
+	}
+
+	.project-quote:hover {
+		background: #c9141b;
+		border-color: #c9141b;
+		transform: translateY(-1px);
+	}
+
 	.project-link {
 		color: #ed1c24;
+		font-size: 0.8rem;
 		font-weight: 900;
+	}
+
+	.project-conversion-strip {
+		padding: 0 0 76px;
+		background: #f7f7f7;
+	}
+
+	.conversion-strip-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 36px;
+		padding: 28px 30px;
+		background: #111111;
+		border-radius: 12px;
+		color: white;
+	}
+
+	.conversion-strip-inner > div {
+		max-width: 780px;
+	}
+
+	.conversion-strip-inner span {
+		display: block;
+		margin-bottom: 8px;
+		color: #ff454c;
+		font-size: 0.68rem;
+		font-weight: 900;
+		letter-spacing: 0.11em;
+	}
+
+	.conversion-strip-inner strong {
+		display: block;
+		margin-bottom: 7px;
+		font-size: 1.25rem;
+	}
+
+	.conversion-strip-inner p {
+		margin: 0;
+		color: #bdbdbd;
+		line-height: 1.65;
+	}
+
+	.conversion-strip-inner .button {
+		flex: 0 0 auto;
 	}
 
 	.specialties-section {
@@ -1269,6 +1439,11 @@ const breadcrumbSchema = {
 	}
 
 	@media (max-width: 900px) {
+		.conversion-strip-inner {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
 		.hero-grid,
 		.case-grid,
 		.capabilities-grid,
@@ -1307,6 +1482,15 @@ const breadcrumbSchema = {
 	}
 
 	@media (max-width: 560px) {
+		.project-actions {
+			align-items: stretch;
+			flex-direction: column;
+		}
+
+		.project-quote {
+			width: 100%;
+		}
+
 		.projects-hero {
 			padding: 50px 0;
 		}
