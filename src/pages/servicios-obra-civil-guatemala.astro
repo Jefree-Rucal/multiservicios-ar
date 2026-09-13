@@ -6,7 +6,7 @@ const title =
 	"Servicios de Obra Civil en Guatemala | Mantenimiento y Remodelación | AR";
 
 const description =
-	"Servicios de obra civil en Guatemala: mantenimiento, remodelación, tablayeso, pintura, plomería, drenajes, impermeabilización, herrería e instalaciones hidráulicas. Cotización por proyecto.";
+	"Servicios de obra civil en Guatemala para empresas y proyectos: mantenimiento, remodelación, tablayeso, plomería, impermeabilización, pintura y herrería.";
 
 const whatsappGeneral = createWhatsAppLink(
 	`Hola, vi su página de servicios de obra civil y quisiera solicitar una cotización.
@@ -84,7 +84,7 @@ const faqSchema = {
 	mainEntity: [
 		{
 			"@type": "Question",
-			name: "¿Qué servicios de obra civil realizan?",
+			name: "¿Qué servicios de obra civil realizan en Guatemala?",
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
@@ -93,11 +93,20 @@ const faqSchema = {
 		},
 		{
 			"@type": "Question",
-			name: "¿Trabajan proyectos para empresas?",
+			name: "¿Atienden mantenimiento y remodelaciones para empresas?",
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"Sí. AR puede preparar cotizaciones para empresas, comercios, oficinas, instalaciones y proyectos que requieran mantenimiento, reparación o mejora de infraestructura.",
+					"Sí. AR puede preparar cotizaciones para empresas, comercios, oficinas e instalaciones que requieran mantenimiento, reparación, remodelación o mejora de infraestructura.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "¿Trabajan tablayeso o drywall?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"Sí. Se pueden evaluar trabajos de tablayeso o drywall para muros, divisiones, cielos, reparaciones y sustituciones según las condiciones del área.",
 			},
 		},
 		{
@@ -106,17 +115,45 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"Sí. Fotografías, medidas, planos o una descripción del problema ayudan a entender mejor el alcance antes de coordinar una visita o preparar una cotización.",
+					"Sí. Fotografías, medidas, planos y una descripción del problema ayudan a entender mejor el alcance antes de coordinar una visita o preparar una cotización.",
 			},
 		},
 		{
 			"@type": "Question",
-			name: "¿La cotización incluye materiales y mano de obra?",
+			name: "¿La cotización puede incluir materiales y mano de obra?",
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"Depende del alcance solicitado. AR puede cotizar mano de obra, materiales o una propuesta integral de suministro y ejecución.",
+					"Sí. Dependiendo del alcance, AR puede preparar una propuesta de mano de obra, materiales o suministro más ejecución.",
 			},
+		},
+		{
+			"@type": "Question",
+			name: "¿Necesitan visitar el lugar antes de cotizar?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"Depende del trabajo. Algunos requerimientos pueden revisarse inicialmente con fotografías y medidas; otros necesitan visita técnica para confirmar condiciones y alcance.",
+			},
+		},
+	],
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Inicio",
+			item: "/",
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: "Servicios de obra civil en Guatemala",
+			item: "/servicios-obra-civil-guatemala/",
 		},
 	],
 };
@@ -125,10 +162,17 @@ const faqSchema = {
 <BaseLayout
 	title={title}
 	description={description}
+	image="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+	imageAlt="Proyecto de obra civil y construcción ejecutado por Multiservicios Obra Civil AR en Guatemala"
 >
 	<script
 		type="application/ld+json"
 		set:html={JSON.stringify(faqSchema)}
+	></script>
+
+	<script
+		type="application/ld+json"
+		set:html={JSON.stringify(breadcrumbSchema)}
 	></script>
 
 	<!-- ==================================================
@@ -143,14 +187,15 @@ const faqSchema = {
 				</p>
 
 				<h1>
-					Mantenimiento, reparación
-					<span>y ejecución de proyectos.</span>
+					Servicios de obra civil
+					<span>para empresas y proyectos.</span>
 				</h1>
 
 				<p class="hero-lead">
-					Atendemos requerimientos de obra civil,
-					mantenimiento y mejora de infraestructura
-					para empresas, comercios y proyectos.
+					Mantenimiento, remodelaciones, tablayeso,
+					plomería, drenajes, impermeabilización,
+					pintura, herrería y otros trabajos de
+					infraestructura según el alcance requerido.
 				</p>
 
 				<div class="hero-actions">
@@ -184,7 +229,7 @@ const faqSchema = {
 				</p>
 
 				<h2>
-					Cuéntenos el alcance.
+					Cuéntenos el trabajo.
 				</h2>
 
 				<div class="panel-list">
@@ -211,7 +256,7 @@ const faqSchema = {
 
 						<p>
 							<strong>Medidas o área</strong>
-							Una referencia inicial nos ayuda a dimensionar.
+							Una referencia inicial ayuda a dimensionar.
 						</p>
 					</div>
 
@@ -226,7 +271,8 @@ const faqSchema = {
 				</div>
 
 				<p class="panel-note">
-					La cotización final depende del alcance y condiciones del sitio.
+					La cotización final depende del alcance y
+					las condiciones del sitio.
 				</p>
 			</aside>
 		</div>
@@ -247,30 +293,27 @@ const faqSchema = {
 				</p>
 
 				<h2>
-					Servicios enfocados en
-					<span>resolver infraestructura.</span>
+					Mantenimiento y remodelación
+					<span>con un alcance definido.</span>
 				</h2>
 
 				<p>
-					No presentamos una lista de “todo”.
-					Organizamos los trabajos por tipo de necesidad
-					para definir mejor el alcance y la cotización.
+					Organizamos cada requerimiento por tipo de trabajo
+					para poder revisar materiales, mano de obra,
+					condiciones existentes y logística antes de cotizar.
 				</p>
 			</div>
 
 			<div class="services-grid">
 				<article class="service-card featured">
-					<span class="service-number">
-						01
-					</span>
+					<span class="service-number">01</span>
 
 					<h3>
 						Mantenimiento y reparaciones
 					</h3>
 
 					<p>
-						Correcciones, reparaciones y trabajos
-						de mantenimiento en instalaciones
+						Trabajos correctivos y mejoras en instalaciones
 						comerciales, empresariales y de proyecto.
 					</p>
 
@@ -290,22 +333,19 @@ const faqSchema = {
 				</article>
 
 				<article class="service-card">
-					<span class="service-number">
-						02
-					</span>
+					<span class="service-number">02</span>
 
 					<h3>
 						Remodelaciones
 					</h3>
 
 					<p>
-						Adecuación y renovación de espacios
-						según requerimiento, medidas y
-						condiciones existentes.
+						Adecuación y renovación de espacios según
+						medidas, condiciones existentes y objetivo.
 					</p>
 
 					<ul>
-						<li>Áreas interiores</li>
+						<li>Oficinas y áreas interiores</li>
 						<li>Espacios comerciales</li>
 						<li>Adecuaciones de proyecto</li>
 					</ul>
@@ -320,9 +360,7 @@ const faqSchema = {
 				</article>
 
 				<article class="service-card">
-					<span class="service-number">
-						03
-					</span>
+					<span class="service-number">03</span>
 
 					<h3>
 						Tablayeso / drywall
@@ -330,8 +368,7 @@ const faqSchema = {
 
 					<p>
 						Soluciones livianas para divisiones,
-						reparaciones, cielos y adecuaciones
-						interiores.
+						cielos, reparaciones y adecuaciones interiores.
 					</p>
 
 					<ul>
@@ -350,24 +387,21 @@ const faqSchema = {
 				</article>
 
 				<article class="service-card">
-					<span class="service-number">
-						04
-					</span>
+					<span class="service-number">04</span>
 
 					<h3>
 						Pintura y acabados
 					</h3>
 
 					<p>
-						Preparación y aplicación de pintura
-						para mantenimiento, renovación
-						y entrega de espacios.
+						Preparación y aplicación de pintura para
+						mantenimiento, renovación y entrega de espacios.
 					</p>
 
 					<ul>
 						<li>Interiores</li>
 						<li>Exteriores</li>
-						<li>Corrección y retoque</li>
+						<li>Correcciones y retoques</li>
 					</ul>
 
 					<a
@@ -380,9 +414,7 @@ const faqSchema = {
 				</article>
 
 				<article class="service-card">
-					<span class="service-number">
-						05
-					</span>
+					<span class="service-number">05</span>
 
 					<h3>
 						Plomería y drenajes
@@ -390,12 +422,11 @@ const faqSchema = {
 
 					<p>
 						Reparaciones e instalaciones hidráulicas
-						y sanitarias según las condiciones
-						del proyecto.
+						y sanitarias según las condiciones del proyecto.
 					</p>
 
 					<ul>
-						<li>Reparaciones de tubería</li>
+						<li>Reparación de tuberías</li>
 						<li>Drenajes</li>
 						<li>Instalaciones nuevas</li>
 					</ul>
@@ -410,9 +441,7 @@ const faqSchema = {
 				</article>
 
 				<article class="service-card">
-					<span class="service-number">
-						06
-					</span>
+					<span class="service-number">06</span>
 
 					<h3>
 						Impermeabilización
@@ -420,8 +449,7 @@ const faqSchema = {
 
 					<p>
 						Evaluación y tratamiento de superficies
-						que requieren protección o corrección
-						por filtraciones.
+						expuestas a humedad o filtraciones.
 					</p>
 
 					<ul>
@@ -440,23 +468,20 @@ const faqSchema = {
 				</article>
 
 				<article class="service-card">
-					<span class="service-number">
-						07
-					</span>
+					<span class="service-number">07</span>
 
 					<h3>
 						Herrería y soldadura
 					</h3>
 
 					<p>
-						Trabajos metálicos y reparaciones
-						según diseño, medidas y necesidad
-						del proyecto.
+						Fabricación, reparación y adecuación de
+						elementos metálicos según medidas y diseño.
 					</p>
 
 					<ul>
-						<li>Reparación</li>
 						<li>Fabricación</li>
+						<li>Reparaciones</li>
 						<li>Refuerzos y adecuaciones</li>
 					</ul>
 
@@ -470,18 +495,15 @@ const faqSchema = {
 				</article>
 
 				<article class="service-card">
-					<span class="service-number">
-						08
-					</span>
+					<span class="service-number">08</span>
 
 					<h3>
 						Instalaciones hidráulicas
 					</h3>
 
 					<p>
-						Integración de equipo, accesorios
-						y mano de obra para requerimientos
-						hidráulicos.
+						Integración de equipo, accesorios y mano
+						de obra para requerimientos hidráulicos.
 					</p>
 
 					<ul>
@@ -491,9 +513,94 @@ const faqSchema = {
 					</ul>
 
 					<a href="/suministros-hidraulicos-guatemala/">
-						Ver hidráulicos →
+						Ver suministros hidráulicos →
 					</a>
 				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     PRUEBA REAL
+	================================================== -->
+
+	<section class="section proof-section">
+		<div class="container proof-grid">
+			<div class="proof-copy">
+				<p class="eyebrow">
+					PROYECTOS EJECUTADOS
+				</p>
+
+				<h2>
+					La obra civil se demuestra
+					<span>con trabajo realizado.</span>
+				</h2>
+
+				<p>
+					Nuestro portafolio incluye construcción y adecuación
+					de oficinas, drenajes, estructuras metálicas,
+					instalaciones de agua y remodelaciones.
+				</p>
+
+				<a
+					class="button"
+					href="/proyectos/"
+				>
+					Ver proyectos realizados
+				</a>
+			</div>
+
+			<div class="proof-cards">
+				<a
+					class="proof-card proof-card-large"
+					href="/proyectos/"
+				>
+					<img
+						src="/images/projects/oficinas-administrativas-estructura-metalica.jpeg"
+						alt="Construcción de oficinas con estructura metálica ejecutada por AR"
+						loading="lazy"
+						decoding="async"
+					/>
+
+					<div>
+						<span>OBRA CIVIL</span>
+						<strong>Oficinas y estructura</strong>
+					</div>
+				</a>
+
+				<a
+					class="proof-card"
+					href="/proyectos/"
+				>
+					<img
+						src="/images/projects/drenaje-pluvial-pvc-bajo-piso.jpeg"
+						alt="Instalación de drenaje pluvial PVC bajo piso ejecutada por AR"
+						loading="lazy"
+						decoding="async"
+					/>
+
+					<div>
+						<span>INSTALACIONES</span>
+						<strong>Drenaje pluvial</strong>
+					</div>
+				</a>
+
+				<a
+					class="proof-card"
+					href="/proyectos/"
+				>
+					<img
+						src="/images/projects/barandal-seguridad-industrial.jpeg"
+						alt="Barandal de seguridad industrial fabricado e instalado por AR"
+						loading="lazy"
+						decoding="async"
+					/>
+
+					<div>
+						<span>HERRERÍA</span>
+						<strong>Seguridad industrial</strong>
+					</div>
+				</a>
 			</div>
 		</div>
 	</section>
@@ -510,14 +617,14 @@ const faqSchema = {
 				</p>
 
 				<h2>
-					No vendemos una lista
-					<span>de oficios aislados.</span>
+					Primero entendemos
+					<span>qué necesita resolver.</span>
 				</h2>
 
 				<p>
-					Partimos del problema o necesidad del cliente,
-					revisamos el alcance y preparamos una propuesta
-					acorde al trabajo requerido.
+					No cotizamos únicamente por el nombre del oficio.
+					Revisamos problema, dimensiones, materiales,
+					accesos y condiciones para definir el alcance.
 				</p>
 
 				<a
@@ -566,12 +673,12 @@ const faqSchema = {
 
 					<div>
 						<h3>
-							Cotización clara
+							Cotización
 						</h3>
 
 						<p>
-							La propuesta se prepara según
-							el trabajo realmente solicitado.
+							La propuesta se prepara con base
+							en el trabajo solicitado.
 						</p>
 					</div>
 				</article>
@@ -585,7 +692,7 @@ const faqSchema = {
 						</h3>
 
 						<p>
-							Coordinamos el trabajo de acuerdo
+							Coordinamos el proyecto de acuerdo
 							con el alcance aprobado.
 						</p>
 					</div>
@@ -610,9 +717,9 @@ const faqSchema = {
 				</h2>
 
 				<p>
-					En trabajos de obra civil, una medida o una
-					fotografía puede cambiar por completo el alcance.
-					Por eso revisamos antes de prometer.
+					En obra civil, una medida, una fotografía o
+					una condición del sitio puede cambiar el alcance.
+					Por eso revisamos antes de preparar la propuesta.
 				</p>
 			</div>
 
@@ -632,7 +739,7 @@ const faqSchema = {
 				<article>
 					<span>03</span>
 					<h3>Cotización</h3>
-					<p>Preparamos materiales, mano de obra y propuesta.</p>
+					<p>Definimos materiales, mano de obra y propuesta.</p>
 				</article>
 
 				<article>
@@ -645,7 +752,7 @@ const faqSchema = {
 	</section>
 
 	<!-- ==================================================
-	     QUÉ ENVIAR
+	     COTIZACIÓN
 	================================================== -->
 
 	<section class="section quote-section">
@@ -718,40 +825,50 @@ const faqSchema = {
 				</p>
 
 				<h2>
-					Antes de cotizar un trabajo.
+					Antes de cotizar obra civil.
 				</h2>
 
 				<p>
-					Si ya cuenta con fotografías, planos o
-					medidas, puede enviarlos directamente
-					por WhatsApp.
+					Si ya cuenta con fotografías, planos o medidas,
+					puede enviarlos directamente por WhatsApp.
 				</p>
 			</div>
 
 			<div class="faq-list">
 				<details open>
 					<summary>
-						¿Qué servicios de obra civil realizan?
+						¿Qué servicios de obra civil realizan en Guatemala?
 					</summary>
 
 					<p>
 						Podemos evaluar mantenimiento, remodelación,
 						tablayeso, pintura, plomería, drenajes,
-						impermeabilización, herrería, soldadura
-						e instalaciones hidráulicas según proyecto.
+						impermeabilización, herrería, soldadura e
+						instalaciones hidráulicas según proyecto.
 					</p>
 				</details>
 
 				<details>
 					<summary>
-						¿Trabajan proyectos para empresas?
+						¿Atienden mantenimiento y remodelaciones para empresas?
 					</summary>
 
 					<p>
-						Sí. Podemos preparar cotizaciones para
-						empresas, comercios, oficinas e instalaciones
-						que requieran reparación, mantenimiento
-						o mejora de infraestructura.
+						Sí. Podemos preparar cotizaciones para empresas,
+						comercios, oficinas e instalaciones que requieran
+						reparación, mantenimiento, remodelación o mejora.
+					</p>
+				</details>
+
+				<details>
+					<summary>
+						¿Trabajan tablayeso o drywall?
+					</summary>
+
+					<p>
+						Sí. Podemos evaluar muros, divisiones, cielos,
+						reparaciones y sustituciones según el área
+						y las condiciones existentes.
 					</p>
 				</details>
 
@@ -761,21 +878,20 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Sí. Fotografías, medidas, planos o una
-						descripción del problema ayudan a entender
-						mejor el alcance antes de coordinar.
+						Sí. Fotografías, medidas, planos y una descripción
+						del problema ayudan a entender mejor el alcance.
 					</p>
 				</details>
 
 				<details>
 					<summary>
-						¿La cotización incluye materiales y mano de obra?
+						¿La cotización puede incluir materiales y mano de obra?
 					</summary>
 
 					<p>
-						Depende del alcance solicitado. Podemos
-						cotizar mano de obra, materiales o una
-						propuesta integral de suministro y ejecución.
+						Sí. Dependiendo del alcance, podemos cotizar
+						mano de obra, materiales o una propuesta
+						de suministro más ejecución.
 					</p>
 				</details>
 
@@ -785,10 +901,9 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Algunos trabajos pueden evaluarse inicialmente
-						con fotografías y medidas. En otros casos,
-						una visita es necesaria para confirmar
-						condiciones y alcance.
+						Depende del trabajo. Algunos requerimientos pueden
+						revisarse inicialmente con fotografías y medidas;
+						otros necesitan visita para confirmar condiciones.
 					</p>
 				</details>
 
@@ -798,8 +913,8 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Sí. Los trabajos pueden documentarse
-						mediante factura electrónica FEL.
+						Sí. Los trabajos pueden documentarse mediante
+						factura electrónica FEL.
 					</p>
 				</details>
 			</div>
@@ -817,13 +932,13 @@ const faqSchema = {
 			</p>
 
 			<h2>
-				¿Tiene una reparación, mantenimiento o proyecto?
+				¿Tiene una reparación, mantenimiento o remodelación?
 			</h2>
 
 			<p>
-				Envíenos fotografías, medidas aproximadas y
-				una breve descripción. Revisamos el requerimiento
-				antes de preparar la propuesta.
+				Envíenos fotografías, medidas aproximadas y una breve
+				descripción. Revisamos el requerimiento antes de
+				preparar la propuesta.
 			</p>
 
 			<a
@@ -840,8 +955,8 @@ const faqSchema = {
 	<section class="legal-note">
 		<div class="container">
 			<p>
-				La disponibilidad de servicios, materiales,
-				plazos y alcance se confirma al momento de cotizar.
+				La disponibilidad de servicios, materiales, plazos
+				y alcance se confirma al momento de cotizar.
 				Algunos trabajos pueden requerir visita técnica.
 			</p>
 		</div>
@@ -849,13 +964,8 @@ const faqSchema = {
 </BaseLayout>
 
 <style>
-	/* ==================================================
-	   HERO
-	================================================== */
-
 	.services-hero {
 		padding: 88px 0;
-
 		background:
 			linear-gradient(
 				115deg,
@@ -867,13 +977,10 @@ const faqSchema = {
 
 	.hero-grid {
 		display: grid;
-
 		grid-template-columns:
 			minmax(0, 1.08fr)
 			minmax(370px, 0.92fr);
-
 		align-items: center;
-
 		gap: 64px;
 	}
 
@@ -882,73 +989,47 @@ const faqSchema = {
 	}
 
 	.hero-copy h1 {
-		max-width: 800px;
-
+		max-width: 820px;
 		margin-bottom: 26px;
-
-		font-size:
-			clamp(
-				3rem,
-				5vw,
-				5rem
-			);
-
+		font-size: clamp(3rem, 5vw, 5rem);
 		line-height: 0.97;
-
 		letter-spacing: -0.055em;
 	}
 
 	.hero-copy h1 span {
 		display: block;
-
 		color: #ed1c24;
 	}
 
 	.hero-lead {
-		max-width: 680px;
-
+		max-width: 700px;
 		color: #606060;
-
 		font-size: 1.08rem;
-
 		line-height: 1.75;
 	}
 
 	.hero-actions {
 		display: flex;
-
 		flex-wrap: wrap;
-
 		gap: 12px;
-
 		margin-top: 32px;
 	}
 
 	.hero-trust {
 		display: flex;
-
 		flex-wrap: wrap;
-
 		gap: 12px 22px;
-
 		margin-top: 30px;
-
 		color: #555555;
-
 		font-size: 0.88rem;
-
 		font-weight: 700;
 	}
 
 	.hero-panel {
 		padding: 36px;
-
 		background: #111111;
-
 		color: white;
-
 		border-radius: 14px;
-
 		box-shadow:
 			0 30px 70px
 			rgba(0, 0, 0, 0.16);
@@ -956,130 +1037,89 @@ const faqSchema = {
 
 	.panel-label {
 		margin-bottom: 14px;
-
 		color: #ff464d;
-
 		font-size: 0.7rem;
-
 		font-weight: 900;
-
 		letter-spacing: 0.14em;
 	}
 
 	.hero-panel h2 {
 		margin-bottom: 26px;
-
 		font-size: 2rem;
-
 		line-height: 1.1;
-
 		letter-spacing: -0.035em;
 	}
 
 	.panel-list {
-		border-top:
-			1px solid #333333;
+		border-top: 1px solid #333333;
 	}
 
 	.panel-list > div {
 		display: grid;
-
-		grid-template-columns:
-			32px minmax(0, 1fr);
-
+		grid-template-columns: 32px minmax(0, 1fr);
 		gap: 12px;
-
 		padding: 16px 0;
-
-		border-bottom:
-			1px solid #333333;
+		border-bottom: 1px solid #333333;
 	}
 
 	.panel-list span {
 		color: #ed1c24;
-
 		font-size: 0.75rem;
-
 		font-weight: 900;
 	}
 
 	.panel-list p {
 		margin: 0;
-
 		color: #bdbdbd;
-
 		font-size: 0.9rem;
-
 		line-height: 1.55;
 	}
 
 	.panel-list strong {
 		display: block;
-
 		margin-bottom: 3px;
-
 		color: white;
 	}
 
 	.panel-note {
-		margin:
-			20px 0 0;
-
+		margin: 20px 0 0;
 		color: #858585;
-
 		font-size: 0.72rem;
-
 		line-height: 1.5;
 	}
 
-	/* ==================================================
-	   HEADINGS
-	================================================== */
-
 	.section-heading {
-		max-width: 820px;
-
+		max-width: 840px;
 		margin-bottom: 44px;
 	}
 
 	.section-heading h2,
+	.proof-copy h2,
 	.approach-copy h2,
 	.quote-grid h2,
 	.faq-heading h2,
 	.final-inner h2 {
 		margin-bottom: 18px;
-
-		font-size:
-			clamp(
-				2.25rem,
-				4vw,
-				3.55rem
-			);
-
+		font-size: clamp(2.25rem, 4vw, 3.55rem);
 		line-height: 1.05;
-
 		letter-spacing: -0.045em;
 	}
 
 	.section-heading h2 span,
+	.proof-copy h2 span,
 	.approach-copy h2 span,
 	.quote-grid h2 span {
 		display: block;
-
 		color: #ed1c24;
 	}
 
 	.section-heading > p:last-child,
+	.proof-copy > p,
 	.quote-lead,
 	.faq-heading > p {
 		color: #666666;
-
 		line-height: 1.75;
 	}
-
-	/* ==================================================
-	   SERVICES
-	================================================== */
 
 	.services-section {
 		background: #f7f7f7;
@@ -1087,101 +1127,154 @@ const faqSchema = {
 
 	.services-grid {
 		display: grid;
-
 		grid-template-columns:
 			repeat(2, minmax(0, 1fr));
-
 		gap: 16px;
 	}
 
 	.service-card {
 		display: flex;
-
 		flex-direction: column;
-
 		min-height: 360px;
-
 		padding: 30px;
-
 		background: white;
-
-		border:
-			1px solid #dfdfdf;
-
+		border: 1px solid #dfdfdf;
 		border-radius: 12px;
 	}
 
 	.service-card.featured {
-		border-top:
-			4px solid #ed1c24;
+		border-top: 4px solid #ed1c24;
 	}
 
 	.service-number {
 		margin-bottom: 38px;
-
 		color: #ed1c24;
-
 		font-size: 0.76rem;
-
 		font-weight: 900;
 	}
 
 	.service-card h3 {
 		margin-bottom: 10px;
-
 		font-size: 1.45rem;
-
 		letter-spacing: -0.02em;
 	}
 
 	.service-card p {
 		color: #666666;
-
 		line-height: 1.65;
 	}
 
 	.service-card ul {
 		display: grid;
-
 		gap: 7px;
-
 		padding-left: 20px;
-
-		margin:
-			10px 0 28px;
-
+		margin: 10px 0 28px;
 		color: #555555;
-
 		line-height: 1.55;
 	}
 
 	.service-card a {
 		margin-top: auto;
-
 		color: #ed1c24;
-
 		font-weight: 900;
 	}
 
-	/* ==================================================
-	   APPROACH
-	================================================== */
+	.proof-section {
+		background: white;
+	}
+
+	.proof-grid {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 0.72fr)
+			minmax(0, 1.28fr);
+		align-items: center;
+		gap: 70px;
+	}
+
+	.proof-copy .button {
+		margin-top: 10px;
+	}
+
+	.proof-cards {
+		display: grid;
+		grid-template-columns:
+			repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	.proof-card {
+		position: relative;
+		min-height: 230px;
+		overflow: hidden;
+		border-radius: 10px;
+		background: #111111;
+	}
+
+	.proof-card-large {
+		grid-column: 1 / -1;
+		min-height: 330px;
+	}
+
+	.proof-card img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.25s ease;
+	}
+
+	.proof-card:hover img {
+		transform: scale(1.025);
+	}
+
+	.proof-card::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.78) 0%,
+				rgba(0, 0, 0, 0.08) 55%,
+				transparent 100%
+			);
+	}
+
+	.proof-card > div {
+		position: absolute;
+		z-index: 2;
+		left: 22px;
+		right: 22px;
+		bottom: 20px;
+		color: white;
+	}
+
+	.proof-card span {
+		display: block;
+		margin-bottom: 5px;
+		color: #ff454c;
+		font-size: 0.64rem;
+		font-weight: 900;
+		letter-spacing: 0.12em;
+	}
+
+	.proof-card strong {
+		font-size: 1.25rem;
+	}
 
 	.approach-section {
 		background: #111111;
-
 		color: white;
 	}
 
 	.approach-grid {
 		display: grid;
-
 		grid-template-columns:
 			minmax(0, 0.85fr)
 			minmax(0, 1.15fr);
-
 		align-items: center;
-
 		gap: 70px;
 	}
 
@@ -1191,7 +1284,6 @@ const faqSchema = {
 
 	.approach-copy > p:not(.eyebrow) {
 		color: #bdbdbd;
-
 		line-height: 1.75;
 	}
 
@@ -1201,143 +1293,100 @@ const faqSchema = {
 
 	.button-light {
 		margin-top: 8px;
-
 		background: white;
-
 		color: #111111;
 	}
 
 	.button-light:hover {
 		background: #ed1c24;
-
 		color: white;
 	}
 
 	.approach-cards {
 		display: grid;
-
 		grid-template-columns:
 			repeat(2, minmax(0, 1fr));
-
 		gap: 12px;
 	}
 
 	.approach-cards article {
 		display: grid;
-
 		grid-template-columns:
 			32px minmax(0, 1fr);
-
 		gap: 12px;
-
 		padding: 22px;
-
 		background: #181818;
-
-		border:
-			1px solid #2f2f2f;
-
+		border: 1px solid #2f2f2f;
 		border-radius: 9px;
 	}
 
 	.approach-cards .approach-featured {
 		border-color: #ed1c24;
-
 		background: #1d1516;
 	}
 
 	.approach-cards article > span {
 		color: #ed1c24;
-
 		font-size: 0.72rem;
-
 		font-weight: 900;
 	}
 
 	.approach-cards h3 {
 		margin-bottom: 6px;
-
 		font-size: 1.1rem;
 	}
 
 	.approach-cards p {
 		margin: 0;
-
 		color: #9f9f9f;
-
 		font-size: 0.85rem;
-
 		line-height: 1.55;
 	}
-
-	/* ==================================================
-	   PROCESS
-	================================================== */
 
 	.process-section {
 		background: white;
 	}
 
 	.process-heading {
-		max-width: 760px;
+		max-width: 780px;
 	}
 
 	.process-grid {
 		display: grid;
-
 		grid-template-columns:
 			repeat(4, minmax(0, 1fr));
-
-		border-top:
-			1px solid #dadada;
-
-		border-bottom:
-			1px solid #dadada;
+		border-top: 1px solid #dadada;
+		border-bottom: 1px solid #dadada;
 	}
 
 	.process-grid article {
 		min-height: 215px;
-
 		padding: 28px;
-
-		border-right:
-			1px solid #dadada;
+		border-right: 1px solid #dadada;
 	}
 
 	.process-grid article:first-child {
-		border-left:
-			1px solid #dadada;
+		border-left: 1px solid #dadada;
 	}
 
 	.process-grid span {
 		display: block;
-
 		margin-bottom: 38px;
-
 		color: #ed1c24;
-
 		font-size: 0.75rem;
-
 		font-weight: 900;
 	}
 
 	.process-grid h3 {
 		margin-bottom: 9px;
-
 		font-size: 1.18rem;
 	}
 
 	.process-grid p {
 		margin: 0;
-
 		color: #666666;
-
 		line-height: 1.6;
 	}
-
-	/* ==================================================
-	   QUOTE INFO
-	================================================== */
 
 	.quote-section {
 		background: #f7f7f7;
@@ -1345,76 +1394,53 @@ const faqSchema = {
 
 	.quote-grid {
 		display: grid;
-
 		grid-template-columns:
 			minmax(0, 0.82fr)
 			minmax(0, 1.18fr);
-
 		align-items: center;
-
 		gap: 70px;
 	}
 
 	.quote-list {
 		display: grid;
-
 		grid-template-columns:
 			repeat(2, minmax(0, 1fr));
-
 		gap: 12px;
 	}
 
 	.quote-list article {
 		display: grid;
-
 		grid-template-columns:
 			32px minmax(0, 1fr);
-
 		gap: 12px;
-
 		padding: 22px;
-
 		background: white;
-
-		border:
-			1px solid #dfdfdf;
-
+		border: 1px solid #dfdfdf;
 		border-radius: 9px;
 	}
 
 	.quote-list .quote-featured {
 		border-color: #ed1c24;
-
 		background: #fff8f8;
 	}
 
 	.quote-list article > span {
 		color: #ed1c24;
-
 		font-size: 0.72rem;
-
 		font-weight: 900;
 	}
 
 	.quote-list h3 {
 		margin-bottom: 6px;
-
 		font-size: 1.1rem;
 	}
 
 	.quote-list p {
 		margin: 0;
-
 		color: #666666;
-
 		font-size: 0.85rem;
-
 		line-height: 1.55;
 	}
-
-	/* ==================================================
-	   FAQ
-	================================================== */
 
 	.faq-section {
 		background: white;
@@ -1422,36 +1448,26 @@ const faqSchema = {
 
 	.faq-grid {
 		display: grid;
-
 		grid-template-columns:
 			minmax(0, 0.78fr)
 			minmax(0, 1.22fr);
-
 		gap: 80px;
 	}
 
 	.faq-list {
-		border-top:
-			1px solid #d7d7d7;
+		border-top: 1px solid #d7d7d7;
 	}
 
 	.faq-list details {
-		border-bottom:
-			1px solid #d7d7d7;
+		border-bottom: 1px solid #d7d7d7;
 	}
 
 	.faq-list summary {
 		position: relative;
-
-		padding:
-			22px 40px 22px 0;
-
+		padding: 22px 40px 22px 0;
 		cursor: pointer;
-
 		list-style: none;
-
 		font-weight: 800;
-
 		line-height: 1.45;
 	}
 
@@ -1461,14 +1477,10 @@ const faqSchema = {
 
 	.faq-list summary::after {
 		content: "+";
-
 		position: absolute;
-
 		top: 19px;
 		right: 3px;
-
 		color: #ed1c24;
-
 		font-size: 1.35rem;
 	}
 
@@ -1478,69 +1490,42 @@ const faqSchema = {
 
 	.faq-list details p {
 		max-width: 690px;
-
 		margin: 0;
-
-		padding:
-			0 40px 22px 0;
-
+		padding: 0 40px 22px 0;
 		color: #666666;
-
 		line-height: 1.7;
 	}
 
-	/* ==================================================
-	   FINAL
-	================================================== */
-
 	.final-cta {
 		background: #f7f7f7;
-
 		text-align: center;
 	}
 
 	.final-inner {
-		max-width: 780px;
+		max-width: 800px;
 	}
 
 	.final-inner p:not(.eyebrow) {
-		max-width: 650px;
-
-		margin:
-			0 auto 28px;
-
+		max-width: 660px;
+		margin: 0 auto 28px;
 		color: #666666;
-
 		line-height: 1.7;
 	}
 
 	.legal-note {
-		padding:
-			18px 0;
-
+		padding: 18px 0;
 		background: #eeeeee;
-
-		border-top:
-			1px solid #dddddd;
+		border-top: 1px solid #dddddd;
 	}
 
 	.legal-note p {
 		max-width: 920px;
-
 		margin: 0 auto;
-
 		color: #888888;
-
 		font-size: 0.7rem;
-
 		line-height: 1.55;
-
 		text-align: center;
 	}
-
-	/* ==================================================
-	   LAPTOP
-	================================================== */
 
 	@media (max-width: 1250px) and (min-width: 901px) {
 		.services-hero {
@@ -1551,7 +1536,6 @@ const faqSchema = {
 			grid-template-columns:
 				minmax(0, 1fr)
 				minmax(340px, 0.86fr);
-
 			gap: 42px;
 		}
 
@@ -1568,6 +1552,7 @@ const faqSchema = {
 			padding: 30px;
 		}
 
+		.proof-grid,
 		.approach-grid,
 		.quote-grid {
 			gap: 45px;
@@ -1578,12 +1563,9 @@ const faqSchema = {
 		}
 	}
 
-	/* ==================================================
-	   TABLET
-	================================================== */
-
 	@media (max-width: 900px) {
 		.hero-grid,
+		.proof-grid,
 		.approach-grid,
 		.quote-grid,
 		.faq-grid {
@@ -1591,6 +1573,7 @@ const faqSchema = {
 		}
 
 		.hero-grid,
+		.proof-grid,
 		.approach-grid,
 		.quote-grid {
 			gap: 42px;
@@ -1616,10 +1599,6 @@ const faqSchema = {
 		}
 	}
 
-	/* ==================================================
-	   MOBILE
-	================================================== */
-
 	@media (max-width: 560px) {
 		.services-hero {
 			padding: 50px 0;
@@ -1627,13 +1606,11 @@ const faqSchema = {
 
 		.hero-copy h1 {
 			font-size: 2.45rem;
-
 			line-height: 0.99;
 		}
 
 		.hero-lead {
 			font-size: 1rem;
-
 			line-height: 1.65;
 		}
 
@@ -1646,6 +1623,7 @@ const faqSchema = {
 		}
 
 		.section-heading h2,
+		.proof-copy h2,
 		.approach-copy h2,
 		.quote-grid h2,
 		.faq-heading h2,
@@ -1654,6 +1632,7 @@ const faqSchema = {
 		}
 
 		.services-grid,
+		.proof-cards,
 		.approach-cards,
 		.quote-list,
 		.process-grid {
@@ -1664,10 +1643,15 @@ const faqSchema = {
 			min-height: 0;
 		}
 
+		.proof-card,
+		.proof-card-large {
+			grid-column: auto;
+			min-height: 260px;
+		}
+
 		.approach-cards article,
 		.quote-list article {
 			grid-template-columns: 1fr;
-
 			gap: 9px;
 		}
 
@@ -1679,13 +1663,10 @@ const faqSchema = {
 		.process-grid article:first-child,
 		.process-grid article:nth-child(3) {
 			min-height: 0;
-
 			border-left:
 				1px solid #dadada;
-
 			border-right:
 				1px solid #dadada;
-
 			border-bottom:
 				1px solid #dadada;
 		}
