@@ -6,10 +6,10 @@ import {
 } from "../config/site";
 
 const title =
-	"Contadores de Agua en Guatemala | Venta e Instalación | AR";
+	"Contadores de Agua en Guatemala | Precios y Opciones | AR";
 
 const description =
-	"Contadores de agua en Guatemala para instalaciones, proyectos y reposición. Opciones Genebre de 3/4, contadores Woltmann bridados y servicio de suministro e instalación.";
+	"Contadores de agua en Guatemala para reposición y proyectos. Consulte precios de referencia, opciones de 3/4 y Woltmann, suministro e instalación.";
 
 const whatsappGeneral = createWhatsAppLink(
 	`Hola, vi su página de contadores de agua y quisiera solicitar una cotización.
@@ -59,20 +59,29 @@ const faqSchema = {
 	mainEntity: [
 		{
 			"@type": "Question",
-			name: "¿Cuánto cuesta un contador de agua de 3/4 en Guatemala?",
+			name: "¿Cuánto cuesta un contador de agua en Guatemala?",
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"AR maneja diferentes opciones de contador de agua de 3/4. Los precios publicados son de referencia y deben confirmarse al momento de cotizar según modelo y disponibilidad.",
+					"El precio de un contador de agua depende de la medida, construcción y modelo. AR maneja opciones de 3/4 desde Q420 como precio de referencia, mientras que equipos de mayor diámetro se cotizan según especificación y disponibilidad.",
 			},
 		},
 		{
 			"@type": "Question",
-			name: "¿Qué tipos de contador de agua de 3/4 ofrecen?",
+			name: "¿Dónde comprar un contador de agua en Guatemala?",
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"Se pueden cotizar opciones Genebre de tecnopolímero, cuerpo metálico niquelado y cuerpo metálico para agua fría, dependiendo del requerimiento del proyecto.",
+					"Multiservicios Obra Civil AR puede cotizar contadores de agua para reposición, instalaciones nuevas y proyectos en Guatemala, con opción de solo suministro o suministro más instalación.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "¿Qué medidas de contadores de agua pueden cotizar?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"Se pueden cotizar contadores de 3/4 y equipos Woltmann bridados en medidas como 3, 4, 6 y 8 pulgadas. Otras medidas se revisan según requerimiento y disponibilidad.",
 			},
 		},
 		{
@@ -100,6 +109,8 @@ const faqSchema = {
 <BaseLayout
 	title={title}
 	description={description}
+	image="/images/contadores/genebre-6029p-contador-tecnopolimero-3-4.png"
+	imageAlt="Contadores de agua en Guatemala para suministro e instalación"
 >
 	<script
 		type="application/ld+json"
@@ -118,18 +129,18 @@ const faqSchema = {
 				</p>
 
 				<h1>
-					Contadores de agua para
+					Contadores de agua
 					<span>
-						proyectos e instalaciones.
+						en Guatemala.
 					</span>
 				</h1>
 
 				<p class="hero-lead">
-					Suministro de contadores de agua para
-					reposición, instalaciones nuevas y proyectos
-					hidráulicos en Guatemala. Trabajamos opciones
-					de 3/4" y medidores Woltmann bridados para
-					mayores diámetros.
+					Venta y suministro de contadores de agua en
+					Guatemala para reposición, instalaciones nuevas
+					y proyectos hidráulicos. Consulte precios de
+					referencia para opciones de 3/4" y cotización
+					de medidores Woltmann bridados para mayores diámetros.
 				</p>
 
 				<div class="hero-actions">
@@ -161,7 +172,7 @@ const faqSchema = {
 
 			<aside class="hero-panel">
 				<p class="panel-label">
-					PRECIO DE REFERENCIA
+					CONTADOR DE AGUA 3/4 · PRECIO DE REFERENCIA
 				</p>
 
 				<div class="starting-price">
@@ -235,6 +246,13 @@ const faqSchema = {
 					La construcción, tipo de medición y forma de
 					instalación pueden cambiar según el modelo.
 				</p>
+
+				<a
+					class="button button-secondary"
+					href="/contador-agua-3-4-guatemala/"
+				>
+					Ver precios y modelos de contador 3/4
+				</a>
 			</div>
 
 			<div class="product-grid">
@@ -675,6 +693,14 @@ const faqSchema = {
 						conexión, caudal y requerimientos del
 						proyecto.
 					</p>
+
+					<p>
+						Para válvulas, uniones tipo Dresser y otros
+						componentes puede consultar también nuestros
+						<a href="/suministros-hidraulicos-guatemala/">
+							suministros hidráulicos en Guatemala
+						</a>.
+					</p>
 				</div>
 			</div>
 
@@ -996,27 +1022,44 @@ const faqSchema = {
 			<div class="faq-list">
 				<details open>
 					<summary>
-						¿Cuánto cuesta un contador de agua de 3/4?
+						¿Cuánto cuesta un contador de agua en Guatemala?
 					</summary>
 
 					<p>
-						Actualmente manejamos precios comerciales
-						de referencia desde Q420. El precio final
-						debe confirmarse según modelo y
-						disponibilidad al momento de cotizar.
+						El precio depende de la medida, construcción
+						y modelo. Las opciones de 3/4" publicadas en
+						esta página parten de Q420 como referencia;
+						los equipos de mayor diámetro se cotizan
+						según especificación y disponibilidad.
 					</p>
 				</details>
 
 				<details>
 					<summary>
-						¿Qué opción de 3/4 necesito?
+						¿Dónde comprar un contador de agua en Guatemala?
 					</summary>
 
 					<p>
-						Depende del requerimiento de la instalación.
-						Podemos revisar medida, posición de montaje
-						y especificaciones antes de recomendar
-						una opción para cotización.
+						AR puede cotizar contadores para reposición,
+						instalaciones nuevas y proyectos. Podemos
+						preparar una propuesta de solo suministro o,
+						cuando el proyecto lo requiera, incluir
+						materiales complementarios e instalación.
+					</p>
+				</details>
+
+				<details>
+					<summary>
+						¿Busco específicamente un contador de agua de 3/4?
+					</summary>
+
+					<p>
+						Tenemos una página específica con comparación
+						de modelos y precios de referencia para 3/4".
+						Puede revisar las opciones en
+						<a href="/contador-agua-3-4-guatemala/">
+							contador de agua 3/4 en Guatemala
+						</a>.
 					</p>
 				</details>
 
@@ -1408,7 +1451,7 @@ const faqSchema = {
 		letter-spacing: -0.045em;
 	}
 
-	.section-heading > p:last-child,
+	.section-heading > p:last-of-type,
 	.comparison-copy > p,
 	.installation-lead,
 	.faq-heading > p {
@@ -1423,6 +1466,10 @@ const faqSchema = {
 
 	.small-meters {
 		background: #f7f7f7;
+	}
+
+	.section-heading .button {
+		margin-top: 8px;
 	}
 
 	.product-grid {
@@ -1795,6 +1842,12 @@ const faqSchema = {
 		line-height: 1.7;
 	}
 
+	.woltmann-intro a {
+		color: #ff464d;
+
+		font-weight: 800;
+	}
+
 	.size-grid {
 		display: grid;
 
@@ -2160,6 +2213,12 @@ const faqSchema = {
 		color: #666666;
 
 		line-height: 1.7;
+	}
+
+	.faq-list details p a {
+		color: #ed1c24;
+
+		font-weight: 800;
 	}
 
 	/* ==================================================

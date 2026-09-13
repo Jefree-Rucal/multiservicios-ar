@@ -7,7 +7,7 @@ const title =
 	'Contador de Agua 3/4 en Guatemala | Precio desde Q420 | AR';
 
 const description =
-	'Contadores de agua de 3/4 en Guatemala desde Q420. Compare Genebre 6029P, 6110C y 6029. Suministro, kit e instalación disponibles según requerimiento.';
+	'Precio de contador de agua 3/4 en Guatemala desde Q420. Compare Genebre 6029P, 6110C y 6029. Suministro e instalación sujetos a confirmación.';
 
 const whatsappGeneral = createWhatsAppLink(
 	`Hola, vi su página de contadores de agua de 3/4" y quisiera solicitar una cotización.
@@ -72,6 +72,15 @@ const faqSchema = {
 		},
 		{
 			"@type": "Question",
+			name: '¿Dónde comprar un contador de agua de 3/4 en Guatemala?',
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					'Multiservicios Obra Civil AR puede cotizar contadores de agua de 3/4 en Guatemala para reposición, instalaciones nuevas y proyectos, con opción de solo suministro o suministro más instalación.',
+			},
+		},
+		{
+			"@type": "Question",
 			name: '¿Qué contador de agua de 3/4 necesito?',
 			acceptedAnswer: {
 				"@type": "Answer",
@@ -108,15 +117,41 @@ const faqSchema = {
 		},
 	],
 };
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	itemListElement: [
+		{
+			"@type": "ListItem",
+			position: 1,
+			name: "Contadores de agua en Guatemala",
+			item: "/contadores-de-agua-guatemala/",
+		},
+		{
+			"@type": "ListItem",
+			position: 2,
+			name: 'Contador de agua 3/4 en Guatemala',
+			item: "/contador-agua-3-4-guatemala/",
+		},
+	],
+};
 ---
 
 <BaseLayout
 	title={title}
 	description={description}
+	image="/images/contadores/genebre-6029p-contador-tecnopolimero-3-4.png"
+	imageAlt='Contador de agua de 3/4 en Guatemala con precio desde Q420'
 >
 	<script
 		type="application/ld+json"
 		set:html={JSON.stringify(faqSchema)}
+	></script>
+
+	<script
+		type="application/ld+json"
+		set:html={JSON.stringify(breadcrumbSchema)}
 	></script>
 
 	<!-- ==================================================
@@ -130,7 +165,7 @@ const faqSchema = {
 					class="breadcrumb"
 					href="/contadores-de-agua-guatemala/"
 				>
-					← Contadores de agua
+					← Contadores de agua en Guatemala
 				</a>
 
 				<p class="eyebrow">
@@ -140,15 +175,15 @@ const faqSchema = {
 				<h1>
 					Contador de agua 3/4"
 					<span>
-						desde Q420.
+						en Guatemala desde Q420.
 					</span>
 				</h1>
 
 				<p class="hero-lead">
-					Compare tres opciones Genebre de 3/4"
-					para instalaciones nuevas, reposiciones
-					y proyectos en Guatemala. Podemos cotizar
-					solo el equipo o incluir instalación.
+					Consulte el precio de contador de agua de 3/4"
+					en Guatemala y compare tres opciones Genebre
+					para reposición, instalaciones nuevas y proyectos.
+					Podemos cotizar solo el equipo o incluir instalación.
 				</p>
 
 				<div class="hero-actions">
@@ -158,19 +193,19 @@ const faqSchema = {
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						Cotizar 3/4"
+						Cotizar contador 3/4"
 					</a>
 
 					<a
 						class="button button-secondary"
-						href="#comparar"
+						href="#precios-modelos"
 					>
-						Comparar modelos
+						Ver precios y modelos
 					</a>
 				</div>
 
 				<div class="hero-trust">
-					<span>✓ 3 opciones</span>
+					<span>✓ Precio desde Q420</span>
 					<span>✓ Instalación disponible</span>
 					<span>✓ Factura FEL</span>
 				</div>
@@ -178,66 +213,68 @@ const faqSchema = {
 
 			<aside class="price-panel">
 				<p class="panel-eyebrow">
-					PRECIO DE REFERENCIA
+					PRECIOS DE CONTADOR DE AGUA 3/4
 				</p>
 
 				<div class="price-main">
-					<span>Desde</span>
+					<span>Precio de referencia desde</span>
 					<strong>Q420</strong>
 				</div>
 
 				<p class="panel-copy">
-					El precio cambia según el modelo seleccionado.
+					El precio cambia según el modelo y debe
+					confirmarse al momento de cotizar.
 				</p>
 
 				<div class="price-list">
 					<div>
-						<span>6029P</span>
+						<span>Genebre 6029P</span>
 						<strong>Q420</strong>
 					</div>
 
 					<div>
-						<span>6110C</span>
+						<span>Genebre 6110C</span>
 						<strong>Q450</strong>
 					</div>
 
 					<div>
-						<span>6029</span>
+						<span>Genebre 6029</span>
 						<strong>Q560</strong>
 					</div>
 				</div>
 
 				<p class="price-note">
-					*Precios de referencia sujetos a confirmación
-					de disponibilidad y actualización del proveedor.
+					*Precios comerciales de referencia sujetos a
+					confirmación de disponibilidad y actualización
+					del proveedor.
 				</p>
 			</aside>
 		</div>
 	</section>
 
 	<!-- ==================================================
-	     PRODUCTOS
+	     PRECIOS + PRODUCTOS
 	================================================== -->
 
 	<section
 		class="section products-section"
-		id="comparar"
+		id="precios-modelos"
 	>
 		<div class="container">
 			<div class="section-heading">
 				<p class="eyebrow">
-					COMPARE LOS 3 MODELOS
+					PRECIOS Y MODELOS 3/4"
 				</p>
 
 				<h2>
-					El mismo diámetro,
-					<span>tres configuraciones distintas.</span>
+					Contadores de agua 3/4:
+					<span>tres opciones para comparar.</span>
 				</h2>
 
 				<p>
-					La diferencia no está únicamente en el precio.
-					La construcción, el sistema de medición y la
-					posición de montaje también cambian.
+					El diámetro es el mismo, pero la construcción,
+					el sistema de medición, la posición de montaje
+					y el precio cambian según el modelo.
 				</p>
 			</div>
 
@@ -247,13 +284,8 @@ const faqSchema = {
 				<article class="product-card">
 					<div class="card-heading">
 						<div>
-							<span class="card-number">
-								01
-							</span>
-
-							<span class="brand">
-								GENEBRE
-							</span>
+							<span class="card-number">01</span>
+							<span class="brand">GENEBRE</span>
 						</div>
 
 						<span class="model-tag">
@@ -273,7 +305,7 @@ const faqSchema = {
 					</p>
 
 					<h3>
-						Genebre 6029P
+						Genebre 6029P 3/4"
 					</h3>
 
 					<p class="product-description">
@@ -290,6 +322,11 @@ const faqSchema = {
 						<li>
 							<strong>Medida:</strong>
 							3/4"
+						</li>
+
+						<li>
+							<strong>Medición:</strong>
+							Chorro múltiple
 						</li>
 
 						<li>
@@ -338,13 +375,8 @@ const faqSchema = {
 
 					<div class="card-heading">
 						<div>
-							<span class="card-number">
-								02
-							</span>
-
-							<span class="brand">
-								GENEBRE
-							</span>
+							<span class="card-number">02</span>
+							<span class="brand">GENEBRE</span>
 						</div>
 
 						<span class="model-tag">
@@ -364,7 +396,7 @@ const faqSchema = {
 					</p>
 
 					<h3>
-						Genebre 6110C
+						Genebre 6110C 3/4"
 					</h3>
 
 					<p class="product-description">
@@ -382,6 +414,11 @@ const faqSchema = {
 						<li>
 							<strong>Medida:</strong>
 							3/4"
+						</li>
+
+						<li>
+							<strong>Medición:</strong>
+							Chorro único
 						</li>
 
 						<li>
@@ -426,13 +463,8 @@ const faqSchema = {
 				<article class="product-card">
 					<div class="card-heading">
 						<div>
-							<span class="card-number">
-								03
-							</span>
-
-							<span class="brand">
-								GENEBRE
-							</span>
+							<span class="card-number">03</span>
+							<span class="brand">GENEBRE</span>
 						</div>
 
 						<span class="model-tag">
@@ -452,7 +484,7 @@ const faqSchema = {
 					</p>
 
 					<h3>
-						Genebre 6029
+						Genebre 6029 3/4"
 					</h3>
 
 					<p class="product-description">
@@ -469,6 +501,11 @@ const faqSchema = {
 						<li>
 							<strong>Medida:</strong>
 							3/4"
+						</li>
+
+						<li>
+							<strong>Medición:</strong>
+							Chorro múltiple
 						</li>
 
 						<li>
@@ -510,8 +547,8 @@ const faqSchema = {
 			</div>
 
 			<p class="products-note">
-				Imágenes ilustrativas. Los precios y disponibilidad
-				deben confirmarse al momento de solicitar la cotización.
+				Imágenes ilustrativas. Precios y disponibilidad sujetos
+				a confirmación al momento de solicitar la cotización.
 			</p>
 		</div>
 	</section>
@@ -524,7 +561,7 @@ const faqSchema = {
 		<div class="container guide-grid">
 			<div class="guide-copy">
 				<p class="eyebrow">
-					¿CUÁL DE LOS 3?
+					¿CUÁL CONTADOR 3/4 NECESITA?
 				</p>
 
 				<h2>
@@ -590,7 +627,7 @@ const faqSchema = {
 
 						<p>
 							Una foto de la instalación o de la
-							placa del contador nos ayuda a revisar
+							placa del contador ayuda a revisar
 							el reemplazo con mayor precisión.
 						</p>
 					</div>
@@ -611,7 +648,8 @@ const faqSchema = {
 				</p>
 
 				<h2>
-					6029P vs 6110C vs 6029.
+					Precio y características:
+					<span>6029P vs 6110C vs 6029.</span>
 				</h2>
 			</div>
 
@@ -630,50 +668,42 @@ const faqSchema = {
 
 					<tbody>
 						<tr>
-							<td>
-								<strong>6029P</strong>
-							</td>
+							<td><strong>6029P</strong></td>
 							<td>Tecnopolímero</td>
 							<td>Chorro múltiple</td>
 							<td>Horizontal</td>
 							<td>40 °C</td>
-							<td>
-								<strong>Q420</strong>
-							</td>
+							<td><strong>Q420</strong></td>
 						</tr>
 
 						<tr>
-							<td>
-								<strong>6110C</strong>
-							</td>
+							<td><strong>6110C</strong></td>
 							<td>Metálico niquelado</td>
 							<td>Chorro único</td>
 							<td>Horizontal / vertical</td>
 							<td>30 °C</td>
-							<td>
-								<strong>Q450</strong>
-							</td>
+							<td><strong>Q450</strong></td>
 						</tr>
 
 						<tr>
-							<td>
-								<strong>6029</strong>
-							</td>
+							<td><strong>6029</strong></td>
 							<td>Metálico</td>
 							<td>Chorro múltiple</td>
 							<td>Horizontal</td>
 							<td>30 °C</td>
-							<td>
-								<strong>Q560</strong>
-							</td>
+							<td><strong>Q560</strong></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 
 			<p class="table-note">
-				Los tres modelos trabajan con presión máxima
-				de 16 bar según especificación del fabricante.
+				Los tres modelos trabajan con presión máxima de 16 bar
+				según especificación del fabricante. Si necesita otra
+				medida, consulte nuestra página de
+				<a href="/contadores-de-agua-guatemala/">
+					contadores de agua en Guatemala
+				</a>.
 			</p>
 		</div>
 	</section>
@@ -765,8 +795,8 @@ const faqSchema = {
 
 				<p>
 					Con esto podemos entender mejor el
-					requerimiento antes de confirmar modelo
-					y disponibilidad.
+					requerimiento antes de confirmar modelo,
+					precio y disponibilidad.
 				</p>
 			</div>
 
@@ -810,7 +840,7 @@ const faqSchema = {
 				</p>
 
 				<h2>
-					Contadores de agua de 3/4".
+					Comprar un contador de agua de 3/4".
 				</h2>
 
 				<p>
@@ -834,10 +864,23 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Actualmente manejamos opciones con
-						precios de referencia desde Q420.
-						El precio final debe confirmarse
-						según modelo y disponibilidad.
+						Actualmente manejamos opciones con precios
+						de referencia desde Q420. El precio final
+						debe confirmarse según modelo y disponibilidad
+						al momento de cotizar.
+					</p>
+				</details>
+
+				<details>
+					<summary>
+						¿Dónde comprar un contador de agua de 3/4 en Guatemala?
+					</summary>
+
+					<p>
+						Multiservicios Obra Civil AR puede cotizar
+						contadores de 3/4 para reposición, instalaciones
+						nuevas y proyectos. Puede solicitar solo el
+						suministro o consultar suministro más instalación.
 					</p>
 				</details>
 
@@ -847,12 +890,11 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						El 6029P utiliza tecnopolímero y
-						medición de chorro múltiple. El 6110C
-						es de chorro único y admite montaje
-						horizontal o vertical. El 6029 es un
-						contador metálico de chorro múltiple
-						para montaje horizontal.
+						El 6029P utiliza tecnopolímero y medición de
+						chorro múltiple. El 6110C es de chorro único
+						y admite montaje horizontal o vertical.
+						El 6029 es metálico, de chorro múltiple
+						y montaje horizontal.
 					</p>
 				</details>
 
@@ -862,10 +904,9 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Sí. Podemos cotizar únicamente el
-						contador o preparar una propuesta
-						que incluya equipo, materiales
-						complementarios y mano de obra.
+						Sí. Podemos cotizar únicamente el contador
+						o preparar una propuesta que incluya equipo,
+						materiales complementarios y mano de obra.
 					</p>
 				</details>
 
@@ -875,10 +916,9 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Sí. Una fotografía del contador,
-						las conexiones y cualquier dato visible
-						del modelo puede ayudarnos a entender
-						mejor el requerimiento.
+						Sí. Una fotografía del contador, las conexiones
+						y cualquier dato visible del modelo puede ayudarnos
+						a entender mejor el requerimiento.
 					</p>
 				</details>
 
@@ -888,11 +928,11 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						La aceptación de un modelo puede depender
-						del trámite y de las especificaciones
-						vigentes. Podemos revisar el requerimiento,
-						pero no afirmamos autorización de un
-						modelo específico sin documentación aplicable.
+						La aceptación de un modelo puede depender del
+						trámite y de las especificaciones vigentes.
+						Podemos revisar el requerimiento, pero no afirmamos
+						autorización de un modelo específico sin
+						documentación aplicable.
 					</p>
 				</details>
 
@@ -902,8 +942,8 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Sí. Las ventas pueden documentarse
-						mediante factura electrónica FEL.
+						Sí. Las ventas pueden documentarse mediante
+						factura electrónica FEL.
 					</p>
 				</details>
 			</div>
@@ -925,9 +965,9 @@ const faqSchema = {
 			</h2>
 
 			<p>
-				Indíquenos cantidad, aplicación y si también
-				requiere instalación. Le ayudamos a revisar
-				qué opción cotizar.
+				Indíquenos cantidad, aplicación, ubicación y si
+				también requiere instalación. Revisamos el modelo,
+				precio y disponibilidad antes de preparar la propuesta.
 			</p>
 
 			<a
@@ -1003,7 +1043,7 @@ const faqSchema = {
 	}
 
 	.hero-copy h1 {
-		max-width: 760px;
+		max-width: 780px;
 
 		margin-bottom: 26px;
 
@@ -1026,7 +1066,7 @@ const faqSchema = {
 	}
 
 	.hero-lead {
-		max-width: 680px;
+		max-width: 690px;
 
 		color: #606060;
 
@@ -1249,7 +1289,7 @@ const faqSchema = {
 	}
 
 	.compact-heading {
-		max-width: 720px;
+		max-width: 760px;
 	}
 
 	/* ==================================================
@@ -1645,9 +1685,15 @@ const faqSchema = {
 
 		color: #888888;
 
-		font-size: 0.72rem;
+		font-size: 0.76rem;
 
-		line-height: 1.5;
+		line-height: 1.6;
+	}
+
+	.table-note a {
+		color: #ed1c24;
+
+		font-weight: 800;
 	}
 
 	/* ==================================================
@@ -1929,7 +1975,7 @@ const faqSchema = {
 	}
 
 	.final-inner p:not(.eyebrow) {
-		max-width: 650px;
+		max-width: 660px;
 
 		margin:
 			0 auto 28px;
