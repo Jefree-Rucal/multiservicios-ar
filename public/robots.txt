@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://obracivilar.com/sitemap-index.xml
