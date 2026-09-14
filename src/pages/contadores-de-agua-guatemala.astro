@@ -9,49 +9,113 @@ const title =
 	"Contadores de Agua en Guatemala | Precios y Opciones | AR";
 
 const description =
-	"Contadores de agua en Guatemala para reposición y proyectos. Consulte precios de referencia, opciones de 3/4 y Woltmann, suministro e instalación.";
+	"Contadores de agua en Guatemala con precios publicados desde Q420 para 3/4 y desde Q3,050 para Woltmann. Suministro e instalación sujetos a confirmación.";
 
 const whatsappGeneral = createWhatsAppLink(
-	`Hola, vi su página de contadores de agua y quisiera solicitar una cotización.
+	`Hola, vi su página de contadores de agua y quiero comprar, confirmar disponibilidad o saber qué opción necesito.
 
-Medida que necesito:
+Medida que necesito / no sé cuál:
 Cantidad:
 Aplicación:
-¿Necesito instalación?:`
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
 );
 
 const whatsapp6029P = createWhatsAppLink(
-	`Hola, quisiera cotizar un contador de agua Genebre 6029P de 3/4".
+	`Hola, vi el contador de agua Genebre 6029P de 3/4" a Q420 como precio de referencia.
 
-¿Me pueden confirmar precio y disponibilidad?
-
-Cantidad requerida:`
+Quiero comprar / confirmar disponibilidad.
+Cantidad requerida:
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
 );
 
 const whatsapp6110C = createWhatsAppLink(
-	`Hola, quisiera cotizar un contador de agua Genebre 6110C de 3/4".
+	`Hola, vi el contador de agua Genebre 6110C de 3/4" a Q450 como precio de referencia.
 
-¿Me pueden confirmar precio y disponibilidad?
-
-Cantidad requerida:`
+Quiero comprar / confirmar disponibilidad.
+Cantidad requerida:
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
 );
 
 const whatsapp6029 = createWhatsAppLink(
-	`Hola, quisiera cotizar un contador de agua Genebre 6029 de 3/4".
+	`Hola, vi el contador de agua Genebre 6029 de 3/4" a Q560 como precio de referencia.
 
-¿Me pueden confirmar precio y disponibilidad?
-
-Cantidad requerida:`
+Quiero comprar / confirmar disponibilidad.
+Cantidad requerida:
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
 );
 
 const whatsappWoltmann = createWhatsAppLink(
-	`Hola, necesito cotizar un contador Woltmann Genebre 6060A.
+	`Hola, vi sus contadores Woltmann Genebre 6060A con precios publicados y necesito ayuda para elegir o confirmar disponibilidad.
 
-Medida requerida:
+Medida requerida / no sé cuál:
 Cantidad:
 ¿Necesito kit de instalación?: Sí / No
-¿Necesito instalación?: Sí / No`
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
 );
+
+const woltmannPrices = [
+	{
+		size: '3"',
+		ref: "6060A 11 · DN80",
+		price: "Q3,050",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 3" a Q3,050 como precio de referencia.
+
+Quiero comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
+		),
+	},
+	{
+		size: '4"',
+		ref: "6060A 12 · DN100",
+		price: "Q4,000",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 4" a Q4,000 como precio de referencia.
+
+Quiero comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
+		),
+	},
+	{
+		size: '6"',
+		ref: "6060A 14 · DN150",
+		price: "Q5,900",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 6" a Q5,900 como precio de referencia.
+
+Quiero comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
+		),
+	},
+	{
+		size: '8"',
+		ref: "6060A 16 · DN200",
+		price: "Q8,500",
+		href: createWhatsAppLink(
+			`Hola, vi el contador Woltmann Genebre 6060A de 8" a Q8,500 como precio de referencia.
+
+Quiero comprar / confirmar disponibilidad.
+Cantidad:
+¿Necesito kit de instalación?: Sí / No
+¿Necesito instalación?: Sí / No
+Ubicación del proyecto:`
+		),
+	},
+];
 
 const faqSchema = {
 	"@context": "https://schema.org",
@@ -63,7 +127,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"El precio de un contador de agua depende de la medida, construcción y modelo. AR maneja opciones de 3/4 desde Q420 como precio de referencia, mientras que equipos de mayor diámetro se cotizan según especificación y disponibilidad.",
+					"El precio depende de la medida, construcción y modelo. AR publica opciones de 3/4 desde Q420 y contadores Woltmann Genebre 6060A desde Q3,050. Los precios y la disponibilidad se confirman antes de cerrar la compra.",
 			},
 		},
 		{
@@ -72,7 +136,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"Multiservicios Obra Civil AR puede cotizar contadores de agua para reposición, instalaciones nuevas y proyectos en Guatemala, con opción de solo suministro o suministro más instalación.",
+					"Multiservicios Obra Civil AR ofrece contadores de agua para reposición, instalaciones nuevas y proyectos en Guatemala, con precios publicados en opciones seleccionadas y posibilidad de solo suministro o suministro más instalación.",
 			},
 		},
 		{
@@ -81,7 +145,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"Se pueden cotizar contadores de 3/4 y equipos Woltmann bridados en medidas como 3, 4, 6 y 8 pulgadas. Otras medidas se revisan según requerimiento y disponibilidad.",
+					"AR ofrece contadores de 3/4 y equipos Woltmann bridados en medidas como 3, 4, 6 y 8 pulgadas. Otras medidas se revisan según requerimiento y disponibilidad.",
 			},
 		},
 		{
@@ -90,7 +154,16 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					"Sí. Se pueden cotizar contadores Genebre Woltmann con bridas ANSI en medidas como 3, 4, 6 y 8 pulgadas, sujetos a disponibilidad y especificación.",
+					"Sí. AR publica precios de referencia para Woltmann Genebre 6060A: 3 pulgadas Q3,050, 4 pulgadas Q4,000, 6 pulgadas Q5,900 y 8 pulgadas Q8,500. Precio y disponibilidad se confirman antes de la compra.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "¿Qué incluye el precio publicado del contador?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text:
+					"El precio publicado corresponde a la unidad del contador de la medida y modelo indicados. Kits, flanges, empaques, tornillería, otros materiales complementarios, entrega e instalación se cotizan por separado cuando aplican.",
 			},
 		},
 		{
@@ -138,31 +211,33 @@ const faqSchema = {
 				<p class="hero-lead">
 					Venta y suministro de contadores de agua en
 					Guatemala para reposición, instalaciones nuevas
-					y proyectos hidráulicos. Consulte precios de
-					referencia para opciones de 3/4" y cotización
-					de medidores Woltmann bridados para mayores diámetros.
+					y proyectos hidráulicos. Publicamos precios de
+					referencia para contadores de 3/4" y Woltmann
+					en las medidas que podemos comparar claramente.
 				</p>
 
 				<div class="hero-actions">
 					<a
-                        class="button"
-                        href={whatsappGeneral}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Cotizar contador
-                    </a>
+						class="button"
+						href="#contadores-3-4"
+					>
+						Ver precios y comprar
+					</a>
 
 					<a
 						class="button button-secondary"
-						href="#contadores-3-4"
+						href={whatsappGeneral}
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						Ver opciones
+						Ayúdenme a elegir
 					</a>
 				</div>
 
 				<div class="hero-trust">
-					<span>✓ Solo suministro</span>
+					<span>✓ 3/4" desde Q420</span>
+
+					<span>✓ Woltmann desde Q3,050</span>
 
 					<span>✓ Instalación disponible</span>
 
@@ -216,8 +291,8 @@ const faqSchema = {
 				</div>
 
 				<p class="price-note">
-					*Precio de referencia sujeto a confirmación
-					de modelo y disponibilidad.
+					*Precios comerciales de referencia por unidad,
+					sujetos a confirmación de modelo y disponibilidad.
 				</p>
 			</aside>
 		</div>
@@ -243,8 +318,9 @@ const faqSchema = {
 
 				<p>
 					No todos los contadores de 3/4" son iguales.
-					La construcción, tipo de medición y forma de
-					instalación pueden cambiar según el modelo.
+					Compare construcción, medición, montaje y precio.
+					Si ya sabe cuál necesita, puede confirmar
+					disponibilidad y comprar por WhatsApp.
 				</p>
 
 				<a
@@ -336,7 +412,7 @@ const faqSchema = {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Cotizar →
+                            Comprar / confirmar →
                         </a>
 					</div>
 				</article>
@@ -425,7 +501,7 @@ const faqSchema = {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Cotizar →
+							Comprar / confirmar →
 						</a>
 					</div>
 				</article>
@@ -510,16 +586,17 @@ const faqSchema = {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							Cotizar →
+							Comprar / confirmar →
 						</a>
 					</div>
 				</article>
 			</div>
 
 			<p class="catalog-note">
-				Los precios son referencias comerciales y pueden
-				variar según disponibilidad, actualización del
-				proveedor y especificaciones requeridas.
+				Los precios publicados corresponden a una unidad
+				del contador indicado. Instalación y materiales
+				complementarios se cotizan por separado cuando aplican.
+				Precio y disponibilidad se confirman antes de la compra.
 			</p>
 		</div>
 	</section>
@@ -540,9 +617,9 @@ const faqSchema = {
 				</h2>
 
 				<p>
-					Antes de cotizar verificamos medida, posición
-					de montaje y requerimientos de la instalación.
-					Esto ayuda a evitar comprar un modelo que luego
+					Antes de comprar conviene verificar medida,
+					posición de montaje y requerimientos de la instalación.
+					Esto ayuda a evitar elegir un modelo que luego
 					no corresponda al proyecto.
 				</p>
 
@@ -552,7 +629,7 @@ const faqSchema = {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Enviar requerimiento
+                    Ayúdenme a elegir
                 </a>
 			</div>
 
@@ -684,8 +761,9 @@ const faqSchema = {
 
 					<p>
 						Para instalaciones que requieren mayores
-						caudales podemos cotizar la línea Genebre
-						6060A para agua fría.
+						caudales ofrecemos la línea Genebre 6060A
+						para agua fría, con precios de referencia
+						publicados por medida.
 					</p>
 
 					<p>
@@ -705,61 +783,25 @@ const faqSchema = {
 			</div>
 
 			<div class="size-grid">
-				<article>
-					<span>
-						3"
-					</span>
+				{
+					woltmannPrices.map((meter) => (
+						<article>
+							<span>{meter.size}</span>
 
-					<strong>
-						6060A 11
-					</strong>
+							<strong>{meter.price}</strong>
 
-					<p>
-						Woltmann ANSI
-					</p>
-				</article>
+							<p>{meter.ref}</p>
 
-				<article>
-					<span>
-						4"
-					</span>
-
-					<strong>
-						6060A 12
-					</strong>
-
-					<p>
-						Woltmann ANSI
-					</p>
-				</article>
-
-				<article>
-					<span>
-						6"
-					</span>
-
-					<strong>
-						6060A 14
-					</strong>
-
-					<p>
-						Woltmann ANSI
-					</p>
-				</article>
-
-				<article>
-					<span>
-						8"
-					</span>
-
-					<strong>
-						6060A 16
-					</strong>
-
-					<p>
-						Woltmann ANSI
-					</p>
-				</article>
+							<a
+								href={meter.href}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Comprar / confirmar →
+							</a>
+						</article>
+					))
+				}
 			</div>
 
 			<div class="woltmann-specs">
@@ -810,7 +852,7 @@ const faqSchema = {
 
 			<div class="woltmann-cta">
 				<p>
-					¿Necesita 3", 4", 6", 8" u otra medida?
+					¿No sabe qué medida, kit o instalación necesita?
 				</p>
 
 				<a
@@ -819,7 +861,7 @@ const faqSchema = {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Cotizar Woltmann
+                    Ayúdenme a elegir Woltmann
                 </a>
 			</div>
 		</div>
@@ -844,10 +886,9 @@ const faqSchema = {
 				</h2>
 
 				<p class="installation-lead">
-					Dependiendo del proyecto podemos preparar
-					la propuesta únicamente con el contador
-					o agregar materiales complementarios y
-					mano de obra.
+					Puede comprar únicamente el contador al precio
+					publicado cuando aplique, o solicitar una propuesta
+					con materiales complementarios e instalación.
 				</p>
 			</div>
 
@@ -929,11 +970,11 @@ const faqSchema = {
 		<div class="container">
 			<div class="process-heading">
 				<p class="eyebrow">
-					PARA COTIZAR
+					PARA COMPRAR O INSTALAR
 				</p>
 
 				<h2>
-					Envíenos estos datos y avanzamos más rápido.
+					Confirme su compra o instalación con cuatro datos.
 				</h2>
 			</div>
 
@@ -1027,10 +1068,10 @@ const faqSchema = {
 
 					<p>
 						El precio depende de la medida, construcción
-						y modelo. Las opciones de 3/4" publicadas en
-						esta página parten de Q420 como referencia;
-						los equipos de mayor diámetro se cotizan
-						según especificación y disponibilidad.
+						y modelo. Las opciones de 3/4" parten de Q420
+						y los Woltmann Genebre 6060A parten de Q3,050.
+						Los precios y la disponibilidad se confirman
+						antes de cerrar la compra.
 					</p>
 				</details>
 
@@ -1040,11 +1081,11 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						AR puede cotizar contadores para reposición,
-						instalaciones nuevas y proyectos. Podemos
-						preparar una propuesta de solo suministro o,
-						cuando el proyecto lo requiera, incluir
-						materiales complementarios e instalación.
+						AR ofrece contadores para reposición,
+						instalaciones nuevas y proyectos. En opciones
+						seleccionadas publicamos el precio para que
+						pueda comparar antes de escribirnos; también
+						podemos incluir materiales e instalación.
 					</p>
 				</details>
 
@@ -1069,10 +1110,10 @@ const faqSchema = {
 					</summary>
 
 					<p>
-						Podemos cotizar la línea Genebre 6060A
-						con bridas ANSI en medidas como 3", 4",
-						6" y 8", además de revisar otras medidas
-						según requerimiento.
+						Sí. Publicamos precios de referencia para
+						Genebre 6060A: 3" Q3,050, 4" Q4,000,
+						6" Q5,900 y 8" Q8,500. Otras medidas se
+						revisan según requerimiento y disponibilidad.
 					</p>
 				</details>
 
@@ -1085,6 +1126,20 @@ const faqSchema = {
 						Sí. Para aplicaciones bridadas podemos
 						evaluar kits de instalación con los
 						accesorios requeridos según medida.
+					</p>
+				</details>
+
+				<details>
+					<summary>
+						¿Qué incluye el precio publicado del contador?
+					</summary>
+
+					<p>
+						El precio corresponde a una unidad del contador
+						del modelo y medida indicados. Kits, flanges,
+						empaques, tornillería, materiales complementarios,
+						entrega e instalación se cotizan por separado
+						cuando aplican.
 					</p>
 				</details>
 
@@ -1137,7 +1192,7 @@ const faqSchema = {
 	<section class="section final-cta">
 		<div class="container final-inner">
 			<p class="eyebrow">
-				COTIZACIÓN
+				COMPRA O INSTALACIÓN
 			</p>
 
 			<h2>
@@ -1145,9 +1200,10 @@ const faqSchema = {
 			</h2>
 
 			<p>
-				Envíenos la medida, cantidad y una fotografía
-				o especificación si la tiene. Revisamos el
-				requerimiento antes de preparar la propuesta.
+				Envíenos la medida y cantidad para confirmar
+				disponibilidad. Si todavía no sabe cuál necesita
+				o requiere instalación, también podemos revisar
+				su aplicación antes de cerrar la compra.
 			</p>
 
 			<a
@@ -1156,7 +1212,7 @@ const faqSchema = {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Solicitar cotización
+                Comprar / confirmar por WhatsApp
             </a>
 		</div>
 	</section>
@@ -1166,8 +1222,8 @@ const faqSchema = {
 			<p>
 				Genebre y las demás marcas mencionadas pertenecen
 				a sus respectivos titulares. Referencias técnicas,
-				precios y disponibilidad están sujetos a
-				confirmación al momento de la cotización.
+				precios y disponibilidad están sujetos a confirmación
+				antes de cerrar la compra o contratación.
 			</p>
 		</div>
 	</section>
@@ -1890,15 +1946,33 @@ const faqSchema = {
 
 		margin-bottom: 7px;
 
-		font-size: 1rem;
+		color: white;
+
+		font-size: 1.55rem;
+
+		letter-spacing: -0.035em;
 	}
 
 	.size-grid p {
-		margin: 0;
+		margin: 0 0 18px;
 
 		color: #999999;
 
 		font-size: 0.82rem;
+	}
+
+	.size-grid a {
+		display: inline-block;
+
+		color: #ff464d;
+
+		font-size: 0.78rem;
+
+		font-weight: 900;
+	}
+
+	.size-grid a:hover {
+		color: white;
 	}
 
 	.woltmann-specs {
