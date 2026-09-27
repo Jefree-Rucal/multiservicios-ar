@@ -208,9 +208,9 @@ const breadcrumbSchema = {
 
 					<a
 						class="button button-secondary"
-						href="#servicios"
+						href="#trabajos-reales"
 					>
-						Ver trabajos
+						Ver trabajos reales
 					</a>
 				</div>
 
@@ -363,6 +363,101 @@ const breadcrumbSchema = {
 						Revisar mi proyecto →
 					</a>
 				</article>
+			</div>
+		</div>
+	</section>
+
+	<section
+		class="section real-work-section"
+		id="trabajos-reales"
+	>
+		<div class="container">
+			<div class="real-work-heading">
+				<div>
+					<p class="eyebrow eyebrow-light">
+						TRABAJOS Y PROCESOS
+					</p>
+
+					<h2>
+						Estructuras y herrería
+						<span>ejecutadas en campo.</span>
+					</h2>
+				</div>
+
+				<p>
+					Fotografías de trabajos de estructura, soldadura
+					y protección metálica realizados en proyectos reales.
+				</p>
+			</div>
+
+			<div class="real-work-grid">
+				<figure class="work-photo">
+					<img
+						src="/images/servicios/estructuras-metalicas/estructura-metalica-cubierta-proceso-01.png"
+						alt="Montaje de estructura metálica para cubierta en proceso en Guatemala"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption>
+						<span>ESTRUCTURA METÁLICA</span>
+						<strong>Montaje de cubierta en proceso</strong>
+					</figcaption>
+				</figure>
+
+				<figure class="work-photo">
+					<img
+						src="/images/servicios/estructuras-metalicas/soldadura-base-columna-estructura-metalica-01.png"
+						alt="Trabajo de soldadura en base de columna de estructura metálica"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption>
+						<span>SOLDADURA</span>
+						<strong>Trabajo en base de columna</strong>
+					</figcaption>
+				</figure>
+
+				<figure class="work-photo">
+					<img
+						src="/images/servicios/estructuras-metalicas/proteccion-metalica-area-carga-01.png"
+						alt="Protecciones metálicas amarillas instaladas en área industrial de carga"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption>
+						<span>HERRERÍA INDUSTRIAL</span>
+						<strong>Protección para área de carga</strong>
+					</figcaption>
+				</figure>
+
+				<figure class="work-photo">
+					<img
+						src="/images/servicios/estructuras-metalicas/cubierta-metalica-estructura-industrial-01.png"
+						alt="Estructura metálica y cubierta ejecutada en un proyecto industrial"
+						loading="lazy"
+						decoding="async"
+					/>
+					<figcaption>
+						<span>ESTRUCTURA + CUBIERTA</span>
+						<strong>Solución metálica para área operativa</strong>
+					</figcaption>
+				</figure>
+			</div>
+
+			<div class="real-work-footer">
+				<p>
+					Cada proyecto cambia según medidas, uso, condiciones
+					del sitio y forma de instalación.
+				</p>
+
+				<a
+					class="button"
+					href={whatsappGeneral}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Cotizar un trabajo similar
+				</a>
 			</div>
 		</div>
 	</section>
@@ -969,6 +1064,123 @@ const breadcrumbSchema = {
 		font-weight: 900;
 	}
 
+	.real-work-section {
+		background: #111111;
+		color: white;
+	}
+
+	.real-work-heading {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 1.15fr)
+			minmax(280px, 0.85fr);
+		align-items: end;
+		gap: 50px;
+		margin-bottom: 38px;
+	}
+
+	.real-work-heading h2 {
+		margin-bottom: 0;
+		font-size: clamp(2.25rem, 4vw, 3.55rem);
+		line-height: 1.05;
+		letter-spacing: -0.045em;
+	}
+
+	.real-work-heading h2 span {
+		display: block;
+		color: #ff454c;
+	}
+
+	.real-work-heading > p {
+		max-width: 560px;
+		margin: 0;
+		color: #bdbdbd;
+		line-height: 1.75;
+	}
+
+	.real-work-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 14px;
+	}
+
+	.work-photo {
+		position: relative;
+		min-height: 390px;
+		margin: 0;
+		overflow: hidden;
+		border: 1px solid #2f2f2f;
+		border-radius: 12px;
+		background: #191919;
+	}
+
+	.work-photo img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.35s ease;
+	}
+
+	.work-photo::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(
+				to top,
+				rgba(0, 0, 0, 0.82) 0%,
+				rgba(0, 0, 0, 0.08) 54%,
+				transparent 100%
+			);
+	}
+
+	.work-photo:hover img {
+		transform: scale(1.025);
+	}
+
+	.work-photo figcaption {
+		position: absolute;
+		z-index: 2;
+		left: 24px;
+		right: 24px;
+		bottom: 22px;
+	}
+
+	.work-photo figcaption span {
+		display: block;
+		margin-bottom: 6px;
+		color: #ff454c;
+		font-size: 0.68rem;
+		font-weight: 900;
+		letter-spacing: 0.11em;
+	}
+
+	.work-photo figcaption strong {
+		display: block;
+		color: white;
+		font-size: 1.18rem;
+		line-height: 1.35;
+	}
+
+	.real-work-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 28px;
+		margin-top: 28px;
+		padding-top: 24px;
+		border-top: 1px solid #303030;
+	}
+
+	.real-work-footer p {
+		max-width: 620px;
+		margin: 0;
+		color: #a7a7a7;
+		line-height: 1.65;
+	}
+
 	.case-section {
 		background: white;
 	}
@@ -1316,8 +1528,13 @@ const breadcrumbSchema = {
 		.second-case-grid,
 		.intent-grid,
 		.context-grid,
-		.faq-grid {
+		.faq-grid,
+		.real-work-heading {
 			grid-template-columns: 1fr;
+		}
+
+		.real-work-heading {
+			gap: 18px;
 		}
 
 		.hero-media,
@@ -1342,6 +1559,19 @@ const breadcrumbSchema = {
 	@media (max-width: 650px) {
 		.metal-hero {
 			padding: 52px 0;
+		}
+
+		.real-work-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.work-photo {
+			min-height: 320px;
+		}
+
+		.real-work-footer {
+			align-items: stretch;
+			flex-direction: column;
 		}
 
 		.hero-copy h1 {
