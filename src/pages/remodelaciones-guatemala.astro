@@ -1193,8 +1193,9 @@ const breadcrumbSchema = {
 		grid-row: 1 / span 2;
 	}
 
-	.gallery-card-wide {
-		grid-column: 1 / span 2;
+	.gallery-card-wide,
+	.gallery-card:last-child {
+		grid-column: 1 / -1;
 	}
 
 	.gallery-card img {
@@ -1526,7 +1527,8 @@ const breadcrumbSchema = {
 		}
 
 		.gallery-card-tall,
-		.gallery-card-wide {
+		.gallery-card-wide,
+		.gallery-card:last-child {
 			grid-column: auto;
 			grid-row: auto;
 		}
