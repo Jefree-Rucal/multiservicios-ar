@@ -152,6 +152,24 @@ const faqSchema = {
 	],
 };
 
+
+const deckProductSchema = {
+	"@context": "https://schema.org",
+	"@type": "Product",
+	name: "Piso Deck WPC, caja de 5 piezas",
+	description: "Caja con 5 piezas de Deck WPC de aproximadamente 2.90 m por 14 cm; rendimiento geométrico aproximado de 2.03 m² antes de cortes.",
+	image: ["https://obracivilar.com/images/deck/deck-wpc-grafito-textura.png"],
+	url: "https://obracivilar.com/deck-wpc-guatemala/",
+	offers: {
+		"@type": "Offer",
+		url: "https://obracivilar.com/deck-wpc-guatemala/",
+		price: "875",
+		priceCurrency: "GTQ",
+		itemCondition: "https://schema.org/NewCondition",
+		seller: { "@type": "Organization", name: "Multiservicios Obra Civil AR" },
+	},
+};
+
 const breadcrumbSchema = {
 	"@context": "https://schema.org",
 	"@type": "BreadcrumbList",
@@ -188,54 +206,162 @@ const breadcrumbSchema = {
 		set:html={JSON.stringify(breadcrumbSchema)}
 	></script>
 
-	<!-- ==================================================
-	     HERO
-	================================================== -->
 
-	<section class="deck-hero">
-		<div class="container hero-grid">
-			<div class="hero-copy">
-				<p class="eyebrow">
-					PISO WPC · DECK WPC EN GUATEMALA
-				</p>
 
-				<h1>
-					Piso Deck WPC
-					<span>en Guatemala desde Q875 por caja.</span>
-				</h1>
+	<script type="application/ld+json" set:html={JSON.stringify(deckProductSchema)}></script>
 
-				<p class="hero-lead">
-					Deck WPC para terrazas, balcones y áreas exteriores.
-					Cada caja incluye 5 piezas y cubre aproximadamente
-					2.03 m² antes de cortes. Puede cotizar solo material
-					o solicitar suministro más instalación.
-				</p>
-
-				<div class="hero-actions">
-					<a
-						class="button"
-						href={whatsappBuyBoxes}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Comprar Deck WPC · Q875/caja
-					</a>
-
-					<a
-						class="button button-secondary"
-						href="#calculadora"
-					>
-						Calcular cuántas cajas necesito
-					</a>
+	<!-- Hero comercial: fotografía real + doble ruta de cotización -->
+	<section class="deck-hero deck-hero-refresh">
+		<div class="container deck-landing-grid">
+			<div class="deck-landing-copy">
+				<p class="eyebrow">PISO WPC · DECK WPC EN GUATEMALA</p>
+				<h1>Piso Deck WPC <span>en Guatemala</span></h1>
+				<p class="deck-subheadline">Transforme su terraza o área exterior con Deck WPC de acabado tipo madera. <strong>Compre solo el material o solicite suministro e instalación completa con AR.</strong></p>
+				<div class="deck-price-highlight" aria-label="Precio de Deck WPC por caja">
+					<strong>Q875</strong>
+					<span>por caja de 5 piezas<br /><small>Rendimiento geométrico aprox. 2.03 m² antes de cortes.</small></span>
+				</div>
+				<div class="deck-hero-ctas">
+					<a class="button deck-cta-primary" href={whatsappInstallation} target="_blank" rel="noopener noreferrer" data-deck-intent="instalacion">Cotizar Deck con instalación <span aria-hidden="true">↗</span></a>
+					<a class="button button-secondary deck-cta-secondary" href={whatsappBuyBoxes} target="_blank" rel="noopener noreferrer" data-deck-intent="material">Comprar solo material <span aria-hidden="true">↗</span></a>
 				</div>
 
-				<div class="hero-trust">
-					<span>✓ Q875 por caja</span>
-					<span>✓ Instalación disponible</span>
+			</div>
+			<figure class="deck-hero-photo">
+				<img src="/images/projects/hero-deck.jpeg" alt="Terraza con Deck instalado en un proyecto real de Multiservicios Obra Civil AR en Guatemala, con mesa y sillas" width="1200" height="1599" loading="eager" decoding="async" fetchpriority="high" />
+				<figcaption><strong>TRABAJO REAL DE AR</strong><span>Una instalación terminada, sin imágenes de catálogo.</span></figcaption>
+			</figure>
+			<div class="deck-landing-footnotes">
+				<a class="deck-calc-link" href="#calculadora">¿No sabe cuántas cajas necesita? Use nuestra calculadora ↓</a>
+				<div class="deck-trust-points" aria-label="Información comercial">
+					<span>✓ Fotografías de trabajo real</span>
+					<span>✓ Suministro e instalación</span>
 					<span>✓ Factura FEL</span>
+				</div>
+				<p class="deck-price-disclaimer">Q875 corresponde únicamente a las 5 piezas de piso. Bases, clips, fijaciones, entrega e instalación se cotizan aparte, según el proyecto.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Dos caminos claros: no obligar al comprador a buscar su opción -->
+	<section class="deck-choice-section" id="cotizar-deck">
+		<div class="container">
+			<div class="deck-choice-heading">
+				<p class="eyebrow">ELIJA CÓMO QUIERE COMPRAR</p>
+				<h2>¿Solo el material o el proyecto completo?</h2>
+				<p>Le ayudamos a cotizar lo que realmente necesita. Puede comenzar con medidas aproximadas o enviarnos fotografías del área.</p>
+			</div>
+			<div class="deck-choice-grid">
+				<article class="deck-choice-card deck-choice-install">
+					<p class="deck-choice-tag">SUMINISTRO + INSTALACIÓN</p>
+					<h3>Nosotros nos encargamos del trabajo.</h3>
+					<p>Revisamos el área, materiales complementarios, bases, fijaciones y mano de obra para preparar una cotización por proyecto.</p>
+					<a class="button" href={whatsappInstallation} target="_blank" rel="noopener noreferrer" data-deck-intent="instalacion">Solicitar cotización completa ↗</a>
+					<small>Envíenos ubicación, medidas aproximadas y fotos si las tiene.</small>
+				</article>
+				<article class="deck-choice-card deck-choice-material">
+					<p class="deck-choice-tag">COMPRA DE MATERIAL</p>
+					<h3>Compre sus cajas de Deck WPC.</h3>
+					<p>5 piezas por caja, aproximadamente 2.03 m² de cobertura geométrica. Confirme color, cantidad y disponibilidad con nuestro equipo.</p>
+					<a class="button button-secondary" href={whatsappBuyBoxes} target="_blank" rel="noopener noreferrer" data-deck-intent="material">Consultar cajas · Q875/caja ↗</a>
+					<small>Accesorios y entrega se cotizan por separado.</small>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ==================================================
+	     PRODUCTO / PROYECTO
+	================================================== -->
+
+	<section
+		class="section product-section"
+		id="producto"
+	>
+		<div class="container product-grid">
+			<div class="project-visual">
+				<img
+					src="/images/servicios/remodelaciones/deck-exterior-remodelacion-terminado.jpeg"
+					alt="Área amplia de Deck instalado en un proyecto real de remodelación de AR"
+					width="1599"
+					height="1200"
+					loading="lazy"
+					decoding="async"
+				/>
+
+				<div class="project-badge">
+					<span>PROYECTO EJECUTADO POR AR</span>
+					<strong>Deck WPC exterior</strong>
 				</div>
 			</div>
 
+			<div class="product-copy">
+				<p class="eyebrow">
+					PISO WPC PARA EXTERIORES
+				</p>
+
+				<h2>
+					Un acabado real para
+					<span>terrazas y espacios exteriores.</span>
+				</h2>
+
+				<p>
+					El Piso Deck WPC ofrece un acabado tipo madera
+					para proyectos exteriores y puede utilizarse en
+					terrazas, balcones y otras áreas donde se busca
+					una superficie visualmente uniforme.
+				</p>
+
+				<div class="spec-grid">
+					<div>
+						<strong>2.90 m</strong>
+						<span>Largo aproximado</span>
+					</div>
+
+					<div>
+						<strong>14 cm</strong>
+						<span>Ancho aproximado</span>
+					</div>
+
+					<div>
+						<strong>25 mm</strong>
+						<span>Espesor aproximado</span>
+					</div>
+
+					<div>
+						<strong>5 piezas</strong>
+						<span>Por caja</span>
+					</div>
+				</div>
+
+				<p class="product-note">
+					Estas medidas corresponden al producto que
+					actualmente utilizamos como referencia comercial.
+					Se confirman nuevamente antes de cada cotización.
+				</p>
+
+				<a
+					class="button"
+					href={whatsappBuyBoxes}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Comprar material · Q875/caja
+				</a>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Precio completo y transparente, después de mostrar el trabajo real -->
+	<section class="section deck-price-section" id="precio-deck">
+		<div class="container deck-price-grid">
+			<div class="deck-price-intro">
+				<p class="eyebrow">PRECIO Y ESPECIFICACIONES</p>
+				<h2>Precio claro por caja. <span>Instalación a la medida.</span></h2>
+				<p>Puede comprar únicamente las duelas de Piso Deck WPC o solicitar una propuesta con bases, clips y mano de obra. El costo final de instalación depende del área y sus condiciones.</p>
+				<a class="deck-price-text-link" href="#calculadora">Calcular material para mi área →</a>
+			</div>
 			<aside class="price-panel">
 				<p class="panel-label">
 					PRECIO DE PISO DECK WPC
@@ -304,158 +430,6 @@ const breadcrumbSchema = {
 					instalación no están incluidos y se cotizan cuando aplican.
 				</p>
 			</aside>
-		</div>
-	</section>
-
-	<!-- ==================================================
-	     COMPRA DIRECTA
-	================================================== -->
-
-	<section class="section direct-buy-section">
-		<div class="container direct-buy-grid">
-			<div class="direct-buy-copy">
-				<p class="eyebrow">
-					COMPRA DIRECTA DE MATERIAL
-				</p>
-
-				<h2>
-					El precio no está escondido:
-					<span>Q875 por caja.</span>
-				</h2>
-
-				<p>
-					Si ya conoce la cantidad que necesita, puede escribirnos
-					directamente para confirmar disponibilidad, color y entrega.
-					Si todavía no sabe cuántas cajas comprar, use la calculadora
-					de esta misma página.
-				</p>
-
-				<div class="direct-buy-actions">
-					<a
-						class="button"
-						href={whatsappBuyBoxes}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Comprar cajas por WhatsApp
-					</a>
-
-					<a
-						class="button button-secondary"
-						href="#calculadora"
-					>
-						Calcular cajas
-					</a>
-				</div>
-			</div>
-
-			<div class="buy-summary">
-				<div>
-					<span>PRECIO POR CAJA</span>
-					<strong>Q875</strong>
-				</div>
-
-				<div>
-					<span>CONTENIDO</span>
-					<strong>5 piezas</strong>
-				</div>
-
-				<div>
-					<span>RENDIMIENTO APROX.</span>
-					<strong>2.03 m²</strong>
-				</div>
-
-				<div>
-					<span>MEDIDA POR PIEZA</span>
-					<strong>2.90 m × 14 cm</strong>
-				</div>
-
-				<p>
-					El precio de Q875 cubre únicamente las 5 piezas de piso.
-					Bases para Piso Deck, separadores, fijaciones, entrega e
-					instalación se agregan por separado según lo que necesite.
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<!-- ==================================================
-	     PRODUCTO / PROYECTO
-	================================================== -->
-
-	<section
-		class="section product-section"
-		id="producto"
-	>
-		<div class="container product-grid">
-			<div class="project-visual">
-				<img
-					src="/images/projects/hero-deck.jpeg"
-					alt="Proyecto real de Piso Deck WPC exterior ejecutado por Multiservicios Obra Civil AR en Guatemala"
-					loading="eager"
-					decoding="async"
-				/>
-
-				<div class="project-badge">
-					<span>PROYECTO EJECUTADO POR AR</span>
-					<strong>Deck WPC exterior</strong>
-				</div>
-			</div>
-
-			<div class="product-copy">
-				<p class="eyebrow">
-					PISO WPC PARA EXTERIORES
-				</p>
-
-				<h2>
-					Una solución para
-					<span>renovar terrazas y balcones.</span>
-				</h2>
-
-				<p>
-					El Piso Deck WPC ofrece un acabado tipo madera
-					para proyectos exteriores y puede utilizarse en
-					terrazas, balcones y otras áreas donde se busca
-					una superficie visualmente uniforme.
-				</p>
-
-				<div class="spec-grid">
-					<div>
-						<strong>2.90 m</strong>
-						<span>Largo aproximado</span>
-					</div>
-
-					<div>
-						<strong>14 cm</strong>
-						<span>Ancho aproximado</span>
-					</div>
-
-					<div>
-						<strong>25 mm</strong>
-						<span>Espesor aproximado</span>
-					</div>
-
-					<div>
-						<strong>5 piezas</strong>
-						<span>Por caja</span>
-					</div>
-				</div>
-
-				<p class="product-note">
-					Estas medidas corresponden al producto que
-					actualmente utilizamos como referencia comercial.
-					Se confirman nuevamente antes de cada cotización.
-				</p>
-
-				<a
-					class="button"
-					href={whatsappBuyBoxes}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Comprar material · Q875/caja
-				</a>
-			</div>
 		</div>
 	</section>
 
@@ -1210,6 +1184,12 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
+
+	<nav class="deck-mobile-contact" aria-label="Cotizar Deck WPC" aria-hidden="true" hidden>
+		<a href={whatsappInstallation} target="_blank" rel="noopener noreferrer" data-deck-intent="instalacion">Cotizar instalación</a>
+		<a href={whatsappBuyBoxes} target="_blank" rel="noopener noreferrer" data-deck-intent="material">Solo material</a>
+	</nav>
+
 	<script is:inline>
 		(() => {
 			const calculator = document.querySelector("[data-deck-calculator]");
@@ -1277,6 +1257,37 @@ const breadcrumbSchema = {
 			});
 		})();
 	</script>
+
+	<!-- La barra de contacto móvil aparece cuando los CTA del hero dejan de verse -->
+	<script is:inline>
+		(() => {
+			const bar = document.querySelector(".deck-mobile-contact");
+			const buttons = document.querySelector(".deck-hero-ctas");
+			if (!bar || !buttons) return;
+
+			const showBar = (visible) => {
+				bar.hidden = !visible;
+				bar.classList.toggle("is-visible", visible);
+				bar.setAttribute("aria-hidden", String(!visible));
+			};
+
+			showBar(false);
+
+			if ("IntersectionObserver" in window) {
+				const observer = new IntersectionObserver(([entry]) => {
+					// Solo mostrarla si los botones quedaron ARRIBA del viewport.
+					// No activar la barra al cargar ni cuando bajamos de nuevo al hero.
+					showBar(!entry.isIntersecting && entry.boundingClientRect.bottom < 0);
+				}, { threshold: 0 });
+				observer.observe(buttons);
+			} else {
+				const update = () => showBar(buttons.getBoundingClientRect().bottom < 0);
+				window.addEventListener("scroll", update, { passive: true });
+				update();
+			}
+		})();
+	</script>
+
 </BaseLayout>
 
 <style>
@@ -2467,4 +2478,147 @@ const breadcrumbSchema = {
 			width: 100%;
 		}
 	}
+
+	/* Landing de conversión Deck WPC: se preservan los estilos y bloques SEO existentes */
+	.deck-hero-refresh {
+		padding: 58px 0 68px;
+		background: linear-gradient(120deg, #faf9f7 0%, #fff 54%, #f2f0ec 100%);
+	}
+	.deck-landing-grid {
+		display: grid;
+		grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+		grid-template-areas: "copy photo" "extras photo";
+		grid-template-rows: auto auto;
+		align-items: center;
+		gap: 12px clamp(26px, 5vw, 70px);
+	}
+	.deck-landing-copy { grid-area: copy; min-width: 0; max-width: 100%; }
+	.deck-landing-footnotes { grid-area: extras; min-width: 0; max-width: 100%; }
+	.deck-hero-photo { grid-area: photo; }
+	.deck-landing-copy .eyebrow { margin-bottom: 18px; }
+	.deck-landing-copy h1 {
+		font-size: clamp(3rem, 5vw, 5.15rem);
+		line-height: 1.02;
+		letter-spacing: -0.062em;
+		margin: 0 0 22px;
+		max-width: 810px;
+	}
+	.deck-landing-copy h1 span { display: block; color: #ed1c24; }
+	.deck-subheadline {
+		max-width: 650px;
+		font-size: clamp(1.04rem, 1.45vw, 1.18rem);
+		color: #555;
+		line-height: 1.7;
+		margin-bottom: 24px;
+	}
+	.deck-subheadline strong { color: #232323; font-weight: 700; }
+	.deck-price-highlight {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		border-left: 4px solid #ed1c24;
+		padding: 10px 0 10px 18px;
+		margin: 22px 0 22px;
+	}
+	.deck-price-highlight > strong { font-size: clamp(2.1rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -0.06em; }
+	.deck-price-highlight > span { font-size: 0.91rem; font-weight: 700; line-height: 1.35; }
+	.deck-price-highlight small { display: inline-block; margin-top: 6px; font-size: 0.74rem; font-weight: 500; color: #666; }
+	.deck-hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+	.deck-hero-ctas .button { min-height: 55px; text-align: center; line-height: 1.4; gap: 8px; }
+	.deck-hero-ctas .deck-cta-primary { box-shadow: 0 9px 26px rgba(237,28,36,0.15); }
+	.deck-hero-ctas .deck-cta-secondary { background: white; }
+	.deck-calc-link { display: inline-block; font-weight: 750; margin-top: 18px; color: #9b1b21; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 4px; }
+	.deck-trust-points { display: flex; flex-wrap: wrap; gap: 9px 17px; font-size: 0.81rem; font-weight: 750; color: #353535; margin-top: 24px; }
+	.deck-price-disclaimer { max-width: 610px; font-size: 0.74rem; color: #777; line-height: 1.5; margin: 15px 0 0; }
+	.deck-hero-photo { position: relative; margin: 0; min-width: 0; border-radius: 17px; overflow: hidden; background: #d5ccc0; box-shadow: 0 22px 60px rgba(33,29,23,0.14); aspect-ratio: 0.89; }
+	.deck-hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; }
+	.deck-hero-photo figcaption { position: absolute; inset: auto 16px 16px; padding: 13px 15px; border-radius: 10px; background: rgba(17,17,17,0.87); color: white; display: flex; flex-direction: column; gap: 4px; }
+	.deck-hero-photo figcaption strong { color: #fff; font-size: 0.72rem; letter-spacing: 0.11em; }
+	.deck-hero-photo figcaption span { font-size: 0.83rem; color: #eee; }
+	.deck-choice-section { padding: 68px 0; background: #fff; }
+	.deck-choice-heading { max-width: 800px; margin-bottom: 25px; }
+	.deck-choice-heading h2, .deck-price-intro h2 { font-size: clamp(2rem, 3vw, 3rem); line-height: 1.1; letter-spacing: -0.045em; margin-bottom: 13px; }
+	.deck-choice-heading > p:last-child, .deck-price-intro > p:not(.eyebrow) { max-width: 670px; color: #666; line-height: 1.7; }
+	.deck-choice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+	.deck-choice-card { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; padding: clamp(23px, 3vw, 34px); border-radius: 13px; border: 1px solid #dedede; background: #f8f8f8; }
+	.deck-choice-install { background: #161616; border-color: #161616; color: #fff; }
+	.deck-choice-tag { letter-spacing: 0.11em; font-size: 0.69rem; font-weight: 900; color: #ed1c24; }
+	.deck-choice-install .deck-choice-tag { color: #ff5b61; }
+	.deck-choice-card h3 { font-size: clamp(1.45rem, 2.3vw, 2.05rem); letter-spacing: -0.045em; line-height: 1.2; margin: 7px 0 13px; }
+	.deck-choice-card > p:not(.deck-choice-tag) { line-height: 1.7; color: #5d5d5d; flex: 1; }
+	.deck-choice-install > p:not(.deck-choice-tag) { color: #cbcbcb; }
+	.deck-choice-card .button { margin: 8px 0 12px; min-height: 48px; text-align: center; }
+	.deck-choice-material .button-secondary { background: white; }
+	.deck-choice-card small { font-size: 0.78rem; color: #666; line-height: 1.5; }
+	.deck-choice-install small { color: #bdbdbd; }
+	.deck-price-section { background: #f2f2f2; }
+	.deck-price-grid { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 0.8fr); gap: clamp(24px, 5vw, 78px); align-items: center; }
+	.deck-price-intro h2 span { display: block; color: #ed1c24; }
+	.deck-price-text-link { display: inline-block; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; margin-top: 7px; }
+	.deck-price-section .price-panel { max-width: 580px; width: 100%; }
+	.deck-mobile-contact { display: none; }
+	.deck-mobile-contact[hidden] { display: none !important; }
+	@media (max-width: 900px) {
+		.deck-landing-grid { grid-template-columns: minmax(0,1fr); grid-template-areas: "copy" "photo" "extras"; gap: 22px; }
+		.deck-hero-photo { aspect-ratio: 16 / 10; }
+		.deck-hero-photo img { object-position: 50% 67%; }
+		.deck-price-grid { grid-template-columns: 1fr; }
+		.deck-price-section .price-panel { max-width: none; }
+	}
+	@media (max-width: 560px) {
+		.deck-hero-refresh { padding: 30px 0 38px; }
+		.deck-landing-copy h1 { font-size: clamp(2.55rem, 11vw, 3.2rem); margin-bottom: 16px; }
+		.deck-subheadline { font-size: 0.98rem; line-height: 1.58; margin-bottom: 18px; }
+		.deck-price-highlight { gap: 14px; margin: 17px 0 21px; }
+		.deck-hero-ctas { flex-direction: column; }
+		.deck-hero-ctas .button { width: 100%; min-height: 49px; }
+		.deck-trust-points { gap: 8px 14px; font-size: 0.72rem; }
+		.deck-price-disclaimer { font-size: 0.72rem; }
+
+		/* Columnas móviles sin display:contents: evita que el contenido ensanche el viewport. */
+		.deck-landing-grid {
+			display: grid;
+			width: min(var(--container), calc(100% - 28px));
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-areas: "copy" "photo" "extras";
+			gap: 0;
+		}
+		.deck-landing-copy, .deck-landing-footnotes { display: block; min-width: 0; max-width: 100%; }
+		.deck-landing-copy h1, .deck-subheadline, .deck-price-highlight,
+		.deck-hero-ctas, .deck-hero-ctas .button { max-width: 100%; min-width: 0; }
+		.deck-landing-copy h1, .deck-subheadline { overflow-wrap: break-word; }
+		.deck-hero-ctas { display: grid; grid-template-columns: minmax(0, 1fr); margin-bottom: 18px; }
+		.deck-hero-ctas .button { width: 100%; white-space: normal; overflow-wrap: anywhere; }
+		.deck-price-highlight > span { min-width: 0; overflow-wrap: break-word; }
+		.deck-hero-photo { aspect-ratio: 5 / 4; width: 100%; max-width: 100%; margin: 0; }
+		.deck-landing-footnotes { padding-top: 4px; }
+		.deck-hero-photo figcaption { inset: auto 10px 10px; padding: 10px 12px; }
+		.deck-hero-photo figcaption span { font-size: 0.72rem; }
+		.deck-choice-section { padding: 47px 0; }
+		.deck-choice-grid { grid-template-columns: 1fr; gap: 14px; }
+		.deck-choice-card .button { width: 100%; }
+		.deck-price-section { padding: 51px 0; }
+		.deck-mobile-contact {
+			display: grid; grid-template-columns: 1fr 0.75fr; gap: 9px;
+			visibility: hidden; opacity: 0; pointer-events: none;
+			transform: translateY(110%);
+			transition: transform 180ms ease, opacity 180ms ease;
+			position: fixed; left: 0; right: 0; bottom: 0; z-index: 120;
+			padding: 9px 14px max(9px, env(safe-area-inset-bottom));
+			background: rgba(255,255,255,0.97);
+			border-top: 1px solid #e5e5e5;
+			box-shadow: 0 -8px 26px rgba(0,0,0,0.08);
+		}
+		.deck-mobile-contact a { display: flex; justify-content: center; align-items: center; min-height: 46px; padding: 9px 8px; border-radius: 7px; font-size: 0.83rem; font-weight: 850; text-align: center; background: #ed1c24; color: #fff; }
+		.deck-mobile-contact a:last-child { background: #f2f2f2; color: #111; border: 1px solid #d2d2d2; }
+		.deck-mobile-contact.is-visible {
+			visibility: visible; opacity: 1; pointer-events: auto;
+			transform: translateY(0);
+		}
+		@media (prefers-reduced-motion: reduce) {
+			.deck-mobile-contact { transition: none; }
+		}
+		:global(body) { padding-bottom: 73px; }
+	}
+
 </style>
