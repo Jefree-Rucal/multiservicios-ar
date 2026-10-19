@@ -1182,7 +1182,7 @@ const breadcrumbSchema = {
 	</section>
 
 
-	<nav class="deck-mobile-contact" aria-label="Cotizar Deck WPC" aria-hidden="true">
+	<nav class="deck-mobile-contact" aria-label="Cotizar Deck WPC" aria-hidden="true" hidden>
 		<a href={whatsappInstallation} target="_blank" rel="noopener noreferrer" data-deck-intent="instalacion">Cotizar instalación</a>
 		<a href={whatsappBuyBoxes} target="_blank" rel="noopener noreferrer" data-deck-intent="material">Solo material</a>
 	</nav>
@@ -1263,6 +1263,7 @@ const breadcrumbSchema = {
 			if (!bar || !buttons) return;
 
 			const showBar = (visible) => {
+				bar.hidden = !visible;
 				bar.classList.toggle("is-visible", visible);
 				bar.setAttribute("aria-hidden", String(!visible));
 			};
@@ -2548,6 +2549,7 @@ const breadcrumbSchema = {
 	.deck-price-text-link { display: inline-block; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; margin-top: 7px; }
 	.deck-price-section .price-panel { max-width: 580px; width: 100%; }
 	.deck-mobile-contact { display: none; }
+	.deck-mobile-contact[hidden] { display: none !important; }
 	@media (max-width: 900px) {
 		.deck-landing-grid { grid-template-columns: 1fr; gap: 24px; }
 		.deck-hero-photo { aspect-ratio: 16 / 10; }
