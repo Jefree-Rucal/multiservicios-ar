@@ -1182,7 +1182,7 @@ const breadcrumbSchema = {
 	</section>
 
 
-	<nav class="deck-mobile-contact" aria-label="Cotizar Deck WPC">
+	<nav class="deck-mobile-contact" aria-label="Cotizar Deck WPC" aria-hidden="true">
 		<a href={whatsappInstallation} target="_blank" rel="noopener noreferrer" data-deck-intent="instalacion">Cotizar instalación</a>
 		<a href={whatsappBuyBoxes} target="_blank" rel="noopener noreferrer" data-deck-intent="material">Solo material</a>
 	</nav>
@@ -1254,6 +1254,36 @@ const breadcrumbSchema = {
 			});
 		})();
 	</script>
+
+	<!-- La barra de contacto móvil aparece cuando los CTA del hero dejan de verse -->
+	<script is:inline>
+		(() => {
+			const bar = document.querySelector(".deck-mobile-contact");
+			const buttons = document.querySelector(".deck-hero-ctas");
+			if (!bar || !buttons) return;
+
+			const showBar = (visible) => {
+				bar.classList.toggle("is-visible", visible);
+				bar.setAttribute("aria-hidden", String(!visible));
+			};
+
+			showBar(false);
+
+			if ("IntersectionObserver" in window) {
+				const observer = new IntersectionObserver(([entry]) => {
+					// Solo mostrarla si los botones quedaron ARRIBA del viewport.
+					// No activar la barra al cargar ni cuando bajamos de nuevo al hero.
+					showBar(!entry.isIntersecting && entry.boundingClientRect.bottom < 0);
+				}, { threshold: 0 });
+				observer.observe(buttons);
+			} else {
+				const update = () => showBar(buttons.getBoundingClientRect().bottom < 0);
+				window.addEventListener("scroll", update, { passive: true });
+				update();
+			}
+		})();
+	</script>
+
 </BaseLayout>
 
 <style>
@@ -2555,6 +2585,9 @@ const breadcrumbSchema = {
 		.deck-price-section { padding: 51px 0; }
 		.deck-mobile-contact {
 			display: grid; grid-template-columns: 1fr 0.75fr; gap: 9px;
+			visibility: hidden; opacity: 0; pointer-events: none;
+			transform: translateY(110%);
+			transition: transform 180ms ease, opacity 180ms ease;
 			position: fixed; left: 0; right: 0; bottom: 0; z-index: 120;
 			padding: 9px 14px max(9px, env(safe-area-inset-bottom));
 			background: rgba(255,255,255,0.97);
@@ -2563,6 +2596,13 @@ const breadcrumbSchema = {
 		}
 		.deck-mobile-contact a { display: flex; justify-content: center; align-items: center; min-height: 46px; padding: 9px 8px; border-radius: 7px; font-size: 0.83rem; font-weight: 850; text-align: center; background: #ed1c24; color: #fff; }
 		.deck-mobile-contact a:last-child { background: #f2f2f2; color: #111; border: 1px solid #d2d2d2; }
+		.deck-mobile-contact.is-visible {
+			visibility: visible; opacity: 1; pointer-events: auto;
+			transform: translateY(0);
+		}
+		@media (prefers-reduced-motion: reduce) {
+			.deck-mobile-contact { transition: none; }
+		}
 		:global(body) { padding-bottom: 73px; }
 	}
 
