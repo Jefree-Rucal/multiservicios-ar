@@ -2534,7 +2534,19 @@ const breadcrumbSchema = {
 		.deck-hero-ctas .button { width: 100%; min-height: 49px; }
 		.deck-trust-points { gap: 8px 14px; font-size: 0.72rem; }
 		.deck-price-disclaimer { font-size: 0.72rem; }
-		.deck-hero-photo { aspect-ratio: 5 / 4; }
+
+		/* En celular se ve el proyecto auténtico justo después de las dos opciones. */
+		.deck-landing-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+		.deck-landing-copy { display: contents; }
+		.deck-landing-copy .eyebrow { order: 1; }
+		.deck-landing-copy h1 { order: 2; }
+		.deck-subheadline { order: 3; }
+		.deck-price-highlight { order: 4; }
+		.deck-hero-ctas { order: 5; margin-bottom: 18px; }
+		.deck-hero-photo { order: 6; aspect-ratio: 5 / 4; width: 100%; }
+		.deck-calc-link { order: 7; }
+		.deck-trust-points { order: 8; }
+		.deck-price-disclaimer { order: 9; }
 		.deck-hero-photo figcaption { inset: auto 10px 10px; padding: 10px 12px; }
 		.deck-hero-photo figcaption span { font-size: 0.72rem; }
 		.deck-choice-section { padding: 47px 0; }
