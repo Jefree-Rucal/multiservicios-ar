@@ -225,6 +225,13 @@ const breadcrumbSchema = {
 					<a class="button deck-cta-primary" href={whatsappInstallation} target="_blank" rel="noopener noreferrer" data-deck-intent="instalacion">Cotizar Deck con instalación <span aria-hidden="true">↗</span></a>
 					<a class="button button-secondary deck-cta-secondary" href={whatsappBuyBoxes} target="_blank" rel="noopener noreferrer" data-deck-intent="material">Comprar solo material <span aria-hidden="true">↗</span></a>
 				</div>
+
+			</div>
+			<figure class="deck-hero-photo">
+				<img src="/images/projects/hero-deck.jpeg" alt="Terraza con Deck instalado en un proyecto real de Multiservicios Obra Civil AR en Guatemala, con mesa y sillas" width="1200" height="1599" loading="eager" decoding="async" fetchpriority="high" />
+				<figcaption><strong>TRABAJO REAL DE AR</strong><span>Una instalación terminada, sin imágenes de catálogo.</span></figcaption>
+			</figure>
+			<div class="deck-landing-footnotes">
 				<a class="deck-calc-link" href="#calculadora">¿No sabe cuántas cajas necesita? Use nuestra calculadora ↓</a>
 				<div class="deck-trust-points" aria-label="Información comercial">
 					<span>✓ Fotografías de trabajo real</span>
@@ -233,10 +240,6 @@ const breadcrumbSchema = {
 				</div>
 				<p class="deck-price-disclaimer">Q875 corresponde únicamente a las 5 piezas de piso. Bases, clips, fijaciones, entrega e instalación se cotizan aparte, según el proyecto.</p>
 			</div>
-			<figure class="deck-hero-photo">
-				<img src="/images/projects/hero-deck.jpeg" alt="Terraza con Deck instalado en un proyecto real de Multiservicios Obra Civil AR en Guatemala, con mesa y sillas" width="1200" height="1599" loading="eager" decoding="async" fetchpriority="high" />
-				<figcaption><strong>TRABAJO REAL DE AR</strong><span>Una instalación terminada, sin imágenes de catálogo.</span></figcaption>
-			</figure>
 		</div>
 	</section>
 
@@ -2484,9 +2487,14 @@ const breadcrumbSchema = {
 	.deck-landing-grid {
 		display: grid;
 		grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+		grid-template-areas: "copy photo" "extras photo";
+		grid-template-rows: auto auto;
 		align-items: center;
-		gap: clamp(26px, 5vw, 70px);
+		gap: 12px clamp(26px, 5vw, 70px);
 	}
+	.deck-landing-copy { grid-area: copy; min-width: 0; max-width: 100%; }
+	.deck-landing-footnotes { grid-area: extras; min-width: 0; max-width: 100%; }
+	.deck-hero-photo { grid-area: photo; }
 	.deck-landing-copy .eyebrow { margin-bottom: 18px; }
 	.deck-landing-copy h1 {
 		font-size: clamp(3rem, 5vw, 5.15rem);
@@ -2551,7 +2559,7 @@ const breadcrumbSchema = {
 	.deck-mobile-contact { display: none; }
 	.deck-mobile-contact[hidden] { display: none !important; }
 	@media (max-width: 900px) {
-		.deck-landing-grid { grid-template-columns: 1fr; gap: 24px; }
+		.deck-landing-grid { grid-template-columns: minmax(0,1fr); grid-template-areas: "copy" "photo" "extras"; gap: 22px; }
 		.deck-hero-photo { aspect-ratio: 16 / 10; }
 		.deck-hero-photo img { object-position: 50% 67%; }
 		.deck-price-grid { grid-template-columns: 1fr; }
@@ -2567,18 +2575,23 @@ const breadcrumbSchema = {
 		.deck-trust-points { gap: 8px 14px; font-size: 0.72rem; }
 		.deck-price-disclaimer { font-size: 0.72rem; }
 
-		/* En celular se ve el proyecto auténtico justo después de las dos opciones. */
-		.deck-landing-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
-		.deck-landing-copy { display: contents; }
-		.deck-landing-copy .eyebrow { order: 1; }
-		.deck-landing-copy h1 { order: 2; }
-		.deck-subheadline { order: 3; }
-		.deck-price-highlight { order: 4; }
-		.deck-hero-ctas { order: 5; margin-bottom: 18px; }
-		.deck-hero-photo { order: 6; aspect-ratio: 5 / 4; width: 100%; }
-		.deck-calc-link { order: 7; }
-		.deck-trust-points { order: 8; }
-		.deck-price-disclaimer { order: 9; }
+		/* Columnas móviles sin display:contents: evita que el contenido ensanche el viewport. */
+		.deck-landing-grid {
+			display: grid;
+			width: min(var(--container), calc(100% - 28px));
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-areas: "copy" "photo" "extras";
+			gap: 0;
+		}
+		.deck-landing-copy, .deck-landing-footnotes { display: block; min-width: 0; max-width: 100%; }
+		.deck-landing-copy h1, .deck-subheadline, .deck-price-highlight,
+		.deck-hero-ctas, .deck-hero-ctas .button { max-width: 100%; min-width: 0; }
+		.deck-landing-copy h1, .deck-subheadline { overflow-wrap: break-word; }
+		.deck-hero-ctas { display: grid; grid-template-columns: minmax(0, 1fr); margin-bottom: 18px; }
+		.deck-hero-ctas .button { width: 100%; white-space: normal; overflow-wrap: anywhere; }
+		.deck-price-highlight > span { min-width: 0; overflow-wrap: break-word; }
+		.deck-hero-photo { aspect-ratio: 5 / 4; width: 100%; max-width: 100%; margin: 0; }
+		.deck-landing-footnotes { padding-top: 4px; }
 		.deck-hero-photo figcaption { inset: auto 10px 10px; padding: 10px 12px; }
 		.deck-hero-photo figcaption span { font-size: 0.72rem; }
 		.deck-choice-section { padding: 47px 0; }
