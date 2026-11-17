@@ -7,7 +7,11 @@ const title =
 	'Contador de Agua 3/4 en Guatemala | Precio desde Q420 | AR';
 
 const description =
-	'Precio de contador de agua 3/4 en Guatemala desde Q420. Compare Genebre 6029P, 6110C y 6029. Suministro e instalación sujetos a confirmación.';
+	'Contadores Genebre de 3/4 en Guatemala desde Q420. GENEBRE figura en el listado oficial de marcas autorizadas por EMPAGUA para cambio de medidor. Consulte modelo y disponibilidad.';
+
+const whatsappEmpagua = createWhatsAppLink(
+  'Hola, necesito un contador Genebre de 3/4" para EMPAGUA. ¿Me ayudan a confirmar qué modelo necesito y su disponibilidad?'
+);
 
 const whatsappGeneral = createWhatsAppLink(
 	`Hola, vi sus contadores de agua de 3/4" desde Q420 y quiero comprar o confirmar disponibilidad.
@@ -110,7 +114,7 @@ const faqSchema = {
 			acceptedAnswer: {
 				"@type": "Answer",
 				text:
-					'La aceptación puede depender del trámite y de las especificaciones vigentes. AR puede ayudar a revisar el requerimiento, pero no afirma autorización de un modelo específico sin documentación aplicable.',
+					'GENEBRE figura en el listado de marcas autorizadas por EMPAGUA para cambio de medidor (volante oficial, versión 4, 2024). Esto no confirma la aceptación individual de los modelos 6029P, 6110C o 6029. Verifique los requisitos del trámite antes de comprar.',
 			},
 		},
 	],
@@ -252,6 +256,26 @@ const breadcrumbSchema = {
 					confirmación de disponibilidad antes de cerrar la compra.
 				</p>
 			</aside>
+		</div>
+	</section>
+
+	<!-- Marca autorizada en documento oficial; no garantiza homologacion de cada referencia -->
+	<section class="empagua-trust-section" aria-labelledby="empagua-title">
+		<div class="container">
+			<div class="empagua-trust-panel">
+				<div>
+					<p class="empagua-trust-eyebrow">INFORMACIÓN OFICIAL · EMPAGUA</p>
+					<h2 id="empagua-title">¿Necesita un contador Genebre de 3/4&quot; para EMPAGUA?</h2>
+					<p><strong>GENEBRE figura en el listado oficial de marcas autorizadas por EMPAGUA para cambio de medidor.</strong> EMPAGUA es la Empresa Municipal de Agua de la Ciudad de Guatemala.</p>
+					<p>Antes de comprar, podemos ayudarle a identificar la referencia que necesita y confirmar disponibilidad. La aceptación de cada modelo depende de los requisitos aplicables al trámite.</p>
+					<p class="empagua-trust-note">La referencia es el volante oficial de cambio de medidor, versión 4 (2024). Para otros municipios, consulte los requisitos de su operador de agua.</p>
+				</div>
+				<div class="empagua-trust-actions">
+					<a class="button" href={whatsappEmpagua} target="_blank" rel="noopener noreferrer" data-ar-cta="empagua-3-4">Consultar para EMPAGUA ↗</a>
+					<a class="empagua-trust-link" href="https://empagua.com/wp-content/uploads/2024/10/Volante-Cambio-de-medidor-2024.pdf" target="_blank" rel="noopener noreferrer">Ver documento oficial de EMPAGUA ↗</a>
+					<small>El documento avala la marca, no certifica individualmente cada modelo.</small>
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -977,15 +1001,16 @@ const breadcrumbSchema = {
 
 				<details>
 					<summary>
-						¿Sirve para un trámite con EMPAGUA?
+						¿GENEBRE está entre las marcas autorizadas por EMPAGUA?
 					</summary>
 
 					<p>
-						La aceptación de un modelo puede depender del
-						trámite y de las especificaciones vigentes.
-						Podemos revisar el requerimiento, pero no afirmamos
-						autorización de un modelo específico sin
-						documentación aplicable.
+						Sí. El documento oficial de EMPAGUA para cambio de medidor
+						(versión 4, 2024) incluye a GENEBRE en su listado de marcas
+						autorizadas. Esto no confirma individualmente la aceptación
+						de los modelos 6029P, 6110C o 6029. Consulte los requisitos
+						de su gestión antes de comprar.
+						<a href="https://empagua.com/wp-content/uploads/2024/10/Volante-Cambio-de-medidor-2024.pdf" target="_blank" rel="noopener noreferrer">Ver el volante oficial de EMPAGUA.</a>
 					</p>
 				</details>
 
@@ -1364,7 +1389,8 @@ const breadcrumbSchema = {
 	================================================== */
 
 	.products-section {
-		background: #f7f7f7;
+    background: #f7f7f7;
+    padding-top: 45px;
 	}
 
 	.product-grid {
@@ -2362,6 +2388,85 @@ const breadcrumbSchema = {
 
 		.quote-grid span {
 			margin-bottom: 22px;
+		}
+	}
+	/* EMPAGUA: respaldo documental sin logos ni sellos ajenos */
+	.empagua-trust-section {
+		padding: 0 0 0;
+		background: #fff;
+	}
+
+	.empagua-trust-panel {
+		display: grid;
+		grid-template-columns: minmax(0, 1.45fr) minmax(235px, .55fr);
+		gap: 30px;
+		align-items: center;
+		padding: clamp(24px, 4vw, 38px);
+		border: 1px solid #dedede;
+		border-left: 4px solid #ed1c24;
+		border-radius: 12px;
+		background: #fafafa;
+	}
+
+	.empagua-trust-eyebrow {
+		color: #d51c23;
+		font-size: .72rem;
+		font-weight: 800;
+		letter-spacing: .1em;
+		margin: 0 0 12px;
+	}
+
+	.empagua-trust-panel h2 {
+		font-size: clamp(1.5rem, 2.7vw, 2.15rem);
+		line-height: 1.2;
+		margin: 0 0 15px;
+		letter-spacing: -.025em;
+	}
+
+	.empagua-trust-panel p {
+		color: #444;
+		line-height: 1.65;
+		margin: 0 0 11px;
+	}
+
+	.empagua-trust-panel .empagua-trust-note {
+		color: #666;
+		font-size: .84rem;
+		margin: 12px 0 0;
+	}
+
+	.empagua-trust-actions {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 16px;
+	}
+
+	.empagua-trust-actions .button {
+		text-align: center;
+	}
+
+	.empagua-trust-link {
+		color: #b11820;
+		font-weight: 750;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	.empagua-trust-actions small {
+		color: #555;
+		font-size: .8rem;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 780px) {
+		.empagua-trust-panel {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 22px;
+		}
+
+		.empagua-trust-section {
+			padding-bottom: 38px;
 		}
 	}
 </style>
