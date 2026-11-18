@@ -9,7 +9,7 @@ const title =
 	"Piso WPC en Guatemala | Deck WPC Q875 por Caja | AR";
 
 const description =
-	"Piso WPC y Deck WPC en Guatemala para terrazas, balcones y exteriores. Caja de 5 piezas, aprox. 2.03 m². Precio Q875, material e instalación.";
+	"Deck WPC en Guatemala a Q875 por caja de 5 duelas (≈2.03 m² geométricos). Material por caja; estructura metálica e instalación se cotizan aparte.";
 
 const whatsappDeck = createWhatsAppLink(
 	`Hola, vi su página de Piso Deck WPC y quisiera solicitar una cotización.
@@ -221,6 +221,11 @@ const breadcrumbSchema = {
 					<strong>Q875</strong>
 					<span>por caja de 5 piezas<br /><small>Rendimiento geométrico aprox. 2.03 m² antes de cortes.</small></span>
 				</div>
+<div class="deck-equivalents" aria-label="Equivalencias informativas del precio de Deck WPC">
+    <span><strong>Q175</strong> equivalente por duela</span>
+    <span><strong>≈ Q431</strong> por m² geométrico</span>
+</div>
+<p class="deck-equivalents-note">Se vende por caja completa. Equivalencias de material antes de cortes; no son precios de venta unitaria.</p>
 				<div class="deck-hero-ctas">
 					<a class="button deck-cta-primary" href={whatsappInstallation} target="_blank" rel="noopener noreferrer" data-deck-intent="instalacion">Cotizar Deck con instalación <span aria-hidden="true">↗</span></a>
 					<a class="button button-secondary deck-cta-secondary" href={whatsappBuyBoxes} target="_blank" rel="noopener noreferrer" data-deck-intent="material">Comprar solo material <span aria-hidden="true">↗</span></a>
@@ -377,6 +382,11 @@ const breadcrumbSchema = {
 					Los accesorios de instalación se venden por separado.
 				</p>
 
+<div class="deck-panel-equivalents" aria-label="Precio equivalente del piso Deck WPC">
+    <p><span>Equivalente por duela</span><strong>Q175</strong></p>
+    <p><span>Equivalente por m² geométrico</span><strong>≈ Q431</strong></p>
+    <small>Referencias por caja completa; no incluyen cortes ni instalación.</small>
+</div>
 				<div class="panel-specs">
 					<div>
 						<span>05</span>
@@ -501,6 +511,10 @@ const breadcrumbSchema = {
 					</button>
 				</div>
 
+<label class="deck-reserve-option" for="deck-reserve">
+    <input id="deck-reserve" type="checkbox" data-deck-reserve />
+    <span>Agregar 10% de reserva orientativa para cortes <small>Opcional. La cantidad final se verifica según la distribución del Deck.</small></span>
+</label>
 				<div class="formula">
 					<span>Área del proyecto</span>
 					<strong>÷</strong>
@@ -515,6 +529,7 @@ const breadcrumbSchema = {
 					<span>ESTIMACIÓN INICIAL</span>
 
 					<strong data-deck-boxes></strong>
+					<p class="deck-calculator-basis" data-deck-basis hidden></p>
 
 					<p>
 						Piso estimado:
@@ -539,7 +554,7 @@ const breadcrumbSchema = {
 				</div>
 
 				<div class="formula-example">
-					<span>Ejemplo para 20 m²</span>
+					<span>Ejemplo sin reserva para cortes · 20 m²</span>
 
 					<p>
 						<strong>20 m² ÷ 2.03 = 9.85 → 10 cajas</strong>
@@ -899,6 +914,51 @@ const breadcrumbSchema = {
 		</div>
 	</section>
 
+<!-- Proyecto real: documentación original, no imágenes de catálogo -->
+<section class="deck-case-study" id="proyecto-deck-zona-12" aria-labelledby="deck-zona12-title">
+    <div class="container">
+        <div class="deck-case-heading">
+            <div>
+                <p class="eyebrow">PROYECTO REAL · ZONA 12, CIUDAD DE GUATEMALA</p>
+                <h2 id="deck-zona12-title">Instalación de Deck WPC <span>sobre estructura metálica en Zona 12.</span></h2>
+                <p>En esta terraza residencial realizamos el montaje de la estructura metálica de soporte y la colocación de duelas de Deck WPC. Estas fotografías documentan el proceso de trabajo y el acabado final de un proyecto de AR.</p>
+            </div>
+            <a class="button deck-case-cta" href={whatsappInstallation} target="_blank" rel="noopener noreferrer">Cotizar un proyecto similar ↗</a>
+        </div>
+        <div class="deck-case-top-grid">
+            <figure class="deck-case-photo deck-case-feature">
+                <img src="/images/deck/zona-12/deck-wpc-zona12-guatemala-resultado-superficie.webp" alt="Superficie terminada de Deck WPC gris en terraza de casa en Zona 12, Ciudad de Guatemala" width="1200" height="900" loading="lazy" decoding="async" />
+                <figcaption><strong>Resultado final</strong><span>Deck WPC gris instalado en terraza residencial</span></figcaption>
+            </figure>
+            <div class="deck-case-side-grid">
+                <figure class="deck-case-photo">
+                    <img src="/images/deck/zona-12/deck-wpc-zona12-guatemala-estructura-metalica.webp" alt="Trabajadores de AR montando la estructura metálica de soporte para Deck WPC en una vivienda de Zona 12" width="1200" height="900" loading="lazy" decoding="async" />
+                    <figcaption><strong>01 · Estructura metálica</strong></figcaption>
+                </figure>
+                <figure class="deck-case-photo">
+                    <img src="/images/deck/zona-12/deck-wpc-zona12-guatemala-colocacion-duelas.webp" alt="Personal instalando duelas de Deck WPC sobre estructura metálica en terraza residencial de Zona 12" width="1200" height="900" loading="lazy" decoding="async" />
+                    <figcaption><strong>02 · Colocación del Deck</strong></figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="deck-case-bottom-grid">
+            <figure class="deck-case-photo">
+                <img src="/images/deck/zona-12/deck-wpc-zona12-guatemala-detalle-duela.webp" alt="Detalle de una duela gris de Deck WPC alineada sobre la estructura metálica de soporte en Zona 12" width="1200" height="900" loading="lazy" decoding="async" />
+                <figcaption><strong>Detalle de duela y soporte</strong></figcaption>
+            </figure>
+            <figure class="deck-case-photo">
+                <img src="/images/deck/zona-12/deck-wpc-zona12-guatemala-vista-general.webp" alt="Vista general del Deck WPC terminado junto a un jardín en vivienda residencial de Zona 12, Guatemala" width="1200" height="900" loading="lazy" decoding="async" />
+                <figcaption><strong>Acabado de la superficie</strong></figcaption>
+            </figure>
+            <figure class="deck-case-photo">
+                <img src="/images/deck/zona-12/deck-wpc-zona12-guatemala-terraza-terminada.webp" alt="Terraza de casa en Zona 12 con Deck WPC gris terminado, sofá y muebles de exterior" width="1200" height="900" loading="lazy" decoding="async" />
+                <figcaption><strong>Terraza lista para utilizar</strong></figcaption>
+            </figure>
+        </div>
+        <p class="deck-case-disclaimer">Proyecto real ejecutado por Multiservicios Obra Civil AR. El precio publicado de Q875 corresponde únicamente a la caja de cinco duelas de piso; estructura metálica, accesorios, entrega e instalación se cotizan por separado según el proyecto.</p>
+    </div>
+</section>
+
 	<!-- ==================================================
 	     PROYECTOS
 	================================================== -->
@@ -1201,6 +1261,8 @@ const breadcrumbSchema = {
 			const result = calculator.querySelector("[data-deck-result]");
 			const boxesOutput = calculator.querySelector("[data-deck-boxes]");
 			const totalOutput = calculator.querySelector("[data-deck-total]");
+			const reserveInput = calculator.querySelector("[data-deck-reserve]");
+			const basisOutput = calculator.querySelector("[data-deck-basis]");
 			const whatsappLink = calculator.querySelector("[data-deck-whatsapp]");
 			const whatsapp = calculator.dataset.whatsappNumber;
 
@@ -1222,7 +1284,9 @@ const breadcrumbSchema = {
 					return;
 				}
 
-				const boxes = Math.ceil(area / BOX_COVERAGE);
+				const reservePercent = reserveInput?.checked ? 10 : 0;
+				const planningArea = area * (1 + reservePercent / 100);
+				const boxes = Math.ceil(planningArea / BOX_COVERAGE);
 				const total = boxes * BOX_PRICE;
 
 				boxesOutput.textContent =
@@ -1231,14 +1295,19 @@ const breadcrumbSchema = {
 				totalOutput.textContent =
 					formatQuetzales(total);
 
+				if (basisOutput) {
+					basisOutput.hidden = false;
+					basisOutput.textContent = reservePercent
+						? `Área: ${area} m² + 10% para cortes = ${Number(planningArea.toFixed(2))} m² de cálculo.`
+						: `Área: ${area} m², sin reserva adicional para cortes.`;
+				}
+
 				if (whatsappLink && whatsapp) {
+					const extra = reservePercent ? " (incluye 10% orientativo para cortes)" : " (sin reserva de cortes)";
 					const message =
-						`Hola, vi el Deck WPC a Q875 por caja. ` +
-						`Mi área aproximada es de ${area} m² y la calculadora ` +
-						`me indicó ${boxes} caja(s), con un material estimado de ` +
-						`${formatQuetzales(total)}. ` +
-						`Quisiera comprar y confirmar cantidad final, color y disponibilidad. ` +
-						`También quisiera saber si necesito bases, separadores u otros materiales de instalación.`;
+						`Hola, calculé ${area} m² de Deck WPC: ${boxes} caja(s)${extra}, ` +
+						`por ${formatQuetzales(total)} solo de piso a Q875/caja. ` +
+						`¿Me ayudan a confirmar la cantidad final, los colores disponibles y la entrega?`;
 
 					whatsappLink.href =
 						`https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`;
@@ -1248,6 +1317,9 @@ const breadcrumbSchema = {
 			};
 
 			calculateButton?.addEventListener("click", calculate);
+			reserveInput?.addEventListener("change", () => {
+				if (Number.parseFloat(areaInput?.value ?? "") > 0) calculate();
+			});
 
 			areaInput?.addEventListener("keydown", (event) => {
 				if (event.key === "Enter") {
@@ -2620,5 +2692,71 @@ const breadcrumbSchema = {
 		}
 		:global(body) { padding-bottom: 73px; }
 	}
+
+/* Deck: equivalencias del precio, sin anunciar venta de duelas sueltas */
+.deck-equivalents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding-left: 18px;
+    margin: -8px 0 4px;
+    color: #303030;
+    font-size: .84rem;
+}
+.deck-equivalents span { display: inline-flex; gap: 5px; align-items: baseline; }
+.deck-equivalents strong { font-weight: 850; }
+.deck-equivalents-note { margin: 3px 0 21px 18px; font-size: .74rem; color: #686868; line-height: 1.5; }
+.deck-panel-equivalents { border-top: 1px solid #373737; border-bottom: 1px solid #373737; padding: 11px 0; margin: 12px 0 18px; }
+.deck-panel-equivalents p { display: flex; justify-content: space-between; gap: 12px; margin: 0 0 7px; font-size: .86rem; }
+.deck-panel-equivalents p:last-of-type { margin-bottom: 3px; }
+.deck-panel-equivalents p strong { white-space: nowrap; }
+.deck-panel-equivalents small { display: block; color: #b9b9b9; font-size: .7rem; line-height: 1.5; margin-top: 8px; }
+
+/* Calculadora: reserva opcional, visible sin sobresaturar la interfaz */
+.deck-reserve-option { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 22px; cursor: pointer; font-size: .87rem; color: #f1f1f1; line-height: 1.5; }
+.deck-reserve-option input { width: 19px; height: 19px; flex: 0 0 19px; margin: 2px 0 0; accent-color: #ed1c24; cursor: pointer; }
+.deck-reserve-option small { display: block; color: #ababab; font-size: .72rem; margin-top: 3px; }
+.deck-calculator-basis { margin: 3px 0 10px !important; color: #ededed !important; font-size: .8rem; line-height: 1.45; }
+
+/* Casa Zona 12: galería editorial de trabajo real */
+.deck-case-study { padding: clamp(52px, 6vw, 88px) 0; background: #fff; }
+.deck-case-heading { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 26px; align-items: end; margin-bottom: 26px; }
+.deck-case-heading h2 { max-width: 820px; font-size: clamp(2rem, 3.6vw, 3.4rem); line-height: 1.1; letter-spacing: -.045em; margin: 0 0 18px; }
+.deck-case-heading h2 span { color: #ed1c24; }
+.deck-case-heading p:not(.eyebrow) { max-width: 750px; color: #5b5b5b; line-height: 1.7; margin: 0; }
+.deck-case-cta { text-align: center; white-space: nowrap; }
+.deck-case-top-grid { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); gap: 14px; }
+.deck-case-side-grid { display: grid; grid-template-columns: minmax(0,1fr); grid-template-rows: repeat(2,minmax(0,1fr)); gap: 14px; min-width: 0; }
+.deck-case-bottom-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 14px; }
+.deck-case-photo { position: relative; margin: 0; overflow: hidden; border-radius: 12px; background: #eee; min-width: 0; }
+.deck-case-photo img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1.8; }
+.deck-case-feature img { aspect-ratio: 1.25; }
+.deck-case-side-grid img { aspect-ratio: 2.13; }
+.deck-case-bottom-grid img { aspect-ratio: 1.45; }
+.deck-case-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; display: flex; gap: 5px; flex-direction: column; color: #fff; background: linear-gradient(0deg, rgba(0,0,0,.83), rgba(0,0,0,0)); padding: 38px 16px 14px; font-size: .81rem; }
+.deck-case-photo figcaption strong { font-weight: 850; }
+.deck-case-photo figcaption span { color: #f2f2f2; font-size: .75rem; }
+.deck-case-disclaimer { margin: 19px 0 0; color: #646464; line-height: 1.6; font-size: .8rem; }
+@media (max-width: 900px) {
+    .deck-case-heading { grid-template-columns: minmax(0,1fr); align-items: start; }
+    .deck-case-cta { justify-self: start; }
+    .deck-case-top-grid { grid-template-columns: minmax(0,1fr); }
+    .deck-case-feature img { aspect-ratio: 1.45; }
+    .deck-case-side-grid { grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: auto; }
+    .deck-case-side-grid img { aspect-ratio: 1.45; }
+}
+@media (max-width: 560px) {
+    .deck-equivalents { margin-top: -6px; gap: 5px 14px; padding-left: 18px; font-size: .8rem; }
+    .deck-equivalents-note { margin-bottom: 18px; }
+    .deck-case-heading h2 { font-size: clamp(2rem, 8vw, 2.5rem); }
+    .deck-case-cta { justify-self: stretch; width: 100%; white-space: normal; }
+    .deck-case-feature img { aspect-ratio: 4/3; }
+    .deck-case-side-grid { gap: 9px; }
+    .deck-case-side-grid img { aspect-ratio: 1/1; }
+    .deck-case-side-grid figcaption { padding: 32px 9px 10px; font-size: .68rem; }
+    .deck-case-bottom-grid { grid-template-columns: minmax(0,1fr); gap: 9px; margin-top: 9px; }
+    .deck-case-bottom-grid img { aspect-ratio: 1.65; }
+}
+
 
 </style>
